@@ -1,0 +1,32 @@
+*.iml
+.idea
+.gradle
+/local.properties
+.DS_Store
+/captures
+.externalNativeBuild
+
+# files for the dex VM
+# Java class files
+# generated files
+bin/
+gen/
+out/
+build/
+.ART
+# Project files
+# .idea/workspace.xml
+
+# Local configuration file (sdk path, etc)
+keystore.properties
+
+# Values file
+values.properties
+
+# Windows thumbnail db
+# Idea non-crucial project fileS
+*.iws
+
+# Sandbox stuff
+_sandbox
+/rebel.xml

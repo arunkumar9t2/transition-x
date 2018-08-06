@@ -23,6 +23,7 @@ object Versions {
     val testRunner = "1.0.2"
     val espresso = "3.0.2"
     val kotlin = "1.2.60"
+    val androidKtx = "0.3"
 }
 
 object Dependencies {
@@ -36,6 +37,9 @@ object Dependencies {
     val appCompat = "com.android.support:appcompat-v7:${Versions.supportLib}"
     val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayout}"
     val supportDesign = "com.android.support:design:${Versions.supportLib}"
+
+    // KTX
+    val androidKtx = "androidx.core:core-ktx:${Versions.androidKtx}"
 
     // Test
     val jUnit = "junit:junit:${Versions.jUnit}"

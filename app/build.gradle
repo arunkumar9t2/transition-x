@@ -29,6 +29,7 @@ dependencies {
     implementation Dependencies.appCompat
     implementation Dependencies.constraintLayout
     implementation Dependencies.supportDesign
+    implementation Dependencies.androidKtx
 
     // Support
     testImplementation Dependencies.jUnit

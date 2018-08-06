@@ -1,11 +1,8 @@
-apply plugin: 'com.android.application'
-apply plugin: Plugins.kotlinAndroid
-apply plugin: Plugins.kotlinAndroidExt
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion BuildDetails.compileSdk
     defaultConfig {
-        applicationId BuildDetails.librarySample
         minSdkVersion BuildDetails.minSdk
         targetSdkVersion BuildDetails.targetSdk
         versionCode BuildDetails.versionCode
@@ -13,6 +10,7 @@ android {
 
         testInstrumentationRunner Dependencies.androidJUnitRunner
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -22,15 +20,13 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':transitionx')
-
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Dependencies.kotlinStdlib
     implementation Dependencies.appCompat
     implementation Dependencies.constraintLayout
     implementation Dependencies.supportDesign
 
-    // Support
+    // Test
     testImplementation Dependencies.jUnit
     androidTestImplementation Dependencies.testRunner
     androidTestImplementation Dependencies.espressoCore

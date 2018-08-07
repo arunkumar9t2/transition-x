@@ -5,12 +5,10 @@ package `in`.arunkumarsampath.transitionx.builders
 import `in`.arunkumarsampath.transitionx.builders.common.*
 import `in`.arunkumarsampath.transitionx.builders.fade.FadeBuilder
 import `in`.arunkumarsampath.transitionx.builders.fade.FadeMode
-import `in`.arunkumarsampath.transitionx.builders.slide.GravityFlag
 import `in`.arunkumarsampath.transitionx.builders.slide.SlideBuilder
 import android.support.transition.Fade
 import android.support.transition.Transition
 import android.support.transition.TransitionSet
-import android.view.Gravity.BOTTOM
 
 class TransitionSetBuilder : TransitionBuilder<TransitionSet>(TransitionSet()) {
 
@@ -24,7 +22,7 @@ class TransitionSetBuilder : TransitionBuilder<TransitionSet>(TransitionSet()) {
 
     inline operator fun get(index: Int): Transition = transition.getTransitionAt(index)
 
-    inline fun slide(@GravityFlag slideEdge: Int = BOTTOM, slideBuilder: SlideBuilder.() -> Unit = {}) {
+    inline fun slide(slideBuilder: SlideBuilder.() -> Unit = {}) {
         +SlideBuilder().apply(slideBuilder).transition
     }
 

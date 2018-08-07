@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: Plugins.kotlinAndroid
+apply plugin: Plugins.kotlinAndroidExt
 
 android {
     compileSdkVersion BuildDetails.compileSdk

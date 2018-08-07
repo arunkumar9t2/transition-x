@@ -2,11 +2,13 @@
 
 package `in`.arunkumarsampath.transitionx.builders
 
+import `in`.arunkumarsampath.transitionx.scope.TransitionBuilderMarker
 import android.animation.TimeInterpolator
 import android.support.transition.PathMotion
 import android.support.transition.Transition
 import android.view.View
 
+@TransitionBuilderMarker
 open class TransitionBuilder<T : Transition>(val transition: T) {
     var duration: Long
         set(value) {
@@ -32,8 +34,6 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
             transition.setPathMotion(value)
         }
         get() = transition.pathMotion
-
-    inline operator fun Int.unaryPlus() = transition.addTarget(this)
 
     inline operator fun String.unaryPlus() = transition.addTarget(this)
 

@@ -13,6 +13,12 @@ android {
         testInstrumentationRunner Dependencies.androidJUnitRunner
     }
 
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -30,6 +36,7 @@ dependencies {
 
     // Test
     testImplementation Dependencies.jUnit
+    testImplementation Dependencies.robotElectric
     androidTestImplementation Dependencies.testRunner
     androidTestImplementation Dependencies.espressoCore
 }

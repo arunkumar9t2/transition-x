@@ -24,6 +24,7 @@ object Versions {
     val espresso = "3.0.2"
     val kotlin = "1.2.60"
     val androidKtx = "0.3"
+    val roboElectric = "3.8"
 }
 
 object Dependencies {
@@ -46,4 +47,5 @@ object Dependencies {
     val androidJUnitRunner = "android.support.test.runner.AndroidJUnitRunner"
     val testRunner = "com.android.support.test:runner:${Versions.testRunner}"
     val espressoCore = "com.android.support.test.espresso:espresso-core:${Versions.espresso}"
+    val robotElectric = "org.robolectric:robolectric:${Versions.roboElectric}"
 }

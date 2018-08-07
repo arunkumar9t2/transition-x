@@ -1,6 +1,9 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
 package `in`.arunkumarsampath.transitionx.builders
 
 import android.animation.TimeInterpolator
+import android.support.transition.PathMotion
 import android.support.transition.Transition
 import android.view.View
 
@@ -23,11 +26,18 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
         }
         get() = transition.interpolator
 
-    operator fun Int.unaryPlus() = transition.addTarget(this)
 
-    operator fun String.unaryPlus() = transition.addTarget(this)
+    var pathMotion: PathMotion?
+        set(value) {
+            transition.setPathMotion(value)
+        }
+        get() = transition.pathMotion
+
+    inline operator fun Int.unaryPlus() = transition.addTarget(this)
+
+    inline operator fun String.unaryPlus() = transition.addTarget(this)
 
     inline operator fun <reified Type> Type.unaryPlus() = transition.addTarget(Type::class.java)
 
-    operator fun View.unaryPlus() = transition.addTarget(this)
+    inline operator fun View.unaryPlus() = transition.addTarget(this)
 }

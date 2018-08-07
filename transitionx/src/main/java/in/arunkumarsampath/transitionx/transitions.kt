@@ -1,18 +1,26 @@
 package `in`.arunkumarsampath.transitionx
 
-import `in`.arunkumarsampath.transitionx.builders.TransitionBuilder
+import `in`.arunkumarsampath.transitionx.builders.TransitionSetBuilder
+import `in`.arunkumarsampath.transitionx.builders.common.AutoTransitionBuilder
 import android.support.transition.TransitionManager
-import android.support.transition.TransitionSet
 import android.view.ViewGroup
 
-fun ViewGroup.transition(
-        cancel: Boolean = true,
-        transitionsBuilder: TransitionBuilder<TransitionSet>.() -> Unit
-) {
+inline fun ViewGroup.transition(cancel: Boolean = true, transitionsBuilder: TransitionSetBuilder.() -> Unit = {}) {
     if (cancel) {
         TransitionManager.endTransitions(this)
     }
-    val transitionDelegate = TransitionBuilder(TransitionSet())
-    transitionsBuilder(transitionDelegate)
-    TransitionManager.beginDelayedTransition(this, transitionDelegate.transition)
+    TransitionManager.beginDelayedTransition(
+            this,
+            TransitionSetBuilder().apply(transitionsBuilder).transition
+    )
+}
+
+inline fun ViewGroup.autoTransition(cancel: Boolean, autoTransitionBuilder: AutoTransitionBuilder.() -> Unit = {}) {
+    if (cancel) {
+        TransitionManager.endTransitions(this)
+    }
+    TransitionManager.beginDelayedTransition(
+            this,
+            AutoTransitionBuilder().apply(autoTransitionBuilder).transition
+    )
 }

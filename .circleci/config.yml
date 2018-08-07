@@ -1,4 +1,5 @@
-version: 2
+version: 2.0
+
 jobs:
   build:
     working_directory: ~/transition-x
@@ -10,7 +11,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "transition-x/build.gradle" }}
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "transitionx/build.gradle" }}
       - run:
           name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
           command: sudo chmod +x ./gradlew
@@ -20,13 +21,13 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "transition-x/build.gradle" }}
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "transitionx/build.gradle" }}
       - run:
           name: Run Tests
           command: ./gradlew test
       - store_artifacts:
-          path: transition-x/build/reports
+          path: transitionx/build/reports
           destination: reports
       - store_test_results:
-          path: transition-x/build/test-results
+          path: transitionx/build/test-results
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples

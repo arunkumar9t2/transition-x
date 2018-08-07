@@ -3,6 +3,7 @@ package `in`.arunkumarsampath.transitionx
 import `in`.arunkumarsampath.transitionx.builders.TransitionSetBuilder
 import android.support.transition.*
 import android.support.v4.view.animation.LinearOutSlowInInterpolator
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -15,7 +16,7 @@ class TransitionDslTest {
     // To test DSL, it is sufficient to construct a transition set with given DSL syntax and test
     // if generated transition test contains correct transitions as per DSL.
     @Test
-    fun testTransitionSetDsl() {
+    fun `test dsl reflects generated transition`() {
         val transition = TransitionSetBuilder().apply {
             slide {
                 duration = 200
@@ -34,17 +35,40 @@ class TransitionDslTest {
         }.transition
 
         with(transition) {
-            assert(getTransitionAt(0) is Slide)
-            assert(getTransitionAt(0).duration == 200L)
-            assert(getTransitionAt(1) is Fade)
-            assert(getTransitionAt(1).interpolator is LinearOutSlowInInterpolator)
-            assert(getTransitionAt(2) is ChangeTransform)
-            assert(getTransitionAt(2).startDelay == 200L)
-            assert(getTransitionAt(3) is ChangeClipBounds)
-            assert(getTransitionAt(4) is ChangeBounds)
-            assert(getTransitionAt(5) is ChangeImageTransform)
-            assert(getTransitionAt(6) is ChangeScroll)
-            assert(getTransitionAt(7) is Explode)
+            val slide = getTransitionAt(0)
+            assertTrue(slide is Slide)
+            assertTrue(slide.duration == 200L)
+            val fade = getTransitionAt(1)
+            assertTrue(fade is Fade)
+            assertTrue(fade.interpolator is LinearOutSlowInInterpolator)
+            val changeTransform = getTransitionAt(2)
+            assertTrue(changeTransform is ChangeTransform)
+            assertTrue(changeTransform.startDelay == 200L)
+            assertTrue(getTransitionAt(3) is ChangeClipBounds)
+            assertTrue(getTransitionAt(4) is ChangeBounds)
+            assertTrue(getTransitionAt(5) is ChangeImageTransform)
+            assertTrue(getTransitionAt(6) is ChangeScroll)
+            assertTrue(getTransitionAt(7) is Explode)
         }
+    }
+
+    @Test
+    fun `test custom transition builder`() {
+        class SimpleFade : Fade()
+
+        val transition = TransitionSetBuilder().apply {
+            customTransition<SimpleFade>()
+        }.transition
+        assertTrue(transition.getTransitionAt(0) is SimpleFade)
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun `test dsl for custom transition with non instantiable constructor fails`() {
+        class SimpleFade(private val something: Int) : Fade()
+
+        val transition = TransitionSetBuilder().apply {
+            customTransition<SimpleFade>()
+        }.transition
+        assertTrue(transition.getTransitionAt(0) is SimpleFade)
     }
 }

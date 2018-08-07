@@ -54,18 +54,18 @@ class TransitionSetBuilder : TransitionBuilder<TransitionSet>(TransitionSet()) {
         +ExplodeBuilder().apply(explodeBuilder).transition
     }
 
-    inline fun <reified T : Transition> customTransition(transitionBuilder: TransitionBuilder<T>.() -> Unit) {
+    inline fun <reified T : Transition> customTransition(transitionBuilder: TransitionBuilder<T>.() -> Unit = {}) {
         val transitionInstance: T = try {
             T::class.java.newInstance()
         } catch (e: Exception) {
-            throw  IllegalArgumentException("Could not instantiate type ${T::class.java.name}. " +
-                    "If you don't have a public no-arg constructor, " +
-                    "instantiate ${T::class.java.simpleName} and use customTransition(transition, builder)")
+            throw  IllegalArgumentException("Could not instantiate type ${T::class.java.simpleName}. " +
+                    "If it does not have a public no-arg constructor, " +
+                    "instantiate ${T::class.java.simpleName} and use customTransition(transition, builder) instead")
         }
         customTransition(transitionInstance, transitionBuilder)
     }
 
-    inline fun <T : Transition> customTransition(transition: T, transitionBuilder: TransitionBuilder<T>.() -> Unit) {
+    inline fun <T : Transition> customTransition(transition: T, transitionBuilder: TransitionBuilder<T>.() -> Unit = {}) {
         +TransitionBuilder(transition).apply(transitionBuilder).transition
     }
 }

@@ -11,29 +11,30 @@ import android.view.View
 @TransitionBuilderMarker
 open class TransitionBuilder<T : Transition>(val transition: T) {
     var duration: Long
+        get() = transition.duration
         set(value) {
             transition.duration = value
         }
-        get() = transition.duration
+
 
     var startDelay: Long
+        get() = transition.startDelay
         set(value) {
             transition.startDelay = value
         }
-        get() = transition.startDelay
+
 
     var interpolator: TimeInterpolator?
+        get() = transition.interpolator
         set(value) {
             transition.interpolator = value
         }
-        get() = transition.interpolator
-
 
     var pathMotion: PathMotion?
+        get() = transition.pathMotion
         set(value) {
             transition.setPathMotion(value)
         }
-        get() = transition.pathMotion
 
     inline operator fun String.unaryPlus() = transition.addTarget(this)
 

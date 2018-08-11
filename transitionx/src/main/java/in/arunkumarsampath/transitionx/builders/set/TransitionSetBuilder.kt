@@ -1,16 +1,24 @@
 @file:Suppress("NOTHING_TO_INLINE")
 
-package `in`.arunkumarsampath.transitionx.builders
+package `in`.arunkumarsampath.transitionx.builders.set
 
+import `in`.arunkumarsampath.transitionx.builders.TransitionBuilder
 import `in`.arunkumarsampath.transitionx.builders.common.*
 import `in`.arunkumarsampath.transitionx.builders.fade.FadeBuilder
 import `in`.arunkumarsampath.transitionx.builders.fade.FadeMode
 import `in`.arunkumarsampath.transitionx.builders.slide.SlideBuilder
+import android.support.transition.AutoTransition
 import android.support.transition.Fade
 import android.support.transition.Transition
 import android.support.transition.TransitionSet
 
-class TransitionSetBuilder : TransitionBuilder<TransitionSet>(TransitionSet()) {
+open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : TransitionBuilder<TransitionSet>(transitionSet) {
+
+    var ordering: Int
+        get() = transition.ordering
+        set(value) {
+            transition.ordering = value
+        }
 
     inline operator fun Transition.unaryPlus() {
         transition.addTransition(this)
@@ -28,8 +36,8 @@ class TransitionSetBuilder : TransitionBuilder<TransitionSet>(TransitionSet()) {
     inline fun fade(@FadeMode fadeMode: Int = Fade.IN or Fade.OUT, fadeBuilder: FadeBuilder.() -> Unit = {}) =
             +FadeBuilder(fadeMode).apply(fadeBuilder).transition
 
-    inline fun changeTransform(changeTransformBuilder: ChangeTransformBuilder.() -> Unit = {}) =
-            +ChangeTransformBuilder().apply(changeTransformBuilder).transition
+    inline fun scaleRotate(scaleRotateBuilder: ScaleRotateBuilder.() -> Unit = {}) =
+            +ScaleRotateBuilder().apply(scaleRotateBuilder).transition
 
     inline fun changeClipBounds(changeClipBoundsBuilder: ChangeClipBoundsBuilder.() -> Unit = {}) =
             +ChangeClipBoundsBuilder().apply(changeClipBoundsBuilder).transition
@@ -63,3 +71,7 @@ class TransitionSetBuilder : TransitionBuilder<TransitionSet>(TransitionSet()) {
             transitionBuilder: TransitionBuilder<T>.() -> Unit = {}
     ) = +TransitionBuilder(transition).apply(transitionBuilder).transition
 }
+
+class DefaultTransitionSetBuilder : TransitionSetBuilder<TransitionSet>(TransitionSet())
+
+class AutoTransitionBuilder : TransitionSetBuilder<TransitionSet>(AutoTransition())

@@ -1,6 +1,6 @@
 package `in`.arunkumarsampath.transitionx
 
-import `in`.arunkumarsampath.transitionx.builders.TransitionSetBuilder
+import `in`.arunkumarsampath.transitionx.builders.set.TransitionSetBuilder
 import android.support.transition.*
 import android.support.v4.view.animation.LinearOutSlowInInterpolator
 import org.junit.Assert.assertTrue

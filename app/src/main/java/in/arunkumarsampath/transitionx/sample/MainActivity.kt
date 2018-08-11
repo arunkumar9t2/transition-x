@@ -1,7 +1,6 @@
 package `in`.arunkumarsampath.transitionx.sample
 
-import `in`.arunkumarsampath.transitionx.sample.extensions.toggleGone
-import `in`.arunkumarsampath.transitionx.transition
+import `in`.arunkumarsampath.transitionx.autoTransition
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,10 +14,11 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener {
-            constraintLayout.transition {
-
+            constraintLayout.autoTransition {
+                scaleRotate()
             }
-            helloWorldText.toggleGone()
+            helloWorldText.scaleX = 1.5F
+            helloWorldText.scaleY = 1.5f
         }
     }
 }

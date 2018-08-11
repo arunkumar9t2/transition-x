@@ -1,6 +1,6 @@
 package `in`.arunkumarsampath.transitionx
 
-import `in`.arunkumarsampath.transitionx.builders.set.TransitionSetBuilder
+import `in`.arunkumarsampath.transitionx.builders.set.DefaultTransitionSetBuilder
 import android.support.transition.*
 import android.support.v4.view.animation.LinearOutSlowInInterpolator
 import org.junit.Assert.assertTrue
@@ -17,14 +17,14 @@ class TransitionDslTest {
     // if generated transition test contains correct transitions as per DSL.
     @Test
     fun `test dsl reflects generated transition`() {
-        val transition = TransitionSetBuilder().apply {
+        val transition = DefaultTransitionSetBuilder().apply {
             slide {
                 duration = 200
             }
             fade {
                 interpolator = LinearOutSlowInInterpolator()
             }
-            changeTransform {
+            scaleRotate {
                 startDelay = 200
             }
             changeClipBounds()
@@ -56,7 +56,7 @@ class TransitionDslTest {
     fun `test custom transition builder`() {
         class SimpleFade : Fade()
 
-        val transition = TransitionSetBuilder().apply {
+        val transition = DefaultTransitionSetBuilder().apply {
             customTransition<SimpleFade>()
         }.transition
         assertTrue(transition.getTransitionAt(0) is SimpleFade)
@@ -66,7 +66,7 @@ class TransitionDslTest {
     fun `test dsl for custom transition with non instantiable constructor fails`() {
         class SimpleFade(private val something: Int) : Fade()
 
-        val transition = TransitionSetBuilder().apply {
+        val transition = DefaultTransitionSetBuilder().apply {
             customTransition<SimpleFade>()
         }.transition
         assertTrue(transition.getTransitionAt(0) is SimpleFade)

@@ -19,13 +19,16 @@ class MainActivity : AppCompatActivity() {
         fab.setOnClickListener {
             constraintLayout.transition {
                 customTransition<ChangeColor>()
-                scaleRotate()
-                duration = 5000
+                scaleRotate {
+                    duration = 300
+                }
                 +helloWorldText
             }
-            helloWorldText.scaleX = 1.5F
-            helloWorldText.scaleY = 1.5f
-            helloWorldText.background = ColorDrawable(Color.GREEN)
+            with(helloWorldText) {
+                scaleX = 1.5F
+                scaleY = 1.5f
+                background = ColorDrawable(Color.GREEN)
+            }
         }
     }
 }

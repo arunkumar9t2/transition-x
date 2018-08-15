@@ -10,19 +10,18 @@ import android.view.View
 
 @TransitionBuilderMarker
 open class TransitionBuilder<T : Transition>(val transition: T) {
+
     var duration: Long
         get() = transition.duration
         set(value) {
             transition.duration = value
         }
 
-
     var startDelay: Long
         get() = transition.startDelay
         set(value) {
             transition.startDelay = value
         }
-
 
     var interpolator: TimeInterpolator?
         get() = transition.interpolator
@@ -38,7 +37,13 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
 
     inline operator fun String.unaryPlus() = transition.addTarget(this)
 
+    inline operator fun String.unaryMinus() = transition.removeTarget(this)
+
     inline operator fun <reified Type> Type.unaryPlus() = transition.addTarget(Type::class.java)
 
+    inline operator fun <reified Type> Type.unaryMinus() = transition.removeTarget(Type::class.java)
+
     inline operator fun View.unaryPlus() = transition.addTarget(this)
+
+    inline operator fun View.unaryMinus() = transition.removeTarget(this)
 }

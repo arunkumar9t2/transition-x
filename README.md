@@ -1,7 +1,8 @@
 
 # Transition X
-**Kotlin DSL for choreographing Android Transitions**
+**Kotlin DSL for choreographing Android Transitions**  
 
+[![CircleCI](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master.svg?style=svg)](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master)
 
 ***Note***: Project is under heavy development and is not available on any Maven repos. API is subject to change.
 

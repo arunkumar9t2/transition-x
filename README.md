@@ -31,3 +31,7 @@ with(helloWorldText) {
 ```
 
 More details and samples will be added soon.
+
+## Contributions
+
+Until a stable release is out, please create an issue to discuss your ideas before submitting a PR. 

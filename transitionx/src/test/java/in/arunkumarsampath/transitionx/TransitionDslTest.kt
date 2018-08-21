@@ -9,6 +9,7 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
+
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [19, 21, 24])
 class TransitionDslTest {
@@ -71,4 +72,18 @@ class TransitionDslTest {
         }.transition
         assertTrue(transition.getTransitionAt(0) is SimpleFade)
     }
+
+    /*@Test
+    fun `test listeners get triggered`() {
+        val testActivity = Robolectric.buildActivity(TestActivity::class.java).apply {
+            start()
+            resume()
+        }.get()
+
+        val contentView = testActivity.findViewById<FrameLayout>(android.R.id.content)
+        contentView.autoTransition {
+            testActivity.textView.text = "Something"
+            onEnd {}
+        }
+    }*/
 }

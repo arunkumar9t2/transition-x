@@ -46,4 +46,44 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
     inline operator fun View.unaryPlus() = transition.addTarget(this)
 
     inline operator fun View.unaryMinus() = transition.removeTarget(this)
+
+    inline fun onEnd(noinline onEnd: ((transition: Transition) -> Unit)) = transition.addListener(onEnd = onEnd)
+
+    inline fun onStart(noinline onStart: ((transition: Transition) -> Unit)) = transition.addListener(onStart = onStart)
+
+    inline fun onCancel(noinline onCancel: ((transition: Transition) -> Unit)) = transition.addListener(onCancel = onCancel)
+
+    inline fun onResume(noinline onResume: ((transition: Transition) -> Unit)) = transition.addListener(onResume = onResume)
+
+    inline fun onPause(noinline onPause: ((transition: Transition) -> Unit)) = transition.addListener(onEnd = onPause)
+
+    fun Transition.addListener(
+            onEnd: ((transition: Transition) -> Unit)? = null,
+            onStart: ((transition: Transition) -> Unit)? = null,
+            onCancel: ((transition: Transition) -> Unit)? = null,
+            onResume: ((transition: Transition) -> Unit)? = null,
+            onPause: ((transition: Transition) -> Unit)? = null
+    ) {
+        addListener(object : Transition.TransitionListener {
+            override fun onTransitionEnd(transition: Transition) {
+                onEnd?.invoke(transition)
+            }
+
+            override fun onTransitionResume(transition: Transition) {
+                onResume?.invoke(transition)
+            }
+
+            override fun onTransitionPause(transition: Transition) {
+                onPause?.invoke(transition)
+            }
+
+            override fun onTransitionCancel(transition: Transition) {
+                onCancel?.invoke(transition)
+            }
+
+            override fun onTransitionStart(transition: Transition) {
+                onStart?.invoke(transition)
+            }
+        })
+    }
 }

@@ -4,6 +4,7 @@ package `in`.arunkumarsampath.transitionx.builders
 
 import `in`.arunkumarsampath.transitionx.scope.TransitionBuilderMarker
 import android.animation.TimeInterpolator
+import android.support.annotation.IdRes
 import android.support.transition.PathMotion
 import android.support.transition.Transition
 import android.view.View
@@ -46,6 +47,12 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
     inline operator fun View.unaryPlus() = transition.addTarget(this)
 
     inline operator fun View.unaryMinus() = transition.removeTarget(this)
+
+    inline fun exclude(vararg views: View) = views.forEach { transition.excludeTarget(it, true) }
+
+    inline fun <reified Type : View> exclude() = transition.excludeTarget(Type::class.java, true)
+
+    inline fun exclude(@IdRes vararg ids: Int) = ids.forEach { transition.excludeTarget(it, true) }
 
     inline fun onEnd(noinline onEnd: ((transition: Transition) -> Unit)) = transition.addListener(onEnd = onEnd)
 

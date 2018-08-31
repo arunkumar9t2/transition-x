@@ -7,6 +7,7 @@ import android.animation.TimeInterpolator
 import android.support.annotation.IdRes
 import android.support.transition.PathMotion
 import android.support.transition.Transition
+import android.support.transition.TransitionPropagation
 import android.view.View
 
 @TransitionBuilderMarker
@@ -36,6 +37,13 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
             transition.setPathMotion(value)
         }
 
+    var transitionPropagation: TransitionPropagation?
+        get() = transition.propagation
+        set(value) {
+            transition.propagation = value
+        }
+
+
     inline operator fun String.unaryPlus() = transition.addTarget(this)
 
     inline operator fun String.unaryMinus() = transition.removeTarget(this)
@@ -54,15 +62,21 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
 
     inline fun exclude(@IdRes vararg ids: Int) = ids.forEach { transition.excludeTarget(it, true) }
 
-    inline fun onEnd(noinline onEnd: ((transition: Transition) -> Unit)) = transition.addListener(onEnd = onEnd)
+    inline fun excludeChildren(vararg views: View) = views.forEach { transition.excludeChildren(it, true) }
 
-    inline fun onStart(noinline onStart: ((transition: Transition) -> Unit)) = transition.addListener(onStart = onStart)
+    inline fun <reified Type : View> excludeChildren() = transition.excludeChildren(Type::class.java, true)
 
-    inline fun onCancel(noinline onCancel: ((transition: Transition) -> Unit)) = transition.addListener(onCancel = onCancel)
+    inline fun excludeChildren(@IdRes vararg ids: Int) = ids.forEach { transition.excludeChildren(it, true) }
 
-    inline fun onResume(noinline onResume: ((transition: Transition) -> Unit)) = transition.addListener(onResume = onResume)
+    inline fun onEnd(noinline onEnd: (transition: Transition) -> Unit) = transition.addListener(onEnd = onEnd)
 
-    inline fun onPause(noinline onPause: ((transition: Transition) -> Unit)) = transition.addListener(onEnd = onPause)
+    inline fun onStart(noinline onStart: (transition: Transition) -> Unit) = transition.addListener(onStart = onStart)
+
+    inline fun onCancel(noinline onCancel: (transition: Transition) -> Unit) = transition.addListener(onCancel = onCancel)
+
+    inline fun onResume(noinline onResume: (transition: Transition) -> Unit) = transition.addListener(onResume = onResume)
+
+    inline fun onPause(noinline onPause: (transition: Transition) -> Unit) = transition.addListener(onEnd = onPause)
 
     fun Transition.addListener(
             onEnd: ((transition: Transition) -> Unit)? = null,

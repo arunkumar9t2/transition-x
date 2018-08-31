@@ -16,7 +16,7 @@ object BuildDetails {
 
 
 object Versions {
-    val agp = "3.3.0-alpha06"
+    val agp = "3.3.0-alpha08"
     val supportLib = "27.1.1"
     val constraintLayout = "1.1.2"
     val jUnit = "4.12"

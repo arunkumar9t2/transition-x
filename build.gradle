@@ -6,6 +6,7 @@ buildscript {
     dependencies {
         classpath Dependencies.agp
         classpath Dependencies.kotlinGradlePlugin
+        classpath Dependencies.navigationPlugin
     }
 }
 

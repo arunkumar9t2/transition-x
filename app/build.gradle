@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: Plugins.kotlinAndroid
 apply plugin: Plugins.kotlinAndroidExt
+apply plugin: Plugins.navigationPlugin
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion BuildDetails.compileSdk
@@ -26,12 +29,20 @@ dependencies {
     implementation project(':transitionx')
 
     implementation Dependencies.kotlinStdlib
+
+    // Support
     implementation Dependencies.appCompat
     implementation Dependencies.constraintLayout
     implementation Dependencies.supportDesign
+
     implementation Dependencies.androidKtx
 
-    // Support
+    // Navigation
+    implementation Dependencies.navigationFragment
+    implementation Dependencies.navigationFragmentKtx
+    implementation Dependencies.navigationUi
+    implementation Dependencies.navigationUiKtx
+
     testImplementation Dependencies.jUnit
     androidTestImplementation Dependencies.testRunner
     androidTestImplementation Dependencies.espressoCore

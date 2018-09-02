@@ -7,16 +7,24 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="in.arunkumarsampath.transitionx.sample.HomeFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.MainFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_snackBarFragmennt"
-            app:destination="@id/snackBarFragmennt" />
+            app:destination="@id/snackBarFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cascadeTransitionFragment"
+            app:destination="@id/cascadeTransitionFragment" />
     </fragment>
     <fragment
-        android:id="@+id/snackBarFragmennt"
-        android:name="in.arunkumarsampath.transitionx.sample.SnackBarFragment"
+        android:id="@+id/snackBarFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.SnackBarFragment"
         android:label="fragment_snack_bar_fragmennt"
         tools:layout="@layout/fragment_snack_bar_fragmennt" />
+    <fragment
+        android:id="@+id/cascadeTransitionFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.CascadeTransitionFragment"
+        android:label="fragment_cascade_transition"
+        tools:layout="@layout/fragment_cascade_transition" />
 </navigation>

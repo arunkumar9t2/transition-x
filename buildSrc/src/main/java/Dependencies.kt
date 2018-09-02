@@ -1,32 +1,33 @@
 object Plugins {
-    val kotlinAndroid = "kotlin-android"
-    val kotlinAndroidExt = "kotlin-android-extensions"
-    val navigationPlugin = "androidx.navigation.safeargs"
+    const val kotlinAndroid = "kotlin-android"
+    const val kotlinAndroidExt = "kotlin-android-extensions"
+    const val navigationPlugin = "androidx.navigation.safeargs"
 }
 
 object BuildDetails {
-    val compileSdk = 28
-    val minSdk = 19
-    val targetSdk = 28
-    val versionCode = 1
-    val versionName = "1.0"
-
-    val libraryPackageName = "in.arunkumarsampath.transitionx"
+    const val compileSdk = 28
+    const val minSdk = 19
+    const val targetSdk = 28
+    const val versionCode = 1
+    const val versionName = "1.0"
+    const val libraryPackageName = "in.arunkumarsampath.transitionx"
     val librarySample = "$libraryPackageName.sample"
 }
 
 object Versions {
-    val agp = "3.3.0-alpha08"
-    val supportLib = "28.0.0-alpha3"
-    val constraintLayout = "1.1.2"
-    val jUnit = "4.12"
-    val testRunner = "1.0.2"
-    val espresso = "3.0.2"
-    val kotlin = "1.2.60"
-    val androidKtx = "0.3"
-    val roboElectric = "3.8"
-    val mdc = "1.0.0-beta01"
-    val archNavigation = "1.0.0-alpha01"
+    const val agp = "3.3.0-alpha08"
+    const val supportLib = "28.0.0-alpha3"
+    const val constraintLayout = "1.1.2"
+    const val kotlin = "1.2.60"
+    const val androidKtx = "0.3"
+    const val archNavigation = "1.0.0-alpha01"
+    const val flexBox = "1.0.0"
+
+    // Tests
+    const val jUnit = "4.12"
+    const val testRunner = "1.0.2"
+    const val espresso = "3.0.2"
+    const val roboElectric = "3.8"
 }
 
 object Dependencies {
@@ -40,6 +41,10 @@ object Dependencies {
     val appCompat = "com.android.support:appcompat-v7:${Versions.supportLib}"
     val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayout}"
     val supportDesign = "com.android.support:design:${Versions.supportLib}"
+    val recyclerView = "com.android.support:recyclerview-v7:${Versions.supportLib}"
+
+    // Flexbox layout
+    val flexBox = "com.google.android:flexbox:${Versions.flexBox}"
 
     // KTX
     val androidKtx = "androidx.core:core-ktx:${Versions.androidKtx}"

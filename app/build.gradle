@@ -22,6 +22,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
@@ -34,8 +38,12 @@ dependencies {
     implementation Dependencies.appCompat
     implementation Dependencies.constraintLayout
     implementation Dependencies.supportDesign
+    implementation Dependencies.recyclerView
 
     implementation Dependencies.androidKtx
+
+    // Flexbox
+    implementation Dependencies.flexBox
 
     // Navigation
     implementation Dependencies.navigationFragment

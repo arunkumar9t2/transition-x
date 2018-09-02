@@ -22,6 +22,7 @@ object Versions {
     const val androidKtx = "0.3"
     const val archNavigation = "1.0.0-alpha01"
     const val flexBox = "1.0.0"
+    const val timber = "4.7.1"
 
     // Tests
     const val jUnit = "4.12"
@@ -45,6 +46,9 @@ object Dependencies {
 
     // Flexbox layout
     val flexBox = "com.google.android:flexbox:${Versions.flexBox}"
+
+    // Timber
+    val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 
     // KTX
     val androidKtx = "androidx.core:core-ktx:${Versions.androidKtx}"

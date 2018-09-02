@@ -45,6 +45,8 @@ dependencies {
     // Flexbox
     implementation Dependencies.flexBox
 
+    implementation Dependencies.timber
+
     // Navigation
     implementation Dependencies.navigationFragment
     implementation Dependencies.navigationFragmentKtx

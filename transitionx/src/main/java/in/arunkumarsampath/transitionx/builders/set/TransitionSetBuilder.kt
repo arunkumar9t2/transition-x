@@ -30,6 +30,9 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
 
     inline operator fun get(index: Int): Transition = transition.getTransitionAt(index)
 
+    inline fun auto(autoBuilder: AutoTransitionBuilder.() -> Unit = {}) =
+            +AutoTransitionBuilder().apply(autoBuilder).transition
+
     inline fun slide(slideBuilder: SlideBuilder.() -> Unit = {}) =
             +SlideBuilder().apply(slideBuilder).transition
 

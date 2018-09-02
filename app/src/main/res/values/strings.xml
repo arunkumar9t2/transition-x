@@ -3,4 +3,7 @@
     <string name="sample_snackbar_fab_transition">Snackbar Fab transition</string>
     <string name="sample_cascade_transition">Cascade transition with delays</string>
     <string name="samples">Samples</string>
+    <string name="snackbar">Snackbar</string>
+    <string name="start">Start</string>
+    <string name="snackbar_message">Snackbar message</string>
 </resources>

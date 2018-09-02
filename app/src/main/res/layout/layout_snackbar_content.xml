@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snackbarConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/fragment_snack_bar_fragmennt">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_touch"
+        android:tint="@android:color/white"
+        app:fabSize="auto"
+        app:layout_constraintBottom_toTopOf="@+id/snackbarMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:useCompatPadding="false" />
+
+    <TextView
+        android:id="@+id/snackbarMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/snackbar"
+        android:gravity="start|center"
+        android:padding="16dp"
+        android:text="@string/snackbar_message"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

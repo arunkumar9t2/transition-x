@@ -36,21 +36,15 @@ class CascadeTransitionFragment : Fragment() {
                 clone(requireContext(), R.layout.fragment_cascade_transition_alt)
             }
             constraintLayout.transition {
-                changeBounds {
-                    +textView
-                    startDelay = 100
-                }
-                changeBounds {
-                    +textView2
-                    startDelay = 200
-                }
-                changeBounds {
-                    +textView3
-                    startDelay = 300
-                }
-                changeBounds {
-                    +textView4
-                    startDelay = 400
+                listOf(textView,
+                        textView2,
+                        textView3,
+                        textView4
+                ).forEachIndexed { position, view ->
+                    changeBounds {
+                        +view
+                        startDelay = ((position + 1) * 150).toLong()
+                    }
                 }
                 changeBounds { +fab }
                 interpolator = LinearOutSlowInInterpolator()

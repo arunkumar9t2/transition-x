@@ -13,10 +13,9 @@ import android.support.transition.Transition
 import android.support.transition.TransitionSet
 
 open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : TransitionBuilder<TransitionSet>(transitionSet) {
-
     var ordering: Int
-        get() = transition.ordering
-        set(value) {
+        @Ordering get() = transition.ordering
+        set(@Ordering value) {
             transition.ordering = value
         }
 
@@ -30,29 +29,37 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
 
     inline operator fun get(index: Int): Transition = transition.getTransitionAt(index)
 
-    inline fun auto(autoBuilder: AutoTransitionBuilder.() -> Unit = {}) =
-            +AutoTransitionBuilder().apply(autoBuilder).transition
+    inline fun auto(autoBuilder: AutoTransitionBuilder.() -> Unit = {}) {
+        +AutoTransitionBuilder().apply(autoBuilder).transition
+    }
 
-    inline fun slide(slideBuilder: SlideBuilder.() -> Unit = {}) =
-            +SlideBuilder().apply(slideBuilder).transition
+    inline fun slide(slideBuilder: SlideBuilder.() -> Unit = {}) {
+        +SlideBuilder().apply(slideBuilder).transition
+    }
 
-    inline fun fade(@FadeMode fadeMode: Int = Fade.IN or Fade.OUT, fadeBuilder: FadeBuilder.() -> Unit = {}) =
-            +FadeBuilder(fadeMode).apply(fadeBuilder).transition
+    inline fun fade(@FadeMode fadeMode: Int = Fade.IN or Fade.OUT, fadeBuilder: FadeBuilder.() -> Unit = {}) {
+        +FadeBuilder(fadeMode).apply(fadeBuilder).transition
+    }
 
-    inline fun scaleRotate(scaleRotateBuilder: ScaleRotateBuilder.() -> Unit = {}) =
-            +ScaleRotateBuilder().apply(scaleRotateBuilder).transition
+    inline fun scaleRotate(scaleRotateBuilder: ScaleRotateBuilder.() -> Unit = {}) {
+        +ScaleRotateBuilder().apply(scaleRotateBuilder).transition
+    }
 
-    inline fun changeClipBounds(changeClipBoundsBuilder: ChangeClipBoundsBuilder.() -> Unit = {}) =
-            +ChangeClipBoundsBuilder().apply(changeClipBoundsBuilder).transition
+    inline fun changeClipBounds(changeClipBoundsBuilder: ChangeClipBoundsBuilder.() -> Unit = {}) {
+        +ChangeClipBoundsBuilder().apply(changeClipBoundsBuilder).transition
+    }
 
-    inline fun changeBounds(changeBoundsBuilder: ChangeBoundsBuilder.() -> Unit = {}) =
-            +ChangeBoundsBuilder().apply(changeBoundsBuilder).transition
+    inline fun changeBounds(changeBoundsBuilder: ChangeBoundsBuilder.() -> Unit = {}) {
+        +ChangeBoundsBuilder().apply(changeBoundsBuilder).transition
+    }
 
-    inline fun changeImage(changeImageBuilder: ChangeImageBuilder.() -> Unit = {}) =
-            +ChangeImageBuilder().apply(changeImageBuilder).transition
+    inline fun changeImage(changeImageBuilder: ChangeImageBuilder.() -> Unit = {}) {
+        +ChangeImageBuilder().apply(changeImageBuilder).transition
+    }
 
-    inline fun changeScroll(changeScrollBuilder: ChangeScrollBuilder.() -> Unit = {}) =
-            +ChangeScrollBuilder().apply(changeScrollBuilder).transition
+    inline fun changeScroll(changeScrollBuilder: ChangeScrollBuilder.() -> Unit = {}) {
+        +ChangeScrollBuilder().apply(changeScrollBuilder).transition
+    }
 
     inline fun explode(explodeBuilder: ExplodeBuilder.() -> Unit = {}) {
         +ExplodeBuilder().apply(explodeBuilder).transition

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_cascadeTransitionFragment"
             app:destination="@id/cascadeTransitionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_customTransitionFragment"
+            app:destination="@id/customTransitionFragment" />
     </fragment>
     <fragment
         android:id="@+id/snackBarFragment"
@@ -27,4 +30,9 @@
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.CascadeTransitionFragment"
         android:label="fragment_cascade_transition"
         tools:layout="@layout/fragment_cascade_transition" />
+    <fragment
+        android:id="@+id/customTransitionFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.CustomTransitionFragment"
+        android:label="fragment_custom_transition"
+        tools:layout="@layout/fragment_custom_transition" />
 </navigation>

@@ -7,4 +7,6 @@
     <string name="start">Start</string>
     <string name="snackbar_message">Snackbar message</string>
     <string name="cascade">Cascade</string>
+    <string name="color_changing_text_view">Tap FAB to change my background</string>
+    <string name="sample_custom_transition">Custom transition</string>
 </resources>

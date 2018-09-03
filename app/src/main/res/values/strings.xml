@@ -6,4 +6,5 @@
     <string name="snackbar">Snackbar</string>
     <string name="start">Start</string>
     <string name="snackbar_message">Snackbar message</string>
+    <string name="cascade">Cascade</string>
 </resources>

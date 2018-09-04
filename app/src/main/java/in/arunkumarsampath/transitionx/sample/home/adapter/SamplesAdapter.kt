@@ -18,7 +18,8 @@ class SamplesAdapter : RecyclerView.Adapter<SamplesAdapter.SamplesViewHolder>() 
     private val sampleTransitions = listOf(
             sample(R.id.snackBarFragment, R.string.sample_snackbar_fab_transition),
             sample(R.id.cascadeTransitionFragment, R.string.sample_cascade_transition),
-            sample(R.id.customTransitionFragment, R.string.sample_custom_transition)
+            sample(R.id.customTransitionFragment, R.string.sample_custom_transition),
+            sample(R.id.scaleRotateFragment, R.string.scale_rotate_transition)
     )
 
     override fun onCreateViewHolder(
@@ -47,9 +48,6 @@ class SamplesAdapter : RecyclerView.Adapter<SamplesAdapter.SamplesViewHolder>() 
 
     companion object {
 
-        fun sample(
-                @IdRes navigationId: Int,
-                @StringRes name: Int
-        ) = SampleTransition(navigationId, name)
+        fun sample(@IdRes navigationId: Int, @StringRes name: Int) = SampleTransition(navigationId, name)
     }
 }

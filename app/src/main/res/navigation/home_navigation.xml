@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeFragment_to_customTransitionFragment"
             app:destination="@id/customTransitionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_scaleRotateFragment"
+            app:destination="@id/scaleRotateFragment" />
     </fragment>
     <fragment
         android:id="@+id/snackBarFragment"
@@ -35,4 +38,9 @@
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.CustomTransitionFragment"
         android:label="fragment_custom_transition"
         tools:layout="@layout/fragment_custom_transition" />
+    <fragment
+        android:id="@+id/scaleRotateFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ScaleRotateFragment"
+        android:label="fragment_scale_rotate"
+        tools:layout="@layout/fragment_scale_rotate" />
 </navigation>

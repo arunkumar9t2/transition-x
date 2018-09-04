@@ -15,9 +15,9 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="@string/scale_rotate_transition" />
+            app:title="@string/arc_motion_transition" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/layout_scale_rotate_content" />
+    <include layout="@layout/layout_arc_motion_content" />
 </android.support.design.widget.CoordinatorLayout>

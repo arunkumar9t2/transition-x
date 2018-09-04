@@ -19,7 +19,8 @@ class SamplesAdapter : RecyclerView.Adapter<SamplesAdapter.SamplesViewHolder>() 
             sample(R.id.snackBarFragment, R.string.sample_snackbar_fab_transition),
             sample(R.id.cascadeTransitionFragment, R.string.sample_cascade_transition),
             sample(R.id.customTransitionFragment, R.string.sample_custom_transition),
-            sample(R.id.scaleRotateFragment, R.string.scale_rotate_transition)
+            sample(R.id.scaleRotateFragment, R.string.scale_rotate_transition),
+            sample(R.id.arcMotionFragment, R.string.arc_motion_transition)
     )
 
     override fun onCreateViewHolder(

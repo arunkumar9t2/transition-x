@@ -10,4 +10,5 @@
     <string name="color_changing_text_view">Tap FAB to change my background</string>
     <string name="sample_custom_transition">Custom transition</string>
     <string name="scale_rotate_transition">Scale rotate transition</string>
+    <string name="arc_motion_transition">Arc motion</string>
 </resources>

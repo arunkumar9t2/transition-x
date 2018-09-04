@@ -1,9 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: Plugins.kotlinAndroid
 apply plugin: Plugins.kotlinAndroidExt
+apply plugin: Plugins.kotlinKapt
 apply plugin: Plugins.navigationPlugin
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion BuildDetails.compileSdk
@@ -48,6 +47,10 @@ dependencies {
     implementation Dependencies.flexBox
 
     implementation Dependencies.timber
+
+    // Glide - Image loading
+    implementation Dependencies.glide
+    kapt Dependencies.glideAnnotationProcessor
 
     // Navigation
     implementation Dependencies.navigationFragment

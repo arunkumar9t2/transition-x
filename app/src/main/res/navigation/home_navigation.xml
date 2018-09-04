@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_homeFragment_to_scaleRotateFragment"
             app:destination="@id/scaleRotateFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_arcMotionFragment"
+            app:destination="@id/arcMotionFragment" />
     </fragment>
     <fragment
         android:id="@+id/snackBarFragment"
@@ -43,4 +46,8 @@
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ScaleRotateFragment"
         android:label="fragment_scale_rotate"
         tools:layout="@layout/fragment_scale_rotate" />
+    <fragment
+        android:id="@+id/arcMotionFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ArcMotionFragment"
+        android:label="ArcMotionFragment" />
 </navigation>

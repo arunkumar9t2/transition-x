@@ -1,5 +1,6 @@
-package `in`.arunkumarsampath.transitionx.sample.transition.changecolor
+package `in`.arunkumarsampath.transitionx.sample.transition.color.changecolor
 
+import `in`.arunkumarsampath.transitionx.sample.transition.ArgbEvaluator
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.graphics.drawable.ColorDrawable
@@ -10,8 +11,9 @@ import android.view.ViewGroup
 
 
 /**
- * Implementation from
- * https://github.com/googlesamples/android-CustomTransition/blob/e241498b3426ea86cb177fb35880d870a245e9d9/Application/src/main/java/com/example/android/customtransition/ChangeColor.java
+ * Implementation copied from AOSP Samples.
+ *
+ * https://github.com/googlesamples/android-CustomTransition
  */
 class ChangeColor : Transition() {
 

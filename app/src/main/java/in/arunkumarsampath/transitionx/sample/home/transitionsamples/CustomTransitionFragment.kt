@@ -2,17 +2,16 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 
 import `in`.arunkumarsampath.transitionx.sample.R
-import `in`.arunkumarsampath.transitionx.sample.transition.changecolor.ChangeColor
+import `in`.arunkumarsampath.transitionx.sample.transition.color.changecardcolor.ChangeCardColor
 import `in`.arunkumarsampath.transitionx.transition
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.annotation.ColorInt
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_custom_transition.*
+import kotlinx.android.synthetic.main.layout_custom_transition_content.*
 
 
 class CustomTransitionFragment : Fragment() {
@@ -43,15 +42,17 @@ class CustomTransitionFragment : Fragment() {
         fab.setOnClickListener {
 
             val color = colors.shuffled().first()
+
             constraintLayout.transition {
-                customTransition<ChangeColor>()
-                +colorChangeTextView
+                customTransition<ChangeCardColor> {
+                    +colorChangeCardView
+                }
                 duration = 1000
                 onEnd { _ ->
                     colorChangeTextView.setTextColor(calcForegroundWhiteOrBlack(color))
                 }
             }
-            colorChangeTextView.background = ColorDrawable(color)
+            colorChangeCardView.setCardBackgroundColor(color)
         }
     }
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package `in`.arunkumarsampath.transitionx.sample.transition.changecolor
+package `in`.arunkumarsampath.transitionx.sample.transition
 
 import android.animation.TypeEvaluator
 

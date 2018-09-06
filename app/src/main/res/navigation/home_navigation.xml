@@ -43,7 +43,7 @@
         android:id="@+id/customTransitionFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.CustomTransitionFragment"
         android:label="fragment_custom_transition"
-        tools:layout="@layout/fragment_custom_transition" />
+        tools:layout="@layout/layout_custom_transition_content" />
     <fragment
         android:id="@+id/scaleRotateFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ScaleRotateFragment"

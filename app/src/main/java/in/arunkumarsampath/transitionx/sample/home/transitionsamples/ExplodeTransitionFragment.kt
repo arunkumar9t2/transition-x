@@ -43,8 +43,8 @@ class ExplodeTransitionFragment : Fragment() {
             if (toggle) {
                 with(requireContext()) {
                     userIconView.updateLayoutParams<LinearLayout.LayoutParams> {
-                        height = dpToPx(112.0).toInt()
-                        width = dpToPx(112.0).toInt()
+                        height = dpToPx(112.0)
+                        width = dpToPx(112.0)
                     }
                 }
                 accentBackground.isGone = true
@@ -52,8 +52,8 @@ class ExplodeTransitionFragment : Fragment() {
             } else {
                 with(requireContext()) {
                     userIconView.updateLayoutParams<LinearLayout.LayoutParams> {
-                        height = dpToPx(56.0).toInt()
-                        width = dpToPx(56.0).toInt()
+                        height = dpToPx(56.0)
+                        width = dpToPx(56.0)
                     }
                 }
                 accentBackground.isGone = false

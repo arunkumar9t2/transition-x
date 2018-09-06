@@ -55,14 +55,14 @@ class ArcMotionFragment : Fragment() {
             with(userIconView) {
                 if (toggle) {
                     updateLayoutParams<FrameLayout.LayoutParams> {
-                        height = requireContext().dpToPx(112.0).toInt()
-                        width = requireContext().dpToPx(112.0).toInt()
+                        height = context.dpToPx(112.0)
+                        width = context.dpToPx(112.0)
                         gravity = Gravity.TOP or Gravity.CENTER_HORIZONTAL
                     }
                 } else {
                     updateLayoutParams<FrameLayout.LayoutParams> {
-                        height = requireContext().dpToPx(56.0).toInt()
-                        width = requireContext().dpToPx(56.0).toInt()
+                        height = context.dpToPx(56.0)
+                        width = context.dpToPx(56.0)
                         gravity = Gravity.START or Gravity.LEFT or Gravity.CENTER_VERTICAL
                     }
                 }

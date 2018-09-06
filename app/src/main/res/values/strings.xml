@@ -11,4 +11,6 @@
     <string name="sample_custom_transition">Custom transition</string>
     <string name="scale_rotate_transition">Scale rotate transition</string>
     <string name="arc_motion_transition">Arc motion</string>
+    <string name="explode_transition">Explode transition</string>
+    <string name="hello">Hello!</string>
 </resources>

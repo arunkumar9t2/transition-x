@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_homeFragment_to_arcMotionFragment"
             app:destination="@id/arcMotionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_explodeTransitionFragment"
+            app:destination="@id/explodeTransitionFragment" />
     </fragment>
     <fragment
         android:id="@+id/snackBarFragment"
@@ -50,4 +53,8 @@
         android:id="@+id/arcMotionFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ArcMotionFragment"
         android:label="ArcMotionFragment" />
+    <fragment
+        android:id="@+id/explodeTransitionFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ExplodeTransitionFragment"
+        android:label="ExplodeTransitionFragment" />
 </navigation>

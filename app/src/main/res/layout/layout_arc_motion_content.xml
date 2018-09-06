@@ -13,10 +13,7 @@
         android:layout_gravity="start|center_vertical"
         android:layout_margin="16dp"
         android:adjustViewBounds="true"
-        android:padding="16dp"
-        android:scaleType="fitCenter"
-        android:tint="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_identity" />
+        android:scaleType="fitCenter" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

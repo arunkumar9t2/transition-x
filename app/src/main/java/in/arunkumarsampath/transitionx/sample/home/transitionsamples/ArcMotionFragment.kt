@@ -14,6 +14,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.core.view.updateLayoutParams
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.layout_arc_motion_content.*
 
 class ArcMotionFragment : Fragment() {
@@ -29,7 +31,15 @@ class ArcMotionFragment : Fragment() {
     @SuppressLint("RtlHardcoded")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupMeow()
         initClickListeners()
+    }
+
+    private fun setupMeow() {
+        Glide.with(userIconView)
+                .load(R.drawable.cute_cat)
+                .apply(RequestOptions().circleCrop())
+                .into(userIconView)
     }
 
     private fun initClickListeners() {

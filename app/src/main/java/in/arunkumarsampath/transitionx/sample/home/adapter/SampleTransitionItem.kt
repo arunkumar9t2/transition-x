@@ -5,7 +5,7 @@ import android.support.annotation.StringRes
 
 sealed class SampleItem {
 
-    data class SampleTransition(
+    data class SampleTransitionItem(
             @param:IdRes val navigationId: Int,
             @param:StringRes val name: Int
     ) : SampleItem()

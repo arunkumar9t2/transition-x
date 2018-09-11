@@ -1,7 +1,7 @@
 package `in`.arunkumarsampath.transitionx.sample.home
 
 import `in`.arunkumarsampath.transitionx.sample.R
-import `in`.arunkumarsampath.transitionx.sample.home.adapter.SamplesAdapter
+import `in`.arunkumarsampath.transitionx.sample.home.adapter.SampleItemsAdapter
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -35,7 +35,7 @@ class MainFragment : Fragment() {
         sampleRecyclerView.layoutManager = flexBoxLayoutManager
         with(sampleRecyclerView) {
             layoutManager = flexBoxLayoutManager
-            adapter = SamplesAdapter()
+            adapter = SampleItemsAdapter()
         }
     }
 }

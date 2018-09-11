@@ -16,7 +16,7 @@ object BuildDetails {
 }
 
 object Versions {
-    const val agp = "3.3.0-alpha08"
+    const val agp = "3.3.0-alpha09"
     const val supportLib = "28.0.0-alpha3"
     const val constraintLayout = "1.1.2"
     const val kotlin = "1.2.60"
@@ -25,12 +25,14 @@ object Versions {
     const val flexBox = "1.0.0"
     const val timber = "4.7.1"
     const val glide = "4.8.0"
+    const val adapterDelegates = "3.0.1"
 
     // Tests
     const val jUnit = "4.12"
     const val testRunner = "1.0.2"
     const val espresso = "3.0.2"
     const val roboElectric = "3.8"
+
 }
 
 
@@ -62,6 +64,9 @@ object Dependencies {
     val navigationUi = "android.arch.navigation:navigation-ui:${Versions.archNavigation}"
     val navigationUiKtx = "android.arch.navigation:navigation-ui-ktx:${Versions.archNavigation}"
     val navigationPlugin = "android.arch.navigation:navigation-safe-args-gradle-plugin:${Versions.archNavigation}"
+
+    // Adapter Delegates
+    val adapterDelegates = "com.hannesdorfmann:adapterdelegates3:${Versions.adapterDelegates}"
 
     // Image Loading
     val glide = "com.github.bumptech.glide:glide:${Versions.glide}"

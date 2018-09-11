@@ -58,6 +58,9 @@ dependencies {
     implementation Dependencies.navigationUi
     implementation Dependencies.navigationUiKtx
 
+    // Adapter Delegates
+    implementation Dependencies.adapterDelegates
+
     testImplementation Dependencies.jUnit
     androidTestImplementation Dependencies.testRunner
     androidTestImplementation Dependencies.espressoCore

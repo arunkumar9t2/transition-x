@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/headerName"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_gravity="center"
+    android:layout_marginStart="16dp"
+    android:gravity="bottom|start"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+    tools:text="Hello this is a sample" />

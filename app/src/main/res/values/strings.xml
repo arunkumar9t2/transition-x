@@ -13,4 +13,5 @@
     <string name="arc_motion_transition">Arc motion</string>
     <string name="explode_transition">Explode transition</string>
     <string name="hello">Hello!</string>
+    <string name="simple_transitions">Simple transitions</string>
 </resources>

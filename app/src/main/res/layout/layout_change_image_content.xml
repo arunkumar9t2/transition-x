@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/userIconView"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
+        android:layout_gravity="center|top"
+        android:scaleType="center" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:tint="@android:color/white"
+        app:fabSize="auto"
+        app:srcCompat="@drawable/ic_touch" />
+</FrameLayout>

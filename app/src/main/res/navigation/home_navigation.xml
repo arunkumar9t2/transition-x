@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_homeFragment_to_explodeTransitionFragment"
             app:destination="@id/explodeTransitionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_changeImageTransform"
+            app:destination="@id/changeImageTransform" />
     </fragment>
     <fragment
         android:id="@+id/snackBarFragment"
@@ -57,4 +60,8 @@
         android:id="@+id/explodeTransitionFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ExplodeTransitionFragment"
         android:label="ExplodeTransitionFragment" />
+    <fragment
+        android:id="@+id/changeImageTransform"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeImageTransform"
+        android:label="ChangeImageTransform" />
 </navigation>

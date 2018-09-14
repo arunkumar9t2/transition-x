@@ -16,7 +16,7 @@ object BuildDetails {
 }
 
 object Versions {
-    const val agp = "3.3.0-alpha09"
+    const val agp = "3.3.0-alpha10"
     const val supportLib = "28.0.0-alpha3"
     const val constraintLayout = "1.1.2"
     const val kotlin = "1.2.60"

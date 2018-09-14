@@ -37,12 +37,11 @@ class ScaleRotateFragment : Fragment() {
                 if (toggle) {
                     scaleY = 2F
                     scaleX = 2F
-                    rotation = 180F
                 } else {
                     scaleY = 1F
                     scaleX = 1F
-                    rotation = 0F
                 }
+                rotation += 90F
                 toggle = !toggle
             }
         }

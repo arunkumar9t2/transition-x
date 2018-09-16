@@ -16,7 +16,7 @@
 
 package `in`.arunkumarsampath.transitionx.transition
 
-import `in`.arunkumarsampath.transitionx.transition.evalutor.ArgbEvaluator
+import `in`.arunkumarsampath.transitionx.transition.evaluator.ArgbEvaluator
 import `in`.arunkumarsampath.transitionx.util.TransitionUtils
 import android.animation.Animator
 import android.animation.ValueAnimator

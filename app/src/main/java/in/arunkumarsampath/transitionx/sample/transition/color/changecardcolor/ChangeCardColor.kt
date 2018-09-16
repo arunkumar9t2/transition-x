@@ -1,6 +1,6 @@
 package `in`.arunkumarsampath.transitionx.sample.transition.color.changecardcolor
 
-import `in`.arunkumarsampath.transitionx.transition.evalutor.ArgbEvaluator
+import `in`.arunkumarsampath.transitionx.transition.evaluator.ArgbEvaluator
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.content.res.ColorStateList

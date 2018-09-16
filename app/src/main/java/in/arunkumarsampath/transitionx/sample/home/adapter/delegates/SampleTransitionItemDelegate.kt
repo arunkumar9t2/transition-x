@@ -6,7 +6,8 @@ import `in`.arunkumarsampath.transitionx.sample.util.extensions.inflate
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.navOptions
 import com.hannesdorfmann.adapterdelegates3.AbsListItemAdapterDelegate
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.layout_sample_item_name_template.*
@@ -32,10 +33,27 @@ class SampleTransitionItemDelegate
 
         fun bindSample(sampleTransitionItem: SampleItem.SampleTransitionItem) {
             sampleName.setText(sampleTransitionItem.name)
-            containerView.setOnClickListener(Navigation.createNavigateOnClickListener(sampleTransitionItem.navigationId))
+            with(containerView) {
+                setOnClickListener {
+                    findNavController().navigate(
+                            sampleTransitionItem.navigationId,
+                            null,
+                            DEFAULT_NAV_OPTIONS
+                    )
+                }
+            }
         }
 
         companion object {
+            val DEFAULT_NAV_OPTIONS = navOptions {
+                anim {
+                    enter = R.anim.nav_default_enter_anim
+                    exit = R.anim.nav_default_exit_anim
+                    popEnter = R.anim.nav_default_pop_enter_anim
+                    popExit = R.anim.nav_default_pop_exit_anim
+                }
+            }
+
             fun create(viewGroup: ViewGroup) = SamplesViewHolder(viewGroup.inflate(R.layout.layout_sample_item_name_template))
         }
     }

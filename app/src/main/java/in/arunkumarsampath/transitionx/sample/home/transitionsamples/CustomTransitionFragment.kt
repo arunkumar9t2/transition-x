@@ -40,19 +40,20 @@ class CustomTransitionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fab.setOnClickListener {
-
             val color = colors.shuffled().first()
 
             constraintLayout.transition {
                 customTransition<ChangeCardColor> {
                     +colorChangeCardView
                 }
-                duration = 1000
-                onEnd { _ ->
-                    colorChangeTextView.setTextColor(calcForegroundWhiteOrBlack(color))
+                changeColor {
+                    +colorChangeTextView
                 }
+                duration = 1000
             }
+
             colorChangeCardView.setCardBackgroundColor(color)
+            colorChangeTextView.setTextColor(calcForegroundWhiteOrBlack(color))
         }
     }
 

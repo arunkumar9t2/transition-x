@@ -65,6 +65,10 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
         +ExplodeBuilder().apply(explodeBuilder).transition
     }
 
+    inline fun changeColor(changeColorBuilder: ChangeColorBuilder.() -> Unit = {}) {
+        +ChangeColorBuilder().apply(changeColorBuilder).transition
+    }
+
     inline fun <reified T : Transition> customTransition(transitionBuilder: TransitionBuilder<T>.() -> Unit = {}) {
         val transitionInstance: T = try {
             T::class.java.newInstance()

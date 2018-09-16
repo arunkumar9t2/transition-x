@@ -1,6 +1,6 @@
 package `in`.arunkumarsampath.transitionx.sample.transition.color.changecardcolor
 
-import `in`.arunkumarsampath.transitionx.sample.transition.ArgbEvaluator
+import `in`.arunkumarsampath.transitionx.transition.evalutor.ArgbEvaluator
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.content.res.ColorStateList
@@ -37,14 +37,14 @@ class ChangeCardColor : Transition() {
         val startColor = (startValues.values[PROPNAME_CARD_VIEW_BACKGROUND] as ColorStateList).defaultColor
         val endColor = (endValues.values[PROPNAME_CARD_VIEW_BACKGROUND] as ColorStateList).defaultColor
         if (startColor != endColor) {
-            val animator = ValueAnimator.ofObject(ArgbEvaluator.instance, startColor, endColor)
-            animator.addUpdateListener { animation ->
-                val value = animation.animatedValue
-                if (null != value) {
-                    materialCardView.setCardBackgroundColor(value as Int)
+            return ValueAnimator.ofObject(ArgbEvaluator, startColor, endColor).apply {
+                addUpdateListener { animation ->
+                    val value = animation.animatedValue
+                    if (null != value) {
+                        materialCardView.setCardBackgroundColor(value as Int)
+                    }
                 }
             }
-            return animator
         }
         return null
     }

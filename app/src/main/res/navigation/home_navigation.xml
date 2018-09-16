@@ -9,7 +9,7 @@
         android:id="@+id/homeFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.MainFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_snackBarFragmennt"
             app:destination="@id/snackBarFragment" />
@@ -30,7 +30,10 @@
             app:destination="@id/explodeTransitionFragment" />
         <action
             android:id="@+id/action_homeFragment_to_changeImageTransform"
-            app:destination="@id/changeImageTransform" />
+            app:destination="@id/changeImageTransformFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_changeColorFragment"
+            app:destination="@id/changeColorFragment" />
     </fragment>
     <fragment
         android:id="@+id/snackBarFragment"
@@ -59,9 +62,16 @@
     <fragment
         android:id="@+id/explodeTransitionFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ExplodeTransitionFragment"
-        android:label="ExplodeTransitionFragment" />
+        android:label="ExplodeTransitionFragment"
+        tools:layout="@layout/fragment_explode_transition" />
     <fragment
-        android:id="@+id/changeImageTransform"
+        android:id="@+id/changeImageTransformFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeImageTransform"
-        android:label="ChangeImageTransform" />
+        android:label="ChangeImageTransformFragment"
+        tools:layout="@layout/fragment_change_image_transition" />
+    <fragment
+        android:id="@+id/changeColorFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeColorFragment"
+        android:label="ChangeColorFragment"
+        tools:layout="@layout/fragment_change_color_transition" />
 </navigation>

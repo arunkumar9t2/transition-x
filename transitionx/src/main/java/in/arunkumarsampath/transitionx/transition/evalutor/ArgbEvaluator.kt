@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package `in`.arunkumarsampath.transitionx.sample.transition
+package `in`.arunkumarsampath.transitionx.transition.evalutor
 
 import android.animation.TypeEvaluator
 
@@ -22,7 +22,7 @@ import android.animation.TypeEvaluator
  * This evaluator can be used to perform type interpolation between integer
  * values that represent ARGB colors.
  */
-class ArgbEvaluator : TypeEvaluator<Any> {
+object ArgbEvaluator : TypeEvaluator<Any> {
     /**
      * This function returns the calculated in-between value for a color
      * given integers that represent the start and end values in the four
@@ -74,17 +74,5 @@ class ArgbEvaluator : TypeEvaluator<Any> {
         b = Math.pow(b.toDouble(), 1.0 / 2.2).toFloat() * 255.0f
 
         return Math.round(a) shl 24 or (Math.round(r) shl 16) or (Math.round(g) shl 8) or Math.round(b)
-    }
-
-    companion object {
-        /**
-         * Returns an instance of `ArgbEvaluator` that may be used in
-         * [ValueAnimator.setEvaluator]. The same instance may
-         * be used in multiple `Animator`s because it holds no state.
-         *
-         * @return An instance of `ArgbEvalutor`.
-         * @hide
-         */
-        val instance = ArgbEvaluator()
     }
 }

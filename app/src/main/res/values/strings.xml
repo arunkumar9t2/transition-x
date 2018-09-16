@@ -18,4 +18,5 @@
     <string name="change_color_transition">Change color transition</string>
     <string name="change_text_transition">Change text transition</string>
     <string name="advanced_transitions">Advanced transitions</string>
+    <string name="material_card_transformation">Material card transformation</string>
 </resources>

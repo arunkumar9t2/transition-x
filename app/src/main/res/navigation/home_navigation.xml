@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_homeFragment_to_changeTextTransitionFragment"
             app:destination="@id/changeTextTransitionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_materialCardTransformationFragment"
+            app:destination="@id/materialCardTransformationFragment" />
     </fragment>
     <fragment
         android:id="@+id/snackBarFragment"
@@ -82,4 +85,9 @@
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeTextTransitionFragment"
         android:label="ChangeTextTransitionFragment"
         tools:layout="@layout/fragment_change_text_transition" />
+    <fragment
+        android:id="@+id/materialCardTransformationFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.MaterialCardTransformationFragment"
+        android:label="MaterialCardTransformationFragment"
+        tools:layout="@layout/fragment_material_card_transformation" />
 </navigation>

@@ -26,7 +26,8 @@ class SampleItemsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             sample(R.id.changeImageTransformFragment, R.string.change_image_transition),
             sample(R.id.changeColorFragment, R.string.change_color_transition),
             sample(R.id.changeTextTransitionFragment, R.string.change_text_transition),
-            header(R.string.advanced_transitions)
+            header(R.string.advanced_transitions),
+            sample(R.id.materialCardTransformationFragment, R.string.material_card_transformation)
     )
 
     override fun getItemViewType(position: Int): Int {

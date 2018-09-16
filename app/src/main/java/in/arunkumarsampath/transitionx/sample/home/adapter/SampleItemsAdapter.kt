@@ -24,7 +24,8 @@ class SampleItemsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             sample(R.id.scaleRotateFragment, R.string.scale_rotate_transition),
             sample(R.id.arcMotionFragment, R.string.arc_motion_transition),
             sample(R.id.changeImageTransformFragment, R.string.change_image_transition),
-            sample(R.id.changeColorFragment, R.string.change_color_transition)
+            sample(R.id.changeColorFragment, R.string.change_color_transition),
+            sample(R.id.changeTextTransitionFragment, R.string.change_text_transition)
     )
 
     override fun getItemViewType(position: Int): Int {

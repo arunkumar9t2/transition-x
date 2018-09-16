@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_homeFragment_to_changeColorFragment"
             app:destination="@id/changeColorFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_changeTextTransitionFragment"
+            app:destination="@id/changeTextTransitionFragment" />
     </fragment>
     <fragment
         android:id="@+id/snackBarFragment"
@@ -74,4 +77,9 @@
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeColorFragment"
         android:label="ChangeColorFragment"
         tools:layout="@layout/fragment_change_color_transition" />
+    <fragment
+        android:id="@+id/changeTextTransitionFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeTextTransitionFragment"
+        android:label="ChangeTextTransitionFragment"
+        tools:layout="@layout/fragment_change_text_transition" />
 </navigation>

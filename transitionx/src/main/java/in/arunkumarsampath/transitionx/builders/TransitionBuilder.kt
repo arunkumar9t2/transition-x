@@ -43,6 +43,9 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
             transition.propagation = value
         }
 
+    inline fun customProperties(action: Transition.() -> Unit) {
+        transition.apply(action)
+    }
 
     inline operator fun String.unaryPlus() = transition.addTarget(this)
 

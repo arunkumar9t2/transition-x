@@ -81,7 +81,7 @@ class TransitionDslTest {
         }.get()
 
         val contentView = testActivity.findViewById<FrameLayout>(android.R.id.content)
-        contentView.autoTransition {
+        contentView.prepareAutoTransition {
             testActivity.textView.text = "Something"
             onEnd {}
         }

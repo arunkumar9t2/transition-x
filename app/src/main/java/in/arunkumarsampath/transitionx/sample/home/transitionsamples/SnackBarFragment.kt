@@ -2,7 +2,7 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.sample.extensions.toggleGone
-import `in`.arunkumarsampath.transitionx.transition
+import `in`.arunkumarsampath.transitionx.prepareTransition
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.animation.LinearOutSlowInInterpolator
@@ -27,7 +27,7 @@ class SnackBarFragment : Fragment() {
 
     private fun bindListeners() {
         fab.setOnClickListener {
-            snackbarConstraintLayout.transition {
+            snackbarConstraintLayout.prepareTransition {
                 moveResize {
                     +fab
                 }

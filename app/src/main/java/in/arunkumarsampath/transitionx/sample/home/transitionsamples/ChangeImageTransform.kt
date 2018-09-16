@@ -3,7 +3,7 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.sample.extensions.dpToPx
-import `in`.arunkumarsampath.transitionx.transition
+import `in`.arunkumarsampath.transitionx.prepareTransition
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -48,7 +48,7 @@ class ChangeImageTransform : Fragment() {
     private fun initClickListeners() {
         fab.setOnClickListener {
 
-            frameLayout.transition {
+            frameLayout.prepareTransition {
                 moveResize()
                 changeImage()
                 +userIconView

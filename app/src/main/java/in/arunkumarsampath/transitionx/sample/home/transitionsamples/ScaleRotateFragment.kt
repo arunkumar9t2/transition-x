@@ -2,7 +2,7 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 
 import `in`.arunkumarsampath.transitionx.sample.R
-import `in`.arunkumarsampath.transitionx.transition
+import `in`.arunkumarsampath.transitionx.prepareTransition
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.animation.FastOutLinearInInterpolator
@@ -26,7 +26,7 @@ class ScaleRotateFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fab.setOnClickListener {
 
-            constraintLayout.transition {
+            constraintLayout.prepareTransition {
                 scaleRotate {
                     +arrowIconView
                     interpolator = FastOutLinearInInterpolator()

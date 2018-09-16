@@ -1,7 +1,7 @@
 package `in`.arunkumarsampath.transitionx.sample.home
 
 import `in`.arunkumarsampath.transitionx.sample.R
-import `in`.arunkumarsampath.transitionx.transition
+import `in`.arunkumarsampath.transitionx.prepareTransition
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import androidx.core.view.isGone
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupBottomNavigationMenu() {
         NavigationUI.setupWithNavController(bottomNavigation, navController)
         navController.addOnNavigatedListener { _, destination ->
-            rootCoordinatorLayout.transition {
+            rootCoordinatorLayout.prepareTransition {
                 +bottomNavigation
                 slide()
             }

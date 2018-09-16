@@ -3,7 +3,7 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.sample.transition.color.changecardcolor.ChangeCardColor
-import `in`.arunkumarsampath.transitionx.transition
+import `in`.arunkumarsampath.transitionx.prepareTransition
 import android.graphics.Color
 import android.os.Bundle
 import android.support.annotation.ColorInt
@@ -42,7 +42,7 @@ class CustomTransitionFragment : Fragment() {
         fab.setOnClickListener {
             val color = colors.shuffled().first()
 
-            constraintLayout.transition {
+            constraintLayout.prepareTransition {
                 customTransition<ChangeCardColor> {
                     +colorChangeCardView
                 }

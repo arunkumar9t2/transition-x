@@ -2,7 +2,7 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 
 import `in`.arunkumarsampath.transitionx.sample.R
-import `in`.arunkumarsampath.transitionx.transition
+import `in`.arunkumarsampath.transitionx.prepareTransition
 import android.os.Bundle
 import android.support.constraint.ConstraintSet
 import android.support.v4.app.Fragment
@@ -35,7 +35,7 @@ class CascadeTransitionFragment : Fragment() {
             val constraint2 = ConstraintSet().apply {
                 clone(requireContext(), R.layout.fragment_cascade_transition_alt)
             }
-            constraintLayout.transition {
+            constraintLayout.prepareTransition {
                 listOf(textView,
                         textView2,
                         textView3,

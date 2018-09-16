@@ -2,7 +2,7 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 
 import `in`.arunkumarsampath.transitionx.sample.R
-import `in`.arunkumarsampath.transitionx.transition
+import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -35,7 +35,7 @@ class ChangeTextTransitionFragment : Fragment() {
 
     private fun initTransitionListeners() {
         fab.setOnClickListener {
-            constraintLayout.transition {
+            constraintLayout.prepareTransition {
                 changeText {
                     changeTextBehavior = ChangeText.CHANGE_BEHAVIOR_OUT_IN
                 }

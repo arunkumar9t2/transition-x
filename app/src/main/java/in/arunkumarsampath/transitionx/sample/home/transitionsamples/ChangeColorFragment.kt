@@ -1,8 +1,8 @@
 package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 
+import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.sample.R
-import `in`.arunkumarsampath.transitionx.transition
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -43,7 +43,7 @@ class ChangeColorFragment : Fragment() {
 
     private fun initClickListeners() {
         fab.setOnClickListener {
-            frameLayout.transition {
+            frameLayout.prepareTransition {
                 +textView
                 changeColor()
                 duration = 1000

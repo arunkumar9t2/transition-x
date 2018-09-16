@@ -5,7 +5,10 @@ import `in`.arunkumarsampath.transitionx.builders.set.DefaultTransitionSetBuilde
 import android.support.transition.TransitionManager
 import android.view.ViewGroup
 
-inline fun ViewGroup.transition(cancel: Boolean = false, transitionsBuilder: DefaultTransitionSetBuilder.() -> Unit = {}) {
+inline fun ViewGroup.prepareTransition(
+        cancel: Boolean = false,
+        transitionsBuilder: DefaultTransitionSetBuilder.() -> Unit = {}
+) {
     if (cancel) {
         TransitionManager.endTransitions(this)
     }
@@ -15,7 +18,10 @@ inline fun ViewGroup.transition(cancel: Boolean = false, transitionsBuilder: Def
     )
 }
 
-inline fun ViewGroup.autoTransition(cancel: Boolean = false, autoTransitionBuilder: AutoTransitionBuilder.() -> Unit = {}) {
+inline fun ViewGroup.prepareAutoTransition(
+        cancel: Boolean = false,
+        autoTransitionBuilder: AutoTransitionBuilder.() -> Unit = {}
+) {
     if (cancel) {
         TransitionManager.endTransitions(this)
     }

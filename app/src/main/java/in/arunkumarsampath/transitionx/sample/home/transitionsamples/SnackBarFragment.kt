@@ -28,7 +28,7 @@ class SnackBarFragment : Fragment() {
     private fun bindListeners() {
         fab.setOnClickListener {
             snackbarConstraintLayout.transition {
-                changeBounds {
+                moveResize {
                     +fab
                 }
                 slide {

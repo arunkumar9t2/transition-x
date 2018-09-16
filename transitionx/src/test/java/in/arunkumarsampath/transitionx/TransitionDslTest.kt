@@ -29,7 +29,7 @@ class TransitionDslTest {
                 startDelay = 200
             }
             changeClipBounds()
-            changeBounds()
+            moveResize()
             changeImage()
             changeScroll()
             explode()

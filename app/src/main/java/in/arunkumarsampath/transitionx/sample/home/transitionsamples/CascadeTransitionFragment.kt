@@ -41,12 +41,12 @@ class CascadeTransitionFragment : Fragment() {
                         textView3,
                         textView4
                 ).forEachIndexed { position, view ->
-                    changeBounds {
+                    moveResize {
                         +view
                         startDelay = ((position + 1) * 150).toLong()
                     }
                 }
-                changeBounds { +fab }
+                moveResize { +fab }
                 interpolator = LinearOutSlowInInterpolator()
             }
             (if (defaultState) constraint1 else constraint2).applyTo(constraintLayout)

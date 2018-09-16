@@ -49,7 +49,7 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
         +ChangeClipBoundsBuilder().apply(changeClipBoundsBuilder).transition
     }
 
-    inline fun changeBounds(changeBoundsBuilder: ChangeBoundsBuilder.() -> Unit = {}) {
+    inline fun moveResize(changeBoundsBuilder: ChangeBoundsBuilder.() -> Unit = {}) {
         +ChangeBoundsBuilder().apply(changeBoundsBuilder).transition
     }
 

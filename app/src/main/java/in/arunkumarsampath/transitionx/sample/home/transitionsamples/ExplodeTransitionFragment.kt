@@ -35,7 +35,7 @@ class ExplodeTransitionFragment : Fragment() {
                 explode {
                     +accentBackground
                 }
-                changeBounds {
+                moveResize {
                     +userIconView
                 }
             }

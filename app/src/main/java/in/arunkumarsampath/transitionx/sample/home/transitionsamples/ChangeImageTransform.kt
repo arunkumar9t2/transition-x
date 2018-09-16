@@ -49,7 +49,7 @@ class ChangeImageTransform : Fragment() {
         fab.setOnClickListener {
 
             frameLayout.transition {
-                changeBounds()
+                moveResize()
                 changeImage()
                 +userIconView
             }

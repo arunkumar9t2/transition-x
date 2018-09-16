@@ -46,7 +46,7 @@ class ArcMotionFragment : Fragment() {
         fab.setOnClickListener {
 
             frameLayout.transition {
-                changeBounds {
+                moveResize {
                     pathMotion = ArcMotion()
                     +userIconView
                 }

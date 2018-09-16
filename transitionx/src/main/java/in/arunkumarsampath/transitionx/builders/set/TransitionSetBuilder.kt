@@ -3,6 +3,7 @@
 package `in`.arunkumarsampath.transitionx.builders.set
 
 import `in`.arunkumarsampath.transitionx.builders.TransitionBuilder
+import `in`.arunkumarsampath.transitionx.builders.changetext.ChangeTextBuilder
 import `in`.arunkumarsampath.transitionx.builders.common.*
 import `in`.arunkumarsampath.transitionx.builders.fade.FadeBuilder
 import `in`.arunkumarsampath.transitionx.builders.fade.FadeMode
@@ -13,6 +14,7 @@ import android.support.transition.Transition
 import android.support.transition.TransitionSet
 
 open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : TransitionBuilder<TransitionSet>(transitionSet) {
+
     var ordering: Int
         @Ordering get() = transition.ordering
         set(@Ordering value) {
@@ -67,6 +69,10 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
 
     inline fun changeColor(changeColorBuilder: ChangeColorBuilder.() -> Unit = {}) {
         +ChangeColorBuilder().apply(changeColorBuilder).transition
+    }
+
+    inline fun changeText(changeTextBuilder: ChangeTextBuilder.() -> Unit = {}) {
+        +ChangeTextBuilder().apply(changeTextBuilder).transition
     }
 
     inline fun <reified T : Transition> customTransition(transitionBuilder: TransitionBuilder<T>.() -> Unit = {}) {

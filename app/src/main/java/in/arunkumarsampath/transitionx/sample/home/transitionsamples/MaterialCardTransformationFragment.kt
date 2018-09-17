@@ -1,12 +1,17 @@
 package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 
+import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.sample.R
+import `in`.arunkumarsampath.transitionx.sample.extensions.dpToPx
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isGone
+import androidx.core.view.updateLayoutParams
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.bumptech.glide.request.RequestOptions
@@ -45,5 +50,42 @@ class MaterialCardTransformationFragment : Fragment() {
                     .apply(RequestOptions().centerCrop())
                     .into(image)
         }
+        toggleButton.setOnClickListener {
+            toggleTransition()
+        }
+    }
+
+    private fun toggleTransition() {
+
+        constraintLayout.prepareTransition {
+            auto {
+                standardEasing()
+                exclude(metamorphosisDesc2)
+            }
+            set {
+                sequentially()
+                slide()
+                fade()
+                accelerateEasing()
+                +metamorphosisDesc2
+            }
+            duration = 500
+        }
+        if (toggle) {
+            toggleButton.setText(R.string.collapse)
+            sceneFlexbox.updateLayoutParams<ConstraintLayout.LayoutParams> {
+                height = requireActivity().dpToPx(200.0)
+            }
+            metamorphosisDesc.isGone = true
+            metamorphosisDesc2.isGone = false
+        } else {
+            sceneFlexbox.updateLayoutParams<ConstraintLayout.LayoutParams> {
+                height = requireActivity().dpToPx(56.0)
+            }
+            toggleButton.setText(R.string.expand)
+            metamorphosisDesc.isGone = false
+            metamorphosisDesc2.isGone = true
+        }
+        toggle = !toggle
     }
 }

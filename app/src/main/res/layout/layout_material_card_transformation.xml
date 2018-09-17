@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
@@ -35,12 +36,13 @@
         android:id="@+id/directorName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
         android:elevation="7dp"
         android:text="Director : Sandra Adams"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
         app:layout_constraintBottom_toTopOf="@+id/metamorphosis"
-        app:layout_constraintStart_toStartOf="@+id/metamorphosis"
+        app:layout_constraintStart_toStartOf="@+id/left25Guideline"
         app:layout_constraintTop_toBottomOf="@id/topSpace"
         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -75,12 +77,13 @@
         android:id="@+id/metamorphosis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
         android:elevation="7dp"
         android:text="Metamorphosis"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
         app:layout_constraintBottom_toTopOf="@+id/metamorphosisDesc"
-        app:layout_constraintStart_toStartOf="@+id/metamorphosisDesc"
+        app:layout_constraintStart_toStartOf="@+id/left25Guideline"
         app:layout_constraintTop_toBottomOf="@+id/directorName" />
 
     <TextView
@@ -93,7 +96,7 @@
         android:elevation="7dp"
         android:ellipsize="end"
         android:singleLine="true"
-        android:text="Calm your mind with this collection of serene arctic landscapes from around the world"
+        android:text="@string/arctic_description"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
         app:layout_constraintBottom_toTopOf="@+id/sceneFlexbox"
         app:layout_constraintEnd_toStartOf="@+id/right25Guideline"
@@ -103,11 +106,11 @@
     <com.google.android.flexbox.FlexboxLayout
         android:id="@+id/sceneFlexbox"
         android:layout_width="0dp"
-        android:layout_height="112dp"
+        android:layout_height="56dp"
         android:elevation="7dp"
         app:alignItems="center"
         app:flexDirection="row"
-        app:layout_constraintBottom_toBottomOf="@id/divider"
+        app:layout_constraintBottom_toTopOf="@+id/metamorphosisDesc2Container"
         app:layout_constraintEnd_toStartOf="@+id/right25Guideline"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/left25Guideline"
@@ -149,14 +152,41 @@
 
     <View
         android:id="@+id/divider"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="#0000001e"
+        android:background="@color/material_divider_dark"
         android:elevation="7dp"
         app:layout_constraintBottom_toTopOf="@+id/toggleButton"
         app:layout_constraintEnd_toStartOf="@+id/right25Guideline"
         app:layout_constraintStart_toStartOf="@+id/left25Guideline"
-        app:layout_constraintTop_toBottomOf="@id/sceneFlexbox" />
+        app:layout_constraintTop_toBottomOf="@id/metamorphosisDesc2Container" />
+
+    <FrameLayout
+        android:id="@+id/metamorphosisDesc2Container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="7dp"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toStartOf="@+id/right25Guideline"
+        app:layout_constraintStart_toStartOf="@+id/sceneFlexbox"
+        app:layout_constraintTop_toBottomOf="@+id/sceneFlexbox">
+
+        <TextView
+            android:id="@+id/metamorphosisDesc2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="7dp"
+            android:ellipsize="end"
+            android:text="@string/arctic_description"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </FrameLayout>
 
     <android.support.design.button.MaterialButton
         android:id="@+id/toggleButton"
@@ -165,7 +195,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:elevation="4dp"
-        android:text="Expand"
+        android:text="@string/expand"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/right25Guideline"
         app:layout_constraintHorizontal_bias="0.0"

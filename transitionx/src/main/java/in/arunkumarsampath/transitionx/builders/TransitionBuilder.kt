@@ -8,6 +8,9 @@ import android.support.annotation.IdRes
 import android.support.transition.PathMotion
 import android.support.transition.Transition
 import android.support.transition.TransitionPropagation
+import android.support.v4.view.animation.FastOutLinearInInterpolator
+import android.support.v4.view.animation.FastOutSlowInInterpolator
+import android.support.v4.view.animation.LinearOutSlowInInterpolator
 import android.view.View
 
 @TransitionBuilderMarker
@@ -30,6 +33,49 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
         set(value) {
             transition.interpolator = value
         }
+
+    /**
+     * Applies Material Design standard's Standard Easing([FastOutSlowInInterpolator]) to this transition.
+     *
+     * This easing is recommended for Views that move within visible area of the layout.
+     *
+     * @see [https://material.io/design/motion/speed.html#easing]
+     *
+     * Note: Calling this overrides any previously set [interpolator]
+     */
+    inline fun standardEasing() {
+        interpolator = FastOutSlowInInterpolator()
+    }
+
+    /**
+     * Applies Material Design standard's Decelerate Easing([LinearOutSlowInInterpolator]) to this
+     * transition.
+     *
+     * This easing is recommended for Views that appear/enter outside visible bounds of the layout.
+     * Example: Snackbar message from bottom of the screen
+     *
+     * @see [https://material.io/design/motion/speed.html#easing]
+     *
+     * Note: Calling this overrides any previously set [interpolator]
+     */
+    inline fun decelerateEasing() {
+        interpolator = LinearOutSlowInInterpolator()
+    }
+
+    /**
+     * Applies Material Design standard's Accelerate Easing([FastOutLinearInInterpolator]) to this
+     * transition.
+     *
+     * This easing is recommended for Views that exit visible bounds of the layout.
+     * Example: Disappear bottom sheet
+     *
+     * @see [https://material.io/design/motion/speed.html#easing]
+     *
+     * Note: Calling this overrides any previously set [interpolator]
+     */
+    inline fun accelerateEasing() {
+        interpolator = FastOutLinearInInterpolator()
+    }
 
     var pathMotion: PathMotion?
         get() = transition.pathMotion

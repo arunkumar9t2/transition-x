@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="snackbar">#212121</color>
     <color name="material_brown">#6D4C41</color>
+    <color name="material_divider_dark">#1f000000</color>
 </resources>

@@ -1,9 +1,11 @@
 package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 
+import `in`.arunkumarsampath.transitionx.prepareAutoTransition
 import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.sample.extensions.dpToPx
+import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.v4.app.Fragment
@@ -21,7 +23,7 @@ class MaterialCardTransformationFragment : Fragment() {
 
     private val requestManager by lazy { Glide.with(this) }
 
-    private var toggle = true
+    private var expand = true
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -50,29 +52,36 @@ class MaterialCardTransformationFragment : Fragment() {
                     .apply(RequestOptions().centerCrop())
                     .into(image)
         }
-        toggleButton.setOnClickListener {
+        collapseButton.setOnClickListener {
             toggleTransition()
         }
     }
 
     private fun toggleTransition() {
-
         constraintLayout.prepareTransition {
             auto {
                 standardEasing()
                 exclude(metamorphosisDesc2)
             }
             set {
-                sequentially()
-                slide()
                 fade()
+                slide()
                 accelerateEasing()
                 +metamorphosisDesc2
             }
+            onEnd {
+                constraintLayout.prepareAutoTransition {
+                    changeText {
+                        +collapseButton
+                        changeTextBehavior = ChangeText.CHANGE_BEHAVIOR_OUT_IN
+                    }
+                    startDelay = 50
+                }
+                collapseButton.setText(if (!expand) R.string.collapse else R.string.expand)
+            }
             duration = 500
         }
-        if (toggle) {
-            toggleButton.setText(R.string.collapse)
+        if (expand) {
             sceneFlexbox.updateLayoutParams<ConstraintLayout.LayoutParams> {
                 height = requireActivity().dpToPx(200.0)
             }
@@ -82,10 +91,9 @@ class MaterialCardTransformationFragment : Fragment() {
             sceneFlexbox.updateLayoutParams<ConstraintLayout.LayoutParams> {
                 height = requireActivity().dpToPx(56.0)
             }
-            toggleButton.setText(R.string.expand)
             metamorphosisDesc.isGone = false
             metamorphosisDesc2.isGone = true
         }
-        toggle = !toggle
+        expand = !expand
     }
 }

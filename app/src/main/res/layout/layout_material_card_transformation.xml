@@ -15,7 +15,7 @@
         app:cardCornerRadius="4dp"
         app:cardElevation="4dp"
         app:cardPreventCornerOverlap="true"
-        app:layout_constraintBottom_toBottomOf="@+id/toggleButton"
+        app:layout_constraintBottom_toBottomOf="@+id/collapseButton"
         app:layout_constraintEnd_toStartOf="@+id/right25Guideline"
         app:layout_constraintStart_toStartOf="@+id/left25Guideline"
         app:layout_constraintTop_toTopOf="@+id/topSpace" />
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:elevation="7dp"
         android:ellipsize="end"
         android:singleLine="true"
@@ -156,7 +156,7 @@
         android:layout_height="1dp"
         android:background="@color/material_divider_dark"
         android:elevation="7dp"
-        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
+        app:layout_constraintBottom_toTopOf="@+id/collapseButton"
         app:layout_constraintEnd_toStartOf="@+id/right25Guideline"
         app:layout_constraintStart_toStartOf="@+id/left25Guideline"
         app:layout_constraintTop_toBottomOf="@id/metamorphosisDesc2Container" />
@@ -189,7 +189,7 @@
     </FrameLayout>
 
     <android.support.design.button.MaterialButton
-        android:id="@+id/toggleButton"
+        android:id="@+id/collapseButton"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="48dp"

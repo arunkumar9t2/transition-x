@@ -4,16 +4,13 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 import `in`.arunkumarsampath.transitionx.prepareAutoTransition
 import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.sample.R
-import `in`.arunkumarsampath.transitionx.sample.extensions.dpToPx
 import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isGone
-import androidx.core.view.updateLayoutParams
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.bumptech.glide.request.RequestOptions
@@ -45,7 +42,8 @@ class MaterialCardTransformationFragment : Fragment() {
         listOf(R.drawable.ic_artic_1 to image1,
                 R.drawable.ic_artic_2 to image2,
                 R.drawable.ic_artic_3 to image3,
-                R.drawable.ic_artic_4 to image4
+                R.drawable.ic_artic_4 to image4,
+                R.drawable.ic_artic_5 to image5
         ).forEach { (drawable, image) ->
             requestManager.load(drawable)
                     .transition(withCrossFade())
@@ -85,9 +83,6 @@ class MaterialCardTransformationFragment : Fragment() {
             }
             duration = 500
         }
-        sceneFlexbox.updateLayoutParams<ConstraintLayout.LayoutParams> {
-            height = requireActivity().dpToPx(56.0)
-        }
         metamorphosisDesc.isGone = false
         metamorphosisDesc2.isGone = true
     }
@@ -114,9 +109,6 @@ class MaterialCardTransformationFragment : Fragment() {
                 collapseButton.setText(R.string.collapse)
             }
             duration = 500
-        }
-        sceneFlexbox.updateLayoutParams<ConstraintLayout.LayoutParams> {
-            height = requireActivity().dpToPx(200.0)
         }
         metamorphosisDesc.isGone = true
         metamorphosisDesc2.isGone = false

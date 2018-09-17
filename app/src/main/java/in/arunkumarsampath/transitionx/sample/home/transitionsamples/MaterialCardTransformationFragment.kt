@@ -53,11 +53,16 @@ class MaterialCardTransformationFragment : Fragment() {
                     .into(image)
         }
         collapseButton.setOnClickListener {
-            toggleTransition()
+            if (expand) {
+                expandTransition()
+            } else {
+                collapseTransition()
+            }
+            expand = !expand
         }
     }
 
-    private fun toggleTransition() {
+    private fun collapseTransition() {
         constraintLayout.prepareTransition {
             auto {
                 standardEasing()
@@ -75,25 +80,45 @@ class MaterialCardTransformationFragment : Fragment() {
                         +collapseButton
                         changeTextBehavior = ChangeText.CHANGE_BEHAVIOR_OUT_IN
                     }
-                    startDelay = 50
                 }
-                collapseButton.setText(if (!expand) R.string.collapse else R.string.expand)
+                collapseButton.setText(R.string.expand)
             }
             duration = 500
         }
-        if (expand) {
-            sceneFlexbox.updateLayoutParams<ConstraintLayout.LayoutParams> {
-                height = requireActivity().dpToPx(200.0)
-            }
-            metamorphosisDesc.isGone = true
-            metamorphosisDesc2.isGone = false
-        } else {
-            sceneFlexbox.updateLayoutParams<ConstraintLayout.LayoutParams> {
-                height = requireActivity().dpToPx(56.0)
-            }
-            metamorphosisDesc.isGone = false
-            metamorphosisDesc2.isGone = true
+        sceneFlexbox.updateLayoutParams<ConstraintLayout.LayoutParams> {
+            height = requireActivity().dpToPx(56.0)
         }
-        expand = !expand
+        metamorphosisDesc.isGone = false
+        metamorphosisDesc2.isGone = true
+    }
+
+    private fun expandTransition() {
+        constraintLayout.prepareTransition {
+            auto {
+                standardEasing()
+                exclude(metamorphosisDesc2)
+            }
+            set {
+                fade()
+                slide()
+                accelerateEasing()
+                +metamorphosisDesc2
+            }
+            onEnd {
+                constraintLayout.prepareAutoTransition {
+                    changeText {
+                        +collapseButton
+                        changeTextBehavior = ChangeText.CHANGE_BEHAVIOR_OUT_IN
+                    }
+                }
+                collapseButton.setText(R.string.collapse)
+            }
+            duration = 500
+        }
+        sceneFlexbox.updateLayoutParams<ConstraintLayout.LayoutParams> {
+            height = requireActivity().dpToPx(200.0)
+        }
+        metamorphosisDesc.isGone = true
+        metamorphosisDesc2.isGone = false
     }
 }

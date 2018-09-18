@@ -3,7 +3,7 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.sample.R
-import `in`.arunkumarsampath.transitionx.sample.util.extensions.removeCallbacks
+import `in`.arunkumarsampath.transitionx.sample.extensions.removeCallbacks
 import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import android.os.Bundle
 import android.support.constraint.ConstraintSet
@@ -98,7 +98,7 @@ class MaterialCardTransformationFragment : Fragment() {
                 }
                 collapseButton.setText(R.string.expand)
             }
-            duration = 500
+            duration = 300
         }
         collapseConstraint.applyTo(constraintLayout)
         metamorphosisDesc2.isGone = true
@@ -128,7 +128,7 @@ class MaterialCardTransformationFragment : Fragment() {
                 }
                 collapseButton.setText(R.string.collapse)
             }
-            duration = 500
+            duration = 300
         }
         expandConstraint.applyTo(constraintLayout)
         metamorphosisDesc2.isGone = false

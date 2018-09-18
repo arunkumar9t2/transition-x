@@ -78,7 +78,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
         android:elevation="7dp"
-        android:text="Metamorphosis"
+        android:text="@string/metamorphosis"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
         app:layout_constraintBottom_toTopOf="@+id/metamorphosisDesc"
         app:layout_constraintStart_toStartOf="@+id/left25Guideline"

@@ -1,8 +1,8 @@
 package `in`.arunkumarsampath.transitionx.sample.home.adapter.delegates
 
 import `in`.arunkumarsampath.transitionx.sample.R
+import `in`.arunkumarsampath.transitionx.sample.extensions.inflate
 import `in`.arunkumarsampath.transitionx.sample.home.adapter.SampleItem
-import `in`.arunkumarsampath.transitionx.sample.util.extensions.inflate
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup

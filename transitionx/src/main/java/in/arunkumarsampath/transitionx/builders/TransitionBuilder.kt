@@ -93,17 +93,45 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
         transition.apply(action)
     }
 
-    inline operator fun String.unaryPlus() = transition.addTarget(this)
+    inline operator fun String.unaryPlus() {
+        transition.addTarget(this)
+    }
 
-    inline operator fun String.unaryMinus() = transition.removeTarget(this)
+    inline operator fun String.unaryMinus() {
+        transition.removeTarget(this)
+    }
 
-    inline operator fun <reified Type> Type.unaryPlus() = transition.addTarget(Type::class.java)
+    inline operator fun <reified Type> Type.unaryPlus() {
+        transition.addTarget(Type::class.java)
+    }
 
-    inline operator fun <reified Type> Type.unaryMinus() = transition.removeTarget(Type::class.java)
+    inline operator fun <reified Type> Type.unaryMinus() {
+        transition.removeTarget(Type::class.java)
+    }
 
-    inline operator fun View.unaryPlus() = transition.addTarget(this)
+    inline operator fun View.unaryPlus() {
+        transition.addTarget(this)
+    }
 
-    inline operator fun View.unaryMinus() = transition.removeTarget(this)
+    inline operator fun View.unaryMinus() {
+        transition.removeTarget(this)
+    }
+
+    inline fun add(vararg views: View) {
+        views.forEach { transition.addTarget(it) }
+    }
+
+    inline fun add(@IdRes vararg ids: Int) {
+        ids.forEach { transition.addTarget(it) }
+    }
+
+    inline fun remove(vararg views: View) {
+        views.forEach { transition.removeTarget(it) }
+    }
+
+    inline fun remove(@IdRes vararg ids: Int) {
+        ids.forEach { transition.removeTarget(it) }
+    }
 
     inline fun exclude(vararg views: View) {
         views.forEach { transition.excludeTarget(it, true) }

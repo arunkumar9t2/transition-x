@@ -5,6 +5,7 @@ import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import android.os.Bundle
+import android.support.constraint.ConstraintSet
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,15 @@ class MaterialCardTransformationFragment : Fragment() {
     private val requestManager by lazy { Glide.with(this) }
 
     private var expand = true
+
+    private val collapseConstraint
+        get() = ConstraintSet().apply {
+            clone(requireContext(), R.layout.layout_material_card_transformation)
+        }
+    private val expandConstraint
+        get() = ConstraintSet().apply {
+            clone(requireContext(), R.layout.layout_material_card_transformation_expanded)
+        }
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -85,6 +95,7 @@ class MaterialCardTransformationFragment : Fragment() {
         }
         metamorphosisDesc.isGone = false
         metamorphosisDesc2.isGone = true
+        collapseConstraint.applyTo(constraintLayout)
     }
 
     private fun expandTransition() {
@@ -113,5 +124,6 @@ class MaterialCardTransformationFragment : Fragment() {
         }
         metamorphosisDesc.isGone = true
         metamorphosisDesc2.isGone = false
+        expandConstraint.applyTo(constraintLayout)
     }
 }

@@ -1,7 +1,6 @@
 package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 
-import `in`.arunkumarsampath.transitionx.prepareAutoTransition
 import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
@@ -73,7 +72,8 @@ class MaterialCardTransformationFragment : Fragment() {
                 +metamorphosisDesc2
             }
             onEnd {
-                constraintLayout.prepareAutoTransition {
+                constraintLayout.prepareTransition {
+                    moveResize()
                     changeText {
                         +collapseButton
                         changeTextBehavior = ChangeText.CHANGE_BEHAVIOR_OUT_IN
@@ -100,7 +100,8 @@ class MaterialCardTransformationFragment : Fragment() {
                 +metamorphosisDesc2
             }
             onEnd {
-                constraintLayout.prepareAutoTransition {
+                constraintLayout.prepareTransition {
+                    moveResize()
                     changeText {
                         +collapseButton
                         changeTextBehavior = ChangeText.CHANGE_BEHAVIOR_OUT_IN

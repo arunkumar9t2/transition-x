@@ -35,7 +35,7 @@ class MaterialCardTransformationFragment : Fragment() {
     private val expandRunnable = { expandTransition() }
     private val collapseRunnable = { collapseTransition() }
 
-    private val images = arrayOf(image1, image2, image3, image4, image5)
+    private val imageViews = arrayOf(image1, image2, image3, image4, image5)
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -87,7 +87,7 @@ class MaterialCardTransformationFragment : Fragment() {
                 accelerateEasing()
                 +metamorphosisDesc2
             }
-            changeImage { add(*images) }
+            changeImage { add(*imageViews) }
             onEnd {
                 constraintLayout.prepareTransition {
                     moveResize()
@@ -117,7 +117,7 @@ class MaterialCardTransformationFragment : Fragment() {
                 accelerateEasing()
                 +metamorphosisDesc2
             }
-            changeImage { add(*images) }
+            changeImage { add(*imageViews) }
             onEnd {
                 constraintLayout.prepareTransition {
                     moveResize()

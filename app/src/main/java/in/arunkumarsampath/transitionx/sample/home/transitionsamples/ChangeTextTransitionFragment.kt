@@ -1,8 +1,8 @@
 package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 
-import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.prepareTransition
+import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import android.os.Bundle
 import android.support.v4.app.Fragment

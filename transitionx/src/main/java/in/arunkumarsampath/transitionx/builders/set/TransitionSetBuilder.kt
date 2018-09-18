@@ -8,18 +8,21 @@ import `in`.arunkumarsampath.transitionx.builders.common.*
 import `in`.arunkumarsampath.transitionx.builders.fade.FadeBuilder
 import `in`.arunkumarsampath.transitionx.builders.fade.FadeMode
 import `in`.arunkumarsampath.transitionx.builders.slide.SlideBuilder
-import android.support.transition.AutoTransition
 import android.support.transition.Fade
 import android.support.transition.Transition
 import android.support.transition.TransitionSet
+import android.support.transition.TransitionSet.ORDERING_SEQUENTIAL
+import android.support.transition.TransitionSet.ORDERING_TOGETHER
 
 open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : TransitionBuilder<TransitionSet>(transitionSet) {
 
-    var ordering: Int
-        @Ordering get() = transition.ordering
-        set(@Ordering value) {
-            transition.ordering = value
-        }
+    inline fun sequentially() {
+        transition.ordering = ORDERING_SEQUENTIAL
+    }
+
+    inline fun together() {
+        transition.ordering = ORDERING_TOGETHER
+    }
 
     inline operator fun Transition.unaryPlus() {
         transition.addTransition(this)
@@ -30,6 +33,10 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
     }
 
     inline operator fun get(index: Int): Transition = transition.getTransitionAt(index)
+
+    inline fun set(setBuilder: DefaultTransitionSetBuilder.() -> Unit = {}) {
+        +DefaultTransitionSetBuilder().apply(setBuilder).transition
+    }
 
     inline fun auto(autoBuilder: AutoTransitionBuilder.() -> Unit = {}) {
         +AutoTransitionBuilder().apply(autoBuilder).transition
@@ -91,7 +98,3 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
             transitionBuilder: TransitionBuilder<T>.() -> Unit = {}
     ) = +TransitionBuilder(transition).apply(transitionBuilder).transition
 }
-
-class DefaultTransitionSetBuilder : TransitionSetBuilder<TransitionSet>(TransitionSet())
-
-class AutoTransitionBuilder : TransitionSetBuilder<TransitionSet>(AutoTransition())

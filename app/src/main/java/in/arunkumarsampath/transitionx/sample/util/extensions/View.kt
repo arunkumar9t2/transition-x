@@ -8,3 +8,5 @@ import android.view.ViewGroup
 fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
     return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
 }
+
+fun View.removeCallbacks(vararg runnables: () -> Unit) = runnables.forEach { removeCallbacks(it) }

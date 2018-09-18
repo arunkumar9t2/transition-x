@@ -3,6 +3,7 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 
 import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.sample.R
+import `in`.arunkumarsampath.transitionx.sample.util.extensions.removeCallbacks
 import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import android.os.Bundle
 import android.support.constraint.ConstraintSet
@@ -30,6 +31,11 @@ class MaterialCardTransformationFragment : Fragment() {
         get() = ConstraintSet().apply {
             clone(requireContext(), R.layout.layout_material_card_transformation_expanded)
         }
+
+    private val expandRunnable = { expandTransition() }
+    private val collapseRunnable = { collapseTransition() }
+
+    private val images = arrayOf(image1, image2, image3, image4, image5)
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -59,13 +65,13 @@ class MaterialCardTransformationFragment : Fragment() {
                     .apply(RequestOptions().centerCrop())
                     .into(image)
         }
-        collapseButton.setOnClickListener {
-            if (expand) {
-                expandTransition()
-            } else {
-                collapseTransition()
+        with(collapseButton) {
+            setOnClickListener {
+                removeCallbacks(expandRunnable, collapseRunnable)
+                val runnable = if (expand) expandRunnable else collapseRunnable
+                postDelayed(runnable, 100) // Add delay to allow ripple animation to run
+                expand = !expand
             }
-            expand = !expand
         }
     }
 
@@ -81,6 +87,7 @@ class MaterialCardTransformationFragment : Fragment() {
                 accelerateEasing()
                 +metamorphosisDesc2
             }
+            changeImage { add(*images) }
             onEnd {
                 constraintLayout.prepareTransition {
                     moveResize()
@@ -93,9 +100,9 @@ class MaterialCardTransformationFragment : Fragment() {
             }
             duration = 500
         }
-        metamorphosisDesc.isGone = false
-        metamorphosisDesc2.isGone = true
         collapseConstraint.applyTo(constraintLayout)
+        metamorphosisDesc2.isGone = true
+        metamorphosisDesc.isGone = false
     }
 
     private fun expandTransition() {
@@ -110,6 +117,7 @@ class MaterialCardTransformationFragment : Fragment() {
                 accelerateEasing()
                 +metamorphosisDesc2
             }
+            changeImage { add(*images) }
             onEnd {
                 constraintLayout.prepareTransition {
                     moveResize()
@@ -122,8 +130,8 @@ class MaterialCardTransformationFragment : Fragment() {
             }
             duration = 500
         }
-        metamorphosisDesc.isGone = true
-        metamorphosisDesc2.isGone = false
         expandConstraint.applyTo(constraintLayout)
+        metamorphosisDesc2.isGone = false
+        metamorphosisDesc.isGone = true
     }
 }

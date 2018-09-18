@@ -1,1 +1,1 @@
-include ':app', ':transitionx'
+include ':sample', ':transitionx'

@@ -19,6 +19,9 @@ object Plugins {
     const val kotlinAndroidExt = "kotlin-android-extensions"
     const val kotlinKapt = "kotlin-kapt"
     const val navigationPlugin = "androidx.navigation.safeargs"
+    const val androidMaven = "com.github.dcendents.android-maven"
+    const val jfrogBintay = "com.jfrog.bintray"
+    const val dokka = "org.jetbrains.dokka-android"
 }
 
 object BuildDetails {
@@ -94,4 +97,8 @@ object Dependencies {
     val testRunner = "com.android.support.test:runner:${Versions.testRunner}"
     val espressoCore = "com.android.support.test.espresso:espresso-core:${Versions.espresso}"
     val robotElectric = "org.robolectric:robolectric:${Versions.roboElectric}"
+
+    val androidMaven = "com.github.dcendents:android-maven-gradle-plugin:1.5"
+    val jfrogBintay = "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4"
+    val dokka = "org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.17"
 }

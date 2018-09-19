@@ -13,10 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.17"
+    }
+}
 apply plugin: 'com.android.library'
 apply plugin: Plugins.kotlinAndroid
 apply plugin: Plugins.kotlinAndroidExt
+apply plugin: Plugins.androidMaven
+apply plugin: Plugins.jfrogBintay
+apply plugin: Plugins.dokka
 
 android {
     compileSdkVersion BuildDetails.compileSdk
@@ -42,6 +54,8 @@ android {
         }
     }
 }
+
+apply from: 'publishing.gradle'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

@@ -81,7 +81,7 @@ class MaterialCardTransformationFragment : Fragment() {
                 standardEasing()
                 exclude(metamorphosisDesc2)
             }
-            set {
+            transitionSet {
                 fade()
                 slide()
                 accelerateEasing()
@@ -111,7 +111,7 @@ class MaterialCardTransformationFragment : Fragment() {
                 standardEasing()
                 exclude(metamorphosisDesc2)
             }
-            set {
+            transitionSet {
                 fade()
                 slide()
                 accelerateEasing()

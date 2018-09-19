@@ -28,11 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/ic_touch"
         android:tint="@android:color/white"
         app:fabSize="auto"
         app:layout_constraintBottom_toTopOf="@+id/snackbarMessage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_touch"
         app:useCompatPadding="false" />
 
     <TextView

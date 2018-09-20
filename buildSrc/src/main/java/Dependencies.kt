@@ -40,7 +40,7 @@ object Versions {
     const val constraintLayout = "1.1.3"
     const val kotlin = "1.2.60"
     const val androidKtx = "0.3"
-    const val archNavigation = "1.0.0-alpha01"
+    const val archNavigation = "1.0.0-alpha06"
     const val flexBox = "1.0.0"
     const val timber = "4.7.1"
     const val glide = "4.8.0"

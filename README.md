@@ -64,11 +64,11 @@ constraintLayout.prepareTransition {
 #### Snack bar transition
 ```Kotlin
 snackbarConstraintLayout.prepareTransition {  
-  moveResize {  
+  moveResize {  // Move resize uses ChangeBounds
     +fab  
   }  
   slide {  
-    +snackbarMessage  
+    +snackbarMessage  // We want the snackBar to slide from bottom, so we add it as target.
   }  
   decelerateEasing()  
 }  
@@ -89,7 +89,7 @@ constraintLayout.prepareTransition {
 	    startDelay = ((position + 1) * 150).toLong()  
 	  }  
  }  
- moveResize { +fab }  
+ moveResize { +fab }
  decelerateEasing()  
 }  
 // Layout changes
@@ -102,7 +102,7 @@ Transition X can work with custom transitions. In case you have a custom transit
 ```kotlin
 constraintLayout.prepareTransition {  
   customTransition<ChangeCardColor> {  
-     +colorChangeCardView  
+     +colorChangeCardView  // By adding targets we can contain on which views the said transition will run.
   }  
   changeColor {  
      +colorChangeTextView  

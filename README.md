@@ -17,11 +17,10 @@ Transition X aims to simplify construction of `Transition` instances for using w
 ```groovy
 allprojects {
     repositories {
-        maven { url "https://dl.bintray.com/arunkumar9t2/maven" }
+        jcenter()
     }
 }
 ```
-**Note: Artifacts will be available on jCenter shortly.** 
 * Add library dependency to module level `build.gradle` file.
 ```groovy
 dependencies{

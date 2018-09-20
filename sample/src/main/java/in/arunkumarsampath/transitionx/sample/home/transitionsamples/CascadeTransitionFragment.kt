@@ -52,7 +52,7 @@ class CascadeTransitionFragment : Fragment() {
                 clone(requireContext(), R.layout.fragment_cascade_transition_alt)
             }
             constraintLayout.prepareTransition {
-                listOf(textView,
+                arrayOf(textView,
                         textView2,
                         textView3,
                         textView4
@@ -63,7 +63,7 @@ class CascadeTransitionFragment : Fragment() {
                     }
                 }
                 moveResize { +fab }
-                interpolator = LinearOutSlowInInterpolator()
+                decelerateEasing()
             }
             (if (defaultState) constraint1 else constraint2).applyTo(constraintLayout)
             defaultState = !defaultState

@@ -21,7 +21,6 @@ import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.sample.extensions.toggleGone
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.view.animation.LinearOutSlowInInterpolator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,7 +49,7 @@ class SnackBarFragment : Fragment() {
                 slide {
                     +snackbarMessage
                 }
-                interpolator = LinearOutSlowInInterpolator()
+                decelerateEasing()
             }
             snackbarMessage.toggleGone()
         }

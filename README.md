@@ -1,7 +1,6 @@
 
 # Transition X
-**Kotlin DSL for choreographing Android Transitions**  
-[![CircleCI](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master.svg?style=svg)](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master)[ ![Download](https://api.bintray.com/packages/arunkumar9t2/maven/transition-x/images/download.svg?version=1.0.0-beta4) ](https://bintray.com/arunkumar9t2/maven/transition-x/1.0.0-beta4/link)
+**Kotlin DSL for choreographing Android Transitions**[![CircleCI](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master.svg?style=svg)](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master)[ ![Download](https://api.bintray.com/packages/arunkumar9t2/maven/transition-x/images/download.svg?version=1.0.0-beta4) ](https://bintray.com/arunkumar9t2/maven/transition-x/1.0.0-beta4/link)
 
 <img src="https://github.com/arunkumar9t2/transition-x/blob/master/sample/src/main/res/mipmap-xxxhdpi/ic_launcher.png" align="left"
 width="200" hspace="10" vspace="10">
@@ -11,6 +10,8 @@ Transition X aims to simplify construction of `Transition` instances for using w
 `TransitionManager` makes it easy to animate simple changes to layout without needing to explicitly calculate and specify `from` and `to` like `Animator` or `Animation` expects. When you call `TransitionManager.beginDelayedTransition(layout, transition)` before updating a layout, the framework automatically does a diff on before and after states and animates the difference.
 
 `Transition X` is intended to simplify construction of these `Transition`  instances to take full advantage of the framework and provide a clear, concise, type safe and extensible DSL.
+
+I highly recommend reading the introduction blog post on [Medium](https://medium.com/@arunkumar9t2/meet-transition-x-declarative-kotlin-dsl-for-choreographing-android-transitions-dff25ebb61f9)
 
 # Download
 * Add repository to your project level `build.gradle` file.
@@ -156,6 +157,13 @@ metamorphosisDesc2.isGone = false
 metamorphosisDesc.isGone = true
 ```
 ![enter image description here](https://github.com/arunkumar9t2/transition-x/raw/master/art/metamorphosis.gif)
+
+# Tasks
+
+- [x] Initial release of Kotlin DSL
+- [ ] Provide samples for Shared Element Transitions
+- [ ] Package common transition within the library module
+- [ ] Add wiki with best practices and gotchas.
 
 # Contributions
 Contributions are welcome! I would greatly appreciate creating an issue to discuss major changes before submitting a PR directly.

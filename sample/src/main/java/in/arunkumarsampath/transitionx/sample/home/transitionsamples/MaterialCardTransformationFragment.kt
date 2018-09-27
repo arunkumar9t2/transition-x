@@ -23,17 +23,17 @@ import `in`.arunkumarsampath.transitionx.sample.extensions.removeCallbacks
 import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import android.os.Bundle
 import android.support.constraint.ConstraintSet
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.isGone
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.layout_material_card_transformation.*
 
-class MaterialCardTransformationFragment : Fragment() {
+class MaterialCardTransformationFragment : BaseSampleFragment() {
+
+    override val contentLayoutResource = R.layout.layout_material_card_transformation
+    override val titleRes = R.string.metamorphosis
 
     private val requestManager by lazy { Glide.with(this) }
 
@@ -52,12 +52,6 @@ class MaterialCardTransformationFragment : Fragment() {
     private val collapseRunnable = { collapseTransition() }
 
     private val imageViews = arrayOf(image1, image2, image3, image4, image5)
-
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_material_card_transformation, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

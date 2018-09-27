@@ -20,38 +20,31 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.sample.transition.color.changecardcolor.ChangeCardColor
-import android.graphics.Color
+import android.graphics.Color.*
 import android.os.Bundle
 import android.support.annotation.ColorInt
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import kotlinx.android.synthetic.main.layout_custom_transition_content.*
 
 
-class CustomTransitionFragment : Fragment() {
+class CustomTransitionFragment : BaseSampleFragment() {
+
+    override val contentLayoutResource = R.layout.layout_custom_transition_content
+    override val titleRes = R.string.sample_custom_transition
 
     private val colors = listOf(
-            Color.BLACK,
-            Color.DKGRAY,
-            Color.GRAY,
-            Color.LTGRAY,
-            Color.WHITE,
-            Color.RED,
-            Color.GREEN,
-            Color.BLUE,
-            Color.YELLOW,
-            Color.CYAN,
-            Color.MAGENTA
+            BLACK,
+            DKGRAY,
+            GRAY,
+            LTGRAY,
+            WHITE,
+            RED,
+            GREEN,
+            BLUE,
+            YELLOW,
+            CYAN,
+            MAGENTA
     )
-
-
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_custom_transition, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -84,9 +77,9 @@ class CustomTransitionFragment : Fragment() {
          * {@see https://chromium.googlesource.com/chromium/src/+/66.0.3335.4/chrome/android/java/src/org/chromium/chrome/browser/util/ColorUtils.java}
          */
         private fun getContrastForColor(color: Int): Float {
-            var bgR = Color.red(color) / 255f
-            var bgG = Color.green(color) / 255f
-            var bgB = Color.blue(color) / 255f
+            var bgR = red(color) / 255f
+            var bgG = green(color) / 255f
+            var bgB = blue(color) / 255f
             bgR = if (bgR < 0.03928f) bgR / 12.92f else Math.pow(((bgR + 0.055f) / 1.055f).toDouble(), 2.4).toFloat()
             bgG = if (bgG < 0.03928f) bgG / 12.92f else Math.pow(((bgG + 0.055f) / 1.055f).toDouble(), 2.4).toFloat()
             bgB = if (bgB < 0.03928f) bgB / 12.92f else Math.pow(((bgB + 0.055f) / 1.055f).toDouble(), 2.4).toFloat()
@@ -114,9 +107,9 @@ class CustomTransitionFragment : Fragment() {
         @ColorInt
         fun calcForegroundWhiteOrBlack(@ColorInt backgroundColor: Int): Int {
             return if (shouldUseLightForegroundOnBackground(backgroundColor)) {
-                Color.WHITE
+                WHITE
             } else
-                Color.BLACK
+                BLACK
         }
     }
 }

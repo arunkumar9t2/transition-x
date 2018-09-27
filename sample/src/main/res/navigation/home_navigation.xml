@@ -87,7 +87,7 @@
         tools:layout="@layout/fragment_explode_transition" />
     <fragment
         android:id="@+id/changeImageTransformFragment"
-        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeImageTransform"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeImageTransitionFragment"
         android:label="ChangeImageTransformFragment"
         tools:layout="@layout/fragment_change_image_transition" />
     <fragment
@@ -99,7 +99,7 @@
         android:id="@+id/changeTextTransitionFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeTextTransitionFragment"
         android:label="ChangeTextTransitionFragment"
-        tools:layout="@layout/fragment_change_text_transition" />
+        tools:layout="@layout/layout_change_text_transition" />
     <fragment
         android:id="@+id/materialCardTransformationFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.MaterialCardTransformationFragment"

@@ -22,10 +22,7 @@ import `in`.arunkumarsampath.transitionx.sample.R
 import `in`.arunkumarsampath.transitionx.sample.extensions.dpToPx
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.core.view.updateLayoutParams
@@ -33,17 +30,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.layout_change_image_content.*
 
-class ChangeImageTransform : Fragment() {
+class ChangeImageTransitionFragment : BaseSampleFragment() {
 
-    val dp112 by lazy { requireContext().dpToPx(112.0) }
+    override val contentLayoutResource = R.layout.layout_change_image_content
+    override val titleRes = R.string.change_image_transition
+
+    private val dp112 by lazy { requireContext().dpToPx(112.0) }
 
     private var toggle = true
-
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_change_image_transition, container, false)
 
     @SuppressLint("RtlHardcoded")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -20,28 +20,21 @@ package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples
 import `in`.arunkumarsampath.transitionx.prepareTransition
 import `in`.arunkumarsampath.transitionx.sample.R
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v4.view.animation.FastOutLinearInInterpolator
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import kotlinx.android.synthetic.main.layout_scale_rotate_content.*
 
 
-class ScaleRotateFragment : Fragment() {
+class ScaleRotateFragment : BaseSampleFragment() {
+
+    override val contentLayoutResource = R.layout.layout_scale_rotate_content
+    override val titleRes = R.string.scale_rotate_transition
 
     private var toggle = true
-
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_scale_rotate, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fab.setOnClickListener {
-
             constraintLayout.prepareTransition {
                 scaleRotate {
                     +arrowIconView

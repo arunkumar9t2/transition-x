@@ -23,26 +23,20 @@ import `in`.arunkumarsampath.transitionx.sample.extensions.dpToPx
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.transition.ArcMotion
-import android.support.v4.app.Fragment
 import android.view.Gravity
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.core.view.updateLayoutParams
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.layout_arc_motion_content.*
 
-class ArcMotionFragment : Fragment() {
+class ArcMotionFragment : BaseSampleFragment() {
+
+    override val contentLayoutResource = R.layout.layout_arc_motion_content
+    override val titleRes = R.string.arc_motion_transition
 
     private var toggle = true
-
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_arc_motion, container, false)
 
     @SuppressLint("RtlHardcoded")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

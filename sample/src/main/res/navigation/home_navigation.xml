@@ -65,7 +65,7 @@
         android:id="@+id/cascadeTransitionFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.CascadeTransitionFragment"
         android:label="fragment_cascade_transition"
-        tools:layout="@layout/fragment_cascade_transition" />
+        tools:layout="@layout/layout_cascade_transition" />
     <fragment
         android:id="@+id/customTransitionFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.CustomTransitionFragment"

@@ -23,18 +23,6 @@
     tools:context=".home.transitionsamples.CascadeTransitionFragment"
     tools:layout_editor_absoluteY="81dp">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/AppTheme.AppBarOverlay"
-        app:title="@string/cascade"
-        app:titleTextColor="@android:color/white" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"

@@ -39,4 +39,9 @@
     <string name="collapse">Collapse</string>
     <string name="arctic_description">Calm your mind with this collection of serene arctic landscapes from around the world.</string>
     <string name="metamorphosis">Metamorphosis</string>
+    <string name="cart">Cart</string>
+    <string name="shared_element_transition">Shared element transition</string>
+    <string name="cart_list">Cart List</string>
+    <string name="tooth_brush">Tooth brush</string>
+    <string name="in_stock">In stock</string>
 </resources>

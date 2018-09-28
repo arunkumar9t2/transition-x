@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_homeFragment_to_materialCardTransformationFragment"
             app:destination="@id/materialCardTransformationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cartListFragment"
+            app:destination="@id/cartListFragment" />
     </fragment>
     <fragment
         android:id="@+id/snackBarFragment"
@@ -105,4 +108,8 @@
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.MaterialCardTransformationFragment"
         android:label="MaterialCardTransformationFragment"
         tools:layout="@layout/fragment_material_card_transformation" />
+    <fragment
+        android:id="@+id/cartListFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.cart.CartListFragment"
+        android:label="CartListFragment" />
 </navigation>

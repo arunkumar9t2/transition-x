@@ -26,4 +26,7 @@ data class CartItem(
         val name: String,
         val status: String,
         val price: String
-) : Parcelable
+) : Parcelable {
+
+    fun cartImageTransitionName() = "$status+$price+$name"
+}

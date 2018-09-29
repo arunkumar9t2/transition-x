@@ -63,7 +63,7 @@
         android:id="@+id/snackBarFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.SnackBarFragment"
         android:label="fragment_snack_bar_fragmennt"
-        tools:layout="@layout/fragment_snack_bar_fragmennt" />
+        tools:layout="@layout/layout_snackbar_content" />
     <fragment
         android:id="@+id/cascadeTransitionFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.CascadeTransitionFragment"
@@ -78,7 +78,7 @@
         android:id="@+id/scaleRotateFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ScaleRotateFragment"
         android:label="fragment_scale_rotate"
-        tools:layout="@layout/fragment_scale_rotate" />
+        tools:layout="@layout/layout_scale_rotate_content" />
     <fragment
         android:id="@+id/arcMotionFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ArcMotionFragment"
@@ -92,12 +92,12 @@
         android:id="@+id/changeImageTransformFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeImageTransitionFragment"
         android:label="ChangeImageTransformFragment"
-        tools:layout="@layout/fragment_change_image_transition" />
+        tools:layout="@layout/layout_change_image_content" />
     <fragment
         android:id="@+id/changeColorFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeColorFragment"
         android:label="ChangeColorFragment"
-        tools:layout="@layout/fragment_change_color_transition" />
+        tools:layout="@layout/layout_change_color_content" />
     <fragment
         android:id="@+id/changeTextTransitionFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.ChangeTextTransitionFragment"
@@ -107,9 +107,23 @@
         android:id="@+id/materialCardTransformationFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.MaterialCardTransformationFragment"
         android:label="MaterialCardTransformationFragment"
-        tools:layout="@layout/fragment_material_card_transformation" />
+        tools:layout="@layout/layout_material_card_transformation" />
     <fragment
         android:id="@+id/cartListFragment"
         android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.cart.CartListFragment"
-        android:label="CartListFragment" />
+        android:label="CartListFragment"
+        tools:layout="@layout/layout_content_cart_list">
+        <action
+            android:id="@+id/action_cartListFragment_to_cartDetailFragment"
+            app:destination="@id/cartDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartDetailFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.cart.CartDetailFragment"
+        android:label="CartDetailFragment"
+        tools:layout="@layout/fragment_cart_detail_content">
+        <argument
+            android:name="cartItem"
+            app:argType="in.arunkumarsampath.transitionx.sample.home.transitionsamples.cart.CartItem" />
+    </fragment>
 </navigation>

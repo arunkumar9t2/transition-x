@@ -44,4 +44,10 @@
     <string name="cart_list">Cart List</string>
     <string name="tooth_brush">Tooth brush</string>
     <string name="in_stock">In stock</string>
+    <string name="remove_from_cart">Remove from cart</string>
+    <string name="select_type">Select Type</string>
+    <string name="extra_soft">Extra soft</string>
+    <string name="soft">Soft</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
 </resources>

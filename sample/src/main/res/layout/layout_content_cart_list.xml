@@ -13,20 +13,15 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cartList"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
-
-    <android.support.v7.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/cartList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:padding="4dp"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        tools:listitem="@layout/layout_cart_list_item_template">
-
-    </android.support.v7.widget.RecyclerView>
-</android.support.constraint.ConstraintLayout>
+    android:background="@android:color/white"
+    android:clipToPadding="false"
+    android:padding="4dp"
+    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:listitem="@layout/layout_cart_list_item_template" />

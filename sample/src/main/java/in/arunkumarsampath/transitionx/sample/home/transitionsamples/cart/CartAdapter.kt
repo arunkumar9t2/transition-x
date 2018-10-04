@@ -105,7 +105,7 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CartItemViewHolder>() {
 
         private val CART_ITEMS: List<CartItem> by lazy {
             ArrayList<CartItem>().also { list ->
-                repeat(10) {
+                repeat(1) {
                     val item = items[random.nextInt(items.size)]
                     list += CartItem(
                             item.second,

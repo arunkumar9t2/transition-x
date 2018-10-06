@@ -99,7 +99,7 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CartItemViewHolder>() {
         private val statuses = listOf(
                 "In Stock",
                 "Out of Stock",
-                "Only ${random.nextInt(5)} in stock"
+                "Only ${random.nextInt(5) + 1} in stock"
         )
         private val items = listOf(
                 "Pencil" to R.drawable.ic_pencil,

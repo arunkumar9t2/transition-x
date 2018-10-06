@@ -47,10 +47,8 @@ inline fun ViewGroup.prepareTransition(
     if (cancel) {
         TransitionManager.endTransitions(this)
     }
-    TransitionManager.beginDelayedTransition(
-            this,
-            DefaultTransitionSetBuilder().apply(transitionsBuilder).transition
-    )
+    val transition = DefaultTransitionSetBuilder().apply(transitionsBuilder).transition
+    TransitionManager.beginDelayedTransition(this, transition)
 }
 
 /**
@@ -80,10 +78,8 @@ inline fun ViewGroup.prepareAutoTransition(
     if (cancel) {
         TransitionManager.endTransitions(this)
     }
-    TransitionManager.beginDelayedTransition(
-            this,
-            AutoTransitionBuilder().apply(autoTransitionBuilder).transition
-    )
+    val transition = AutoTransitionBuilder().apply(autoTransitionBuilder).transition
+    TransitionManager.beginDelayedTransition(this, transition)
 }
 
 /**

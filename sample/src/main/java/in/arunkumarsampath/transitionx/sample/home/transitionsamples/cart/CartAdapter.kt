@@ -46,7 +46,8 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CartItemViewHolder>() {
             position: Int
     ) = holder.bindCartItem(CART_ITEMS[position])
 
-    class CartItemViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    class CartItemViewHolder(override val containerView: View)
+        : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         init {
             with(containerView) {

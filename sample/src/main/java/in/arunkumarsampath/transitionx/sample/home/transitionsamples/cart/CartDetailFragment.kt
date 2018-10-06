@@ -38,10 +38,26 @@ class CartDetailFragment : Fragment() {
 
     private fun applyTransition() {
         sharedElementEnterTransition = transitionSet {
-            changeClipBounds()
-            changeImage()
-            scaleRotate()
-            moveResize()
+            transitionSet {
+                changeImage()
+                moveResize()
+                changeClipBounds()
+                scaleRotate()
+                standardEasing()
+                duration = 375
+                +cartItem.cartImageTransitionName()
+            }
+            transitionSet {
+                standardEasing()
+                moveResize()
+                scaleRotate()
+                add(cartItem.name, cartItem.price)
+                duration = 375
+            }
+        }
+        enterTransition = transitionSet {
+            slide()
+            fadeIn()
         }
     }
 
@@ -54,11 +70,11 @@ class CartDetailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         applyTransition()
         super.onCreate(savedInstanceState)
-        postponeEnterTransition()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        postponeEnterTransition()
         setupViews()
     }
 

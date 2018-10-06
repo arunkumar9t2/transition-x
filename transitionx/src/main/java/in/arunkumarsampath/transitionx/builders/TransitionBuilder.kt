@@ -229,6 +229,15 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
     }
 
     /**
+     * Adds all [transitionTargetNames] as targets to this transition
+     *
+     * @see [Transition.addTarget]
+     */
+    inline fun add(vararg transitionTargetNames: String) {
+        transitionTargetNames.forEach { +it }
+    }
+
+    /**
      * Remove all [views] as targets from this transition.
      *
      * @see [Transition.removeTarget]

@@ -21,6 +21,7 @@ import `in`.arunkumarsampath.transitionx.sample.home.transitionsamples.BaseSampl
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.layout_content_cart_list.*
+import timber.log.Timber
 
 class CartListFragment : BaseSampleFragment() {
 
@@ -34,5 +35,16 @@ class CartListFragment : BaseSampleFragment() {
 
     private fun setupCartList() {
         cartList.adapter = CartAdapter()
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.d("onDestroy called")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Timber.d("onDestroyView")
     }
 }

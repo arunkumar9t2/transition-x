@@ -36,6 +36,15 @@ class CartDetailFragment : Fragment() {
 
     private val cartItem by lazy { CartDetailFragmentArgs.fromBundle(arguments).cartItem }
 
+    private fun applyTransition() {
+        sharedElementEnterTransition = transitionSet {
+            changeClipBounds()
+            changeImage()
+            scaleRotate()
+            moveResize()
+        }
+    }
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -43,9 +52,7 @@ class CartDetailFragment : Fragment() {
     ) = inflater.inflate(R.layout.fragment_cart_detail_content, container, false)!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        sharedElementEnterTransition = transitionSet {
-            auto()
-        }
+        applyTransition()
         super.onCreate(savedInstanceState)
         postponeEnterTransition()
     }
@@ -60,12 +67,16 @@ class CartDetailFragment : Fragment() {
                 cartContentPreview,
                 cartItem.cartImageTransitionName()
         )
-        cartItemName.text = cartItem.name
-        ViewCompat.setTransitionName(cartItemName, cartItem.name)
 
-        cartItemPrice.text = cartItem.price
-        ViewCompat.setTransitionName(cartItemPrice, cartItem.price)
+        with(cartItemName) {
+            text = cartItem.name
+            ViewCompat.setTransitionName(this, cartItem.name)
+        }
 
+        with(cartItemPrice) {
+            text = cartItem.price
+            ViewCompat.setTransitionName(this, cartItem.price)
+        }
         loadCartImage()
     }
 

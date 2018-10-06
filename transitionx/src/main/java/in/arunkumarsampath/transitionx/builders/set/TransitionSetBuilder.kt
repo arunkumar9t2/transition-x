@@ -131,13 +131,13 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
      * Adds a [Fade] transition that triggers only when the views disappear as per condition described
      * by [Visibility.onDisappear]
      */
-    inline fun fadeOut(fadeBuilder: FadeBuilder.() -> Unit) = fade(Fade.OUT, fadeBuilder)
+    inline fun fadeOut(fadeBuilder: FadeBuilder.() -> Unit = {}) = fade(Fade.OUT, fadeBuilder)
 
     /**
      * Adds a [Fade] transition that triggers only when the views appear as per condition described
      * by [Visibility.onAppear]
      */
-    inline fun fadeIn(fadeBuilder: FadeBuilder.() -> Unit) = fade(Fade.IN, fadeBuilder)
+    inline fun fadeIn(fadeBuilder: FadeBuilder.() -> Unit = {}) = fade(Fade.IN, fadeBuilder)
 
     /**
      * Adds a [ChangeTransform] to this transition. This transition animates [View]'s scale or rotate

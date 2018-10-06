@@ -26,6 +26,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.navOptions
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.layout_cart_list_item_template.*
 import java.util.*
@@ -68,11 +69,13 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CartItemViewHolder>() {
                             .Builder(cartItem)
                             .build()
                             .toBundle(),
-                    null,
+                    navOptions {
+
+                    },
                     FragmentNavigatorExtras(
                             cartItemName to cartItem.name,
                             cartPrice to cartItem.price,
-                            cartContentPreview to "${cartItem.status}+${cartItem.price}+${cartItem.name}"
+                            cartContentPreview to cartItem.cartImageTransitionName()
                     )
             )
         }
@@ -105,7 +108,7 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CartItemViewHolder>() {
 
         private val CART_ITEMS: List<CartItem> by lazy {
             ArrayList<CartItem>().also { list ->
-                repeat(1) {
+                repeat(10) {
                     val item = items[random.nextInt(items.size)]
                     list += CartItem(
                             item.second,

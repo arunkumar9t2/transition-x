@@ -57,7 +57,8 @@ class CartDetailFragment : Fragment() {
         }
         enterTransition = transitionSet {
             slide()
-            fadeIn()
+            fade()
+            decelerateEasing()
         }
     }
 
@@ -68,13 +69,13 @@ class CartDetailFragment : Fragment() {
     ) = inflater.inflate(R.layout.fragment_cart_detail_content, container, false)!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        applyTransition()
         super.onCreate(savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         postponeEnterTransition()
+        applyTransition()
         setupViews()
     }
 

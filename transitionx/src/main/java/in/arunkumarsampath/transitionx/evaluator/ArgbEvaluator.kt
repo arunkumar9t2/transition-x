@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package `in`.arunkumarsampath.transitionx.transition.evaluator
+package `in`.arunkumarsampath.transitionx.evaluator
 
 import android.animation.TypeEvaluator
 

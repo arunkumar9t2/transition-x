@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package `in`.arunkumarsampath.transitionx.builders.common
+package `in`.arunkumarsampath.transitionx.transition.common
 
-import `in`.arunkumarsampath.transitionx.builders.TransitionBuilder
-import `in`.arunkumarsampath.transitionx.transition.ChangeColor
+import `in`.arunkumarsampath.transitionx.transition.TransitionBuilder
+import `in`.arunkumarsampath.transitionx.transition.changecolor.ChangeColor
 import android.support.transition.*
 
 /**

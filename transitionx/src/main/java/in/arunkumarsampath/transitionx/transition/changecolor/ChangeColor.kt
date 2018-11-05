@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package `in`.arunkumarsampath.transitionx.transition
+package `in`.arunkumarsampath.transitionx.transition.changecolor
 
-import `in`.arunkumarsampath.transitionx.transition.evaluator.ArgbEvaluator
+import `in`.arunkumarsampath.transitionx.evaluator.ArgbEvaluator
 import `in`.arunkumarsampath.transitionx.util.TransitionUtils
 import android.animation.Animator
 import android.animation.ValueAnimator

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package `in`.arunkumarsampath.transitionx.builders.set
+package `in`.arunkumarsampath.transitionx.transition.fade
 
-import android.support.transition.AutoTransition
-import android.support.transition.TransitionSet
+import android.support.annotation.IntDef
+import android.support.transition.Fade.IN
+import android.support.transition.Fade.OUT
 
-
-class DefaultTransitionSetBuilder : TransitionSetBuilder<TransitionSet>(TransitionSet())
-
-class AutoTransitionBuilder : TransitionSetBuilder<TransitionSet>(AutoTransition())
+@IntDef(flag = true, value = [IN, OUT, IN or OUT])
+@Retention(AnnotationRetention.SOURCE)
+annotation class FadeMode

@@ -16,7 +16,7 @@
 
 @file:Suppress("NOTHING_TO_INLINE")
 
-package `in`.arunkumarsampath.transitionx.builders
+package `in`.arunkumarsampath.transitionx.transition
 
 import `in`.arunkumarsampath.transitionx.scope.TransitionBuilderMarker
 import android.animation.TimeInterpolator
@@ -65,6 +65,14 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
         set(value) {
             transition.interpolator = value
         }
+
+
+    /**
+     * Note: Calling this overrides any previously set [interpolator]
+     */
+    inline fun ease(noinline interpolatorBuilder: (() -> TimeInterpolator)? = null) {
+        interpolator = interpolatorBuilder?.invoke()
+    }
 
     /**
      * Applies Material Design standard's Standard Easing([FastOutSlowInInterpolator]) to this transition.

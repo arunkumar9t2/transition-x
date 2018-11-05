@@ -16,8 +16,8 @@
 
 package `in`.arunkumarsampath.transitionx
 
-import `in`.arunkumarsampath.transitionx.builders.set.AutoTransitionBuilder
-import `in`.arunkumarsampath.transitionx.builders.set.DefaultTransitionSetBuilder
+import `in`.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder
+import `in`.arunkumarsampath.transitionx.transition.set.DefaultTransitionSetBuilder
 import android.support.transition.*
 import android.view.ViewGroup
 

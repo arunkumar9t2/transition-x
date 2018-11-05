@@ -14,21 +14,15 @@
  * limitations under the License.
  */
 
-package `in`.arunkumarsampath.transitionx.builders.slide
+package `in`.arunkumarsampath.transitionx.transition.changetext
 
-import android.annotation.SuppressLint
-import android.support.annotation.IntDef
-import android.view.Gravity
-import kotlin.annotation.AnnotationRetention.SOURCE
+import `in`.arunkumarsampath.transitionx.transition.TransitionBuilder
 
-@SuppressLint("RtlHardcoded")
-@IntDef(
-        Gravity.LEFT,
-        Gravity.TOP,
-        Gravity.RIGHT,
-        Gravity.BOTTOM,
-        Gravity.START,
-        Gravity.END
-)
-@Retention(SOURCE)
-annotation class GravityFlag
+class ChangeTextBuilder : TransitionBuilder<ChangeText>(ChangeText()) {
+
+    var changeTextBehavior: Int
+        @ChangeTextBehavior get() = transition.changeBehavior
+        set(@ChangeTextBehavior value) {
+            transition.changeBehavior = value
+        }
+}

@@ -14,18 +14,11 @@
  * limitations under the License.
  */
 
-package `in`.arunkumarsampath.transitionx.builders.slide
+package `in`.arunkumarsampath.transitionx.transition.fade
 
-import `in`.arunkumarsampath.transitionx.builders.TransitionBuilder
-import android.support.transition.Slide
+import `in`.arunkumarsampath.transitionx.transition.TransitionBuilder
+import android.support.transition.Fade
+import android.support.transition.Fade.IN
+import android.support.transition.Fade.OUT
 
-/**
- * Builder for [Slide] transition.
- */
-class SlideBuilder : TransitionBuilder<Slide>(Slide()) {
-    var slideEdge: Int
-        set(@GravityFlag value) {
-            transition.slideEdge = value
-        }
-        @GravityFlag get() = transition.slideEdge
-}
+class FadeBuilder(@FadeMode fadingMode: Int = IN or OUT) : TransitionBuilder<Fade>(Fade(fadingMode))

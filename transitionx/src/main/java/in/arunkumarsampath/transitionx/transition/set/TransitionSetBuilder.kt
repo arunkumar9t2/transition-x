@@ -16,15 +16,15 @@
 
 @file:Suppress("NOTHING_TO_INLINE")
 
-package `in`.arunkumarsampath.transitionx.builders.set
+package `in`.arunkumarsampath.transitionx.transition.set
 
-import `in`.arunkumarsampath.transitionx.builders.TransitionBuilder
-import `in`.arunkumarsampath.transitionx.builders.changetext.ChangeTextBuilder
-import `in`.arunkumarsampath.transitionx.builders.common.*
-import `in`.arunkumarsampath.transitionx.builders.fade.FadeBuilder
-import `in`.arunkumarsampath.transitionx.builders.fade.FadeMode
-import `in`.arunkumarsampath.transitionx.builders.slide.SlideBuilder
-import `in`.arunkumarsampath.transitionx.transition.ChangeColor
+import `in`.arunkumarsampath.transitionx.transition.TransitionBuilder
+import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeTextBuilder
+import `in`.arunkumarsampath.transitionx.transition.common.*
+import `in`.arunkumarsampath.transitionx.transition.fade.FadeBuilder
+import `in`.arunkumarsampath.transitionx.transition.fade.FadeMode
+import `in`.arunkumarsampath.transitionx.transition.slide.SlideBuilder
+import `in`.arunkumarsampath.transitionx.transition.changecolor.ChangeColor
 import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import android.support.transition.*
 import android.support.transition.TransitionSet.ORDERING_SEQUENTIAL

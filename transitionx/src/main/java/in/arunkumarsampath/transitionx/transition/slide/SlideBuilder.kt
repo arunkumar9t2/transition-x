@@ -14,12 +14,18 @@
  * limitations under the License.
  */
 
-package `in`.arunkumarsampath.transitionx.builders.fade
+package `in`.arunkumarsampath.transitionx.transition.slide
 
-import android.support.annotation.IntDef
-import android.support.transition.Fade.IN
-import android.support.transition.Fade.OUT
+import `in`.arunkumarsampath.transitionx.transition.TransitionBuilder
+import android.support.transition.Slide
 
-@IntDef(flag = true, value = [IN, OUT, IN or OUT])
-@Retention(AnnotationRetention.SOURCE)
-annotation class FadeMode
+/**
+ * Builder for [Slide] transition.
+ */
+class SlideBuilder : TransitionBuilder<Slide>(Slide()) {
+    var slideEdge: Int
+        set(@GravityFlag value) {
+            transition.slideEdge = value
+        }
+        @GravityFlag get() = transition.slideEdge
+}

@@ -88,13 +88,13 @@ class MaterialCardTransformationFragment : BaseSampleFragment() {
     private fun collapseTransition() {
         constraintLayout.prepareTransition {
             auto {
-                standardEasing()
+                ease { standardEasing }
                 exclude(metamorphosisDesc2)
             }
             transitionSet {
                 fade()
                 slide()
-                accelerateEasing()
+                ease { accelerateEasing }
                 +metamorphosisDesc2
             }
             changeImage { add(*imageViews) }
@@ -118,13 +118,13 @@ class MaterialCardTransformationFragment : BaseSampleFragment() {
     private fun expandTransition() {
         constraintLayout.prepareTransition {
             auto {
-                standardEasing()
+                ease { standardEasing }
                 exclude(metamorphosisDesc2)
             }
             transitionSet {
                 fade()
                 slide()
-                accelerateEasing()
+                ease { accelerateEasing }
                 +metamorphosisDesc2
             }
             changeImage { add(*imageViews) }

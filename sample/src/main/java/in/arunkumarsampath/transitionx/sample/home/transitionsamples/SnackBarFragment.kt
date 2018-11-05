@@ -43,7 +43,7 @@ class SnackBarFragment : BaseSampleFragment() {
                 slide {
                     +snackbarMessage
                 }
-                decelerateEasing()
+                ease { decelerateEasing }
             }
             snackbarMessage.toggleGone()
         }

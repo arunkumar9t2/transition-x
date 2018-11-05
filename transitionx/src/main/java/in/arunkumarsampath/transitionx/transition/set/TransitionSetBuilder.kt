@@ -19,13 +19,13 @@
 package `in`.arunkumarsampath.transitionx.transition.set
 
 import `in`.arunkumarsampath.transitionx.transition.TransitionBuilder
+import `in`.arunkumarsampath.transitionx.transition.changecolor.ChangeColor
+import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeTextBuilder
 import `in`.arunkumarsampath.transitionx.transition.common.*
 import `in`.arunkumarsampath.transitionx.transition.fade.FadeBuilder
 import `in`.arunkumarsampath.transitionx.transition.fade.FadeMode
 import `in`.arunkumarsampath.transitionx.transition.slide.SlideBuilder
-import `in`.arunkumarsampath.transitionx.transition.changecolor.ChangeColor
-import `in`.arunkumarsampath.transitionx.transition.changetext.ChangeText
 import android.support.transition.*
 import android.support.transition.TransitionSet.ORDERING_SEQUENTIAL
 import android.support.transition.TransitionSet.ORDERING_TOGETHER

@@ -56,7 +56,9 @@ class CascadeTransitionFragment : BaseSampleFragment() {
                     }
                 }
                 moveResize { +fab }
-                decelerateEasing()
+                ease {
+                    decelerateEasing
+                }
             }
             (if (defaultState) constraint1 else constraint2).applyTo(constraintLayout)
             defaultState = !defaultState

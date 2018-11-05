@@ -43,12 +43,16 @@ class CartDetailFragment : Fragment() {
                 moveResize()
                 changeClipBounds()
                 scaleRotate()
-                standardEasing()
+                ease {
+                    standardEasing
+                }
                 duration = 375
                 +cartItem.cartImageTransitionName()
             }
             transitionSet {
-                standardEasing()
+                ease {
+                    standardEasing
+                }
                 moveResize()
                 scaleRotate()
                 add(cartItem.name, cartItem.price)
@@ -58,7 +62,9 @@ class CartDetailFragment : Fragment() {
         enterTransition = transitionSet {
             slide()
             fade()
-            decelerateEasing()
+            ease {
+                decelerateEasing
+            }
         }
     }
 

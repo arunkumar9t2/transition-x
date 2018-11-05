@@ -18,13 +18,11 @@
 
 package `in`.arunkumarsampath.transitionx.transition
 
+import `in`.arunkumarsampath.transitionx.easing.Easing
 import `in`.arunkumarsampath.transitionx.scope.TransitionBuilderMarker
 import android.animation.TimeInterpolator
 import android.support.annotation.IdRes
 import android.support.transition.*
-import android.support.v4.view.animation.FastOutLinearInInterpolator
-import android.support.v4.view.animation.FastOutSlowInInterpolator
-import android.support.v4.view.animation.LinearOutSlowInInterpolator
 import android.view.View
 import android.view.animation.Interpolator
 
@@ -33,40 +31,6 @@ import android.view.animation.Interpolator
  */
 @TransitionBuilderMarker
 open class TransitionBuilder<T : Transition>(val transition: T) {
-    /**
-     * Proxy object to scope adding inbuilt interpolators provided with the support library.
-     */
-    @Suppress("ClassName")
-    object ease {
-        /**
-         * Material Design standard's Standard Easing([FastOutSlowInInterpolator])
-         *
-         * This easing is recommended for Views that move within visible area of the layout.
-         *
-         * @see [https://material.io/design/motion/speed.html#easing]
-         */
-        val standardEasing get() = FastOutSlowInInterpolator()
-
-        /**
-         * Material Design standard's Decelerate Easing([LinearOutSlowInInterpolator])
-         *
-         * This easing is recommended for Views that appear/enter outside visible bounds of the layout.
-         * Example: Snackbar message from bottom of the screen
-         *
-         * @see [https://material.io/design/motion/speed.html#easing]
-         */
-        val decelerateEasing get() = LinearOutSlowInInterpolator()
-
-        /**
-         * Material Design standard's Accelerate Easing([FastOutLinearInInterpolator])
-         *
-         * This easing is recommended for Views that exit visible bounds of the layout.
-         * Example: Disappear bottom sheet
-         *
-         * @see [https://material.io/design/motion/speed.html#easing]
-         */
-        val accelerateEasing get() = FastOutLinearInInterpolator()
-    }
 
     /**
      * Sets the duration for this transition
@@ -115,8 +79,8 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
      *      }
      * ```
      */
-    inline fun ease(easeBuilder: ease.() -> Interpolator) {
-        interpolator = easeBuilder.invoke(ease)
+    inline fun ease(easeBuilder: Easing.() -> Interpolator) {
+        interpolator = easeBuilder.invoke(Easing)
     }
 
     /**

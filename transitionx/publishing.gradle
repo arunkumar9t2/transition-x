@@ -26,7 +26,7 @@ ext {
     siteUrl = 'https://github.com/arunkumar9t2/transition-x'
     gitUrl = 'https://github.com/arunkumar9t2/transition-x.git'
 
-    libraryVersion = '1.0.0-beta4'
+    libraryVersion = '1.0.0'
 
     developerId = 'arunkumar9t2'
     developerName = 'Arunkumar'

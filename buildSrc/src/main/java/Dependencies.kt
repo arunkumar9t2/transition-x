@@ -38,7 +38,7 @@ object Versions {
     const val agp = "3.3.0-beta02"
     const val supportLib = "28.0.0"
     const val constraintLayout = "1.1.3"
-    const val kotlin = "1.2.60"
+    const val kotlin = "1.2.71"
     const val androidKtx = "0.3"
     const val archNavigation = "1.0.0-alpha06"
     const val flexBox = "1.0.0"

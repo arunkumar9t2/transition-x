@@ -18,6 +18,9 @@ package `in`.arunkumarsampath.transitionx.transition.changetext
 
 import `in`.arunkumarsampath.transitionx.transition.TransitionBuilder
 
+/**
+ * Builder for [ChangeText]
+ */
 class ChangeTextBuilder : TransitionBuilder<ChangeText>(ChangeText()) {
 
     var changeTextBehavior: Int

@@ -75,9 +75,13 @@ install {
 
 dokka {
     outputFormat = 'html'
-    outputDirectory = "$buildDir/docs/kdoc"
+    outputDirectory = "$rootDir/docs/"
     classpath = new ArrayList<File>(project.tasks['assemble'].outputs.files.files)
     sourceDirs = android.sourceSets.main.java.srcDirs
+    externalDocumentationLink {
+        url = new URL("https://developer.android.com/reference/")
+        packageListUrl = new URL("https://developer.android.com/reference/android/support/package-list")
+    }
 }
 
 task docJar(type: Jar, dependsOn: dokka) {

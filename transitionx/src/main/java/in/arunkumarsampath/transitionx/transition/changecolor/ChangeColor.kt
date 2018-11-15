@@ -45,6 +45,7 @@ class ChangeColor : Transition() {
         }
     }
 
+
     override fun captureStartValues(transitionValues: TransitionValues) =
             captureValues(transitionValues)
 

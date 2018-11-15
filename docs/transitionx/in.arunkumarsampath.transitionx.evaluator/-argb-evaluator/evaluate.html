@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+    <meta charset="UTF-8">
+    <title>ArgbEvaluator.evaluate - transitionx</title>
+    <link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">transitionx</a>&nbsp;/&nbsp;<a href="../index.html">in.arunkumarsampath.transitionx.evaluator</a>&nbsp;/&nbsp;<a
+        href="index.html">ArgbEvaluator</a>&nbsp;/&nbsp;<a href="./evaluate.html">evaluate</a><br/>
+<br/>
+<h1>evaluate</h1>
+<a name="in.arunkumarsampath.transitionx.evaluator.ArgbEvaluator$evaluate(kotlin.Float, kotlin.Any, kotlin.Any)"></a>
+<code><span class="keyword">fun </span><span class="identifier">evaluate</span><span class="symbol">(</span><span
+        class="identifier"
+        id="in.arunkumarsampath.transitionx.evaluator.ArgbEvaluator$evaluate(kotlin.Float, kotlin.Any, kotlin.Any)/fraction">fraction</span><span
+        class="symbol">:</span>&nbsp;<a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span
+        class="identifier">Float</span></a><span class="symbol">, </span><span class="identifier"
+                                                                               id="in.arunkumarsampath.transitionx.evaluator.ArgbEvaluator$evaluate(kotlin.Float, kotlin.Any, kotlin.Any)/startValue">startValue</span><span
+        class="symbol">:</span>&nbsp;<a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span
+        class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier"
+                                                                             id="in.arunkumarsampath.transitionx.evaluator.ArgbEvaluator$evaluate(kotlin.Float, kotlin.Any, kotlin.Any)/endValue">endValue</span><span
+        class="symbol">:</span>&nbsp;<a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span
+        class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span
+        class="identifier">Any</span></a></code>
+<p>This function returns the calculated in-between value for a color
+    given integers that represent the start and end values in the four
+    bytes of the 32-bit int. Each channel is separately linearly interpolated
+    and the resulting calculated values are recombined into the return value.</p>
+<h3>Parameters</h3>
+<p><a name="fraction"></a>
+    <code>fraction</code> - The fraction from the starting to the ending values</p>
+<p><a name="startValue"></a>
+    <code>startValue</code> - A 32-bit int value representing colors in the
+    separate bytes of the parameter</p>
+<p><a name="endValue"></a>
+    <code>endValue</code> - A 32-bit int value representing colors in the
+    separate bytes of the parameter</p>
+<p><strong>Return</strong><br/>
+    A value that is calculated to be the linearly interpolated
+    result, derived by separating the start and end values into separate
+    color channels and interpolating each one separately, recombining the
+    resulting values in the same way.</p>
+</BODY>
+</HTML>

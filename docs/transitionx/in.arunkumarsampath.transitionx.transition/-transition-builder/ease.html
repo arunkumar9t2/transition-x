@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+    <meta charset="UTF-8">
+    <title>TransitionBuilder.ease - transitionx</title>
+    <link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">transitionx</a>&nbsp;/&nbsp;<a href="../index.html">in.arunkumarsampath.transitionx.transition</a>&nbsp;/&nbsp;<a
+        href="index.html">TransitionBuilder</a>&nbsp;/&nbsp;<a href="./ease.html">ease</a><br/>
+<br/>
+<h1>ease</h1>
+<a name="in.arunkumarsampath.transitionx.transition.TransitionBuilder$ease(kotlin.Function1((in.arunkumarsampath.transitionx.easing.Easing, android.view.animation.Interpolator)))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="identifier">ease</span><span
+        class="symbol">(</span><span class="identifier"
+                                     id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$ease(kotlin.Function1((in.arunkumarsampath.transitionx.easing.Easing, android.view.animation.Interpolator)))/easeBuilder">easeBuilder</span><span
+        class="symbol">:</span>&nbsp;<a
+        href="../../in.arunkumarsampath.transitionx.easing/-easing/index.html"><span
+        class="identifier">Easing</span></a><span class="symbol">.</span><span
+        class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a
+        href="https://developer.android.com/reference/android/view/animation/Interpolator.html"><span
+        class="identifier">Interpolator</span></a><span class="symbol">)</span><span class="symbol">: </span><a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+        class="identifier">Unit</span></a></code>
+<p>Builder to add one of the inbuilt easing as per Material Design guidelines. Calling this
+    overwrites any previously set transitions.</p>
+<p>Usage:</p>
+<pre><code>    constraintLayout.prepareTransition {
+         changeImage()
+         ease {
+            standardEasing
+         }
+    }
+</code></pre>
+</BODY>
+</HTML>

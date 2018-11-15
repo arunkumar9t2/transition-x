@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+    <meta charset="UTF-8">
+    <title>in.arunkumarsampath.transitionx.android.view.ViewGroup - transitionx</title>
+    <link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">transitionx</a>&nbsp;/&nbsp;<a href="../index.html">in.arunkumarsampath.transitionx</a>&nbsp;/&nbsp;<a
+        href="./index.html">android.view.ViewGroup</a><br/>
+<br/>
+<h3>Extensions for android.view.ViewGroup</h3>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <p><a href="prepare-auto-transition.html">prepareAutoTransition</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><a
+                    href="https://developer.android.com/reference/android/view/ViewGroup.html"><span
+                    class="identifier">ViewGroup</span></a><span class="symbol">.</span><span
+                    class="identifier">prepareAutoTransition</span><span
+                    class="symbol">(</span><span class="identifier"
+                                                 id="in.arunkumarsampath.transitionx$prepareAutoTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder, kotlin.Unit)))/cancel">cancel</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span
+                    class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span
+                    class="symbol">, </span><span class="identifier"
+                                                  id="in.arunkumarsampath.transitionx$prepareAutoTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder, kotlin.Unit)))/autoTransitionBuilder">autoTransitionBuilder</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="../../in.arunkumarsampath.transitionx.transition.set/-auto-transition-builder/index.html"><span
+                    class="identifier">AutoTransitionBuilder</span></a><span class="symbol">.</span><span
+                    class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a>&nbsp;<span
+                    class="symbol">=</span>&nbsp;{}<span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Schedules a call to <a
+                    href="https://developer.android.com/reference/android/support/transition/TransitionManager.html#beginDelayedTransition(android.view.ViewGroup)">TransitionManager.beginDelayedTransition</a>
+                with receiver <a
+                        href="https://developer.android.com/reference/android/view/ViewGroup.html">ViewGroup</a>
+                as
+                the scene root. <a
+                        href="prepare-auto-transition.html#in.arunkumarsampath.transitionx$prepareAutoTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder, kotlin.Unit)))/autoTransitionBuilder">autoTransitionBuilder</a>
+                uses a <a
+                        href="https://developer.android.com/reference/android/support/transition/AutoTransition.html">AutoTransition</a>
+                instance internally and its
+                properties can be modified by using available methods from <a
+                        href="../../in.arunkumarsampath.transitionx.transition.set/-auto-transition-builder/index.html">AutoTransitionBuilder</a>.
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><a href="prepare-transition.html">prepareTransition</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><a
+                    href="https://developer.android.com/reference/android/view/ViewGroup.html"><span
+                    class="identifier">ViewGroup</span></a><span class="symbol">.</span><span
+                    class="identifier">prepareTransition</span><span class="symbol">(</span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.DefaultTransitionSetBuilder, kotlin.Unit)))/cancel">cancel</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span
+                    class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span
+                    class="symbol">, </span><span class="identifier"
+                                                  id="in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.DefaultTransitionSetBuilder, kotlin.Unit)))/transitionsBuilder">transitionsBuilder</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="../../in.arunkumarsampath.transitionx.transition.set/-default-transition-set-builder/index.html"><span
+                    class="identifier">DefaultTransitionSetBuilder</span></a><span
+                    class="symbol">.</span><span class="symbol">(</span><span
+                    class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a>&nbsp;<span
+                    class="symbol">=</span>&nbsp;{}<span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Schedules a call to <a
+                    href="https://developer.android.com/reference/android/support/transition/TransitionManager.html#beginDelayedTransition(android.view.ViewGroup)">TransitionManager.beginDelayedTransition</a>
+                with receiver <a
+                        href="https://developer.android.com/reference/android/view/ViewGroup.html">ViewGroup</a>
+                as
+                the scene root. <a
+                        href="prepare-transition.html#in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.DefaultTransitionSetBuilder, kotlin.Unit)))/transitionsBuilder">transitionsBuilder</a>
+                uses a <a
+                        href="https://developer.android.com/reference/android/support/transition/TransitionSet.html">TransitionSet</a>
+                instance internally and its
+                properties can be modified by using available methods from <a
+                        href="../../in.arunkumarsampath.transitionx.transition.set/-default-transition-set-builder/index.html">DefaultTransitionSetBuilder</a>
+            </p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</BODY>
+</HTML>

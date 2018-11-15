@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+    <meta charset="UTF-8">
+    <title>prepareAutoTransition - transitionx</title>
+    <link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">transitionx</a>&nbsp;/&nbsp;<a href="../index.html">in.arunkumarsampath.transitionx</a>&nbsp;/&nbsp;<a
+        href="index.html">android.view.ViewGroup</a>&nbsp;/&nbsp;<a
+        href="./prepare-auto-transition.html">prepareAutoTransition</a><br/>
+<br/>
+<h1>prepareAutoTransition</h1>
+<a name="in.arunkumarsampath.transitionx$prepareAutoTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder, kotlin.Unit)))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><a
+        href="https://developer.android.com/reference/android/view/ViewGroup.html"><span
+        class="identifier">ViewGroup</span></a><span class="symbol">.</span><span
+        class="identifier">prepareAutoTransition</span><span class="symbol">(</span><span
+        class="identifier"
+        id="in.arunkumarsampath.transitionx$prepareAutoTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder, kotlin.Unit)))/cancel">cancel</span><span
+        class="symbol">:</span>&nbsp;<a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span
+        class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span
+        class="symbol">, </span><span class="identifier"
+                                      id="in.arunkumarsampath.transitionx$prepareAutoTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder, kotlin.Unit)))/autoTransitionBuilder">autoTransitionBuilder</span><span
+        class="symbol">:</span>&nbsp;<a
+        href="../../in.arunkumarsampath.transitionx.transition.set/-auto-transition-builder/index.html"><span
+        class="identifier">AutoTransitionBuilder</span></a><span class="symbol">.</span><span
+        class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+        class="identifier">Unit</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{}<span
+        class="symbol">)</span><span class="symbol">: </span><a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+        class="identifier">Unit</span></a></code>
+<p>Schedules a call to <a
+        href="https://developer.android.com/reference/android/support/transition/TransitionManager.html#beginDelayedTransition(android.view.ViewGroup)">TransitionManager.beginDelayedTransition</a>
+    with receiver <a href="https://developer.android.com/reference/android/view/ViewGroup.html">ViewGroup</a>
+    as
+    the scene root. <a
+            href="prepare-auto-transition.html#in.arunkumarsampath.transitionx$prepareAutoTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder, kotlin.Unit)))/autoTransitionBuilder">autoTransitionBuilder</a>
+    uses a <a
+            href="https://developer.android.com/reference/android/support/transition/AutoTransition.html">AutoTransition</a>
+    instance internally and its
+    properties can be modified by using available methods from <a
+            href="../../in.arunkumarsampath.transitionx.transition.set/-auto-transition-builder/index.html">AutoTransitionBuilder</a>.
+</p>
+<p>Since <a
+        href="https://developer.android.com/reference/android/support/transition/AutoTransition.html">AutoTransition</a>
+    is used, View bounds changes are animated using <a
+            href="https://developer.android.com/reference/android/support/transition/ChangeBounds.html">ChangeBounds</a>
+    and
+    disappear/appear are animated using <a
+            href="https://developer.android.com/reference/android/support/transition/Fade.html">Fade</a>
+</p>
+<h3>Parameters</h3>
+<p><a name="cancel"></a>
+    <code>cancel</code> - if true, ends all previous transitions before starting this transition.
+</p>
+<p><a name="autoTransitionBuilder"></a>
+    <code>autoTransitionBuilder</code> - Builder to construct transition instance for use with <a
+            href="https://developer.android.com/reference/android/support/transition/TransitionManager.html">TransitionManager</a>
+</p>
+<p><strong>See Also</strong><br/>
+<p><a href="https://developer.android.com/reference/android/support/transition/AutoTransition.html">AutoTransition</a>
+</p>
+</p>
+</BODY>
+</HTML>

@@ -23,6 +23,7 @@ import android.support.transition.Slide
  * Builder for [Slide] transition.
  */
 class SlideBuilder : TransitionBuilder<Slide>(Slide()) {
+
     var slideEdge: Int
         set(@GravityFlag value) {
             transition.slideEdge = value

@@ -1,0 +1,16 @@
+$dokka.format:html
+$dokka.linkExtension:html
+$dokka.location:in.arunkumarsampath.transitionx$prepareAutoTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder, kotlin.Unit)))in.arunkumarsampath.transitionx/android.view.-view-group/prepare-auto-transition.html
+$dokka.location:in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.DefaultTransitionSetBuilder, kotlin.Unit)))in.arunkumarsampath.transitionx/android.view.-view-group/prepare-transition.html
+in.arunkumarsampath.transitionx
+in.arunkumarsampath.transitionx.easing
+in.arunkumarsampath.transitionx.evaluator
+in.arunkumarsampath.transitionx.scope
+in.arunkumarsampath.transitionx.transition
+in.arunkumarsampath.transitionx.transition.changecolor
+in.arunkumarsampath.transitionx.transition.changetext
+in.arunkumarsampath.transitionx.transition.common
+in.arunkumarsampath.transitionx.transition.fade
+in.arunkumarsampath.transitionx.transition.set
+in.arunkumarsampath.transitionx.transition.slide
+in.arunkumarsampath.transitionx.util

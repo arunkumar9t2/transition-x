@@ -1,0 +1,663 @@
+<HTML>
+<HEAD>
+    <meta charset="UTF-8">
+    <title>ScaleRotateBuilder - transitionx</title>
+    <link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">transitionx</a>&nbsp;/&nbsp;<a href="../index.html">in.arunkumarsampath.transitionx.transition.common</a>&nbsp;/&nbsp;<a
+        href="./index.html">ScaleRotateBuilder</a><br/>
+<br/>
+<h1>ScaleRotateBuilder</h1>
+<code><span class="keyword">class </span><span
+        class="identifier">ScaleRotateBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a
+        href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/index.html"><span
+        class="identifier">TransitionBuilder</span></a><span class="symbol">&lt;</span><a
+        href="https://developer.android.com/reference/android/support/transition/ChangeTransform.html"><span
+        class="identifier">ChangeTransform</span></a><span class="symbol">&gt;</span></code>
+<p>Builder for <a
+        href="https://developer.android.com/reference/android/support/transition/ChangeTransform.html">ChangeTransform</a>
+</p>
+<h3>Constructors</h3>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <p><a href="-init-.html">&lt;init&gt;</a></p>
+        </td>
+        <td>
+            <code><span class="identifier">ScaleRotateBuilder</span><span
+                    class="symbol">(</span><span class="symbol">)</span></code>
+            <p>Builder for <a
+                    href="https://developer.android.com/reference/android/support/transition/ChangeTransform.html">ChangeTransform</a>
+            </p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/duration.html">duration</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">var </span><span class="identifier">duration</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span
+                    class="identifier">Long</span></a></code>
+            <p>Sets the duration for this transition</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/interpolator.html">interpolator</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">var </span><span class="identifier">interpolator</span><span
+                    class="symbol">: </span><a
+                    href="https://developer.android.com/reference/android/animation/TimeInterpolator.html"><span
+                    class="identifier">TimeInterpolator</span></a><span
+                    class="symbol">?</span></code>
+            <p>
+                <a href="https://developer.android.com/reference/android/animation/TimeInterpolator.html">TimeInterpolator</a>
+                for this transition.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/path-motion.html">pathMotion</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">var </span><span class="identifier">pathMotion</span><span
+                    class="symbol">: </span><a
+                    href="https://developer.android.com/reference/android/support/transition/PathMotion.html"><span
+                    class="identifier">PathMotion</span></a><span class="symbol">?</span></code>
+            <p>
+                <a href="https://developer.android.com/reference/android/support/transition/PathMotion.html">PathMotion</a>
+                for this transition.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/start-delay.html">startDelay</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">var </span><span class="identifier">startDelay</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span
+                    class="identifier">Long</span></a></code>
+            <p>Set a start delay in milliseconds to this transition</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/transition.html">transition</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">val </span><span class="identifier">transition</span><span
+                    class="symbol">: </span><a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/index.html#T"><span
+                    class="identifier">T</span></a></code></td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/transition-propagation.html">transitionPropagation</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">var </span><span
+                    class="identifier">transitionPropagation</span><span class="symbol">: </span><a
+                    href="https://developer.android.com/reference/android/support/transition/TransitionPropagation.html"><span
+                    class="identifier">TransitionPropagation</span></a><span class="symbol">?</span></code>
+            <p>
+                <a href="https://developer.android.com/reference/android/support/transition/TransitionPropagation.html">TransitionPropagation</a>
+                for this transition. Propagations are use to control start delays for
+                transition. For example, <a
+                    href="https://developer.android.com/reference/android/support/transition/CircularPropagation.html">CircularPropagation</a>
+                has increased start delays from the focal point
+                and <a
+                    href="https://developer.android.com/reference/android/support/transition/Explode.html">Explode</a>
+                defaults to using that.</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/add.html">add</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span class="identifier">add</span><span
+                    class="symbol">(</span><span class="keyword">vararg</span> <span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$add(kotlin.Array((android.view.View)))/views">views</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/view/View.html"><span
+                    class="identifier">View</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Adds all <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/add.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$add(kotlin.Array((android.view.View)))/views">views</a>
+                as targets to this transition.</p>
+            <code><span class="keyword">fun </span><span class="identifier">add</span><span
+                    class="symbol">(</span><span class="keyword">vararg</span> <span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$add(kotlin.IntArray)/ids">ids</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span
+                    class="identifier">Int</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Adds all view <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/add.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$add(kotlin.IntArray)/ids">ids</a>
+                as targets to this transition.</p>
+            <code><span class="keyword">fun </span><span class="identifier">add</span><span
+                    class="symbol">(</span><span class="keyword">vararg</span> <span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$add(kotlin.Array((kotlin.String)))/transitionTargetNames">transitionTargetNames</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span
+                    class="identifier">String</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Adds all <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/add.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$add(kotlin.Array((kotlin.String)))/transitionTargetNames">transitionTargetNames</a>
+                as targets to this transition</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/add-listener.html">addListener</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">.</span><span
+                    class="identifier">addListener</span><span class="symbol">(</span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$addListener(android.support.transition.Transition, kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onEnd">onEnd</span><span
+                    class="symbol">:</span>&nbsp;<span class="symbol">(</span><span
+                    class="identifier">transition</span><span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span>&nbsp;<span
+                    class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a>&nbsp;<span
+                    class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$addListener(android.support.transition.Transition, kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onStart">onStart</span><span
+                    class="symbol">:</span>&nbsp;<span class="symbol">(</span><span
+                    class="identifier">transition</span><span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span>&nbsp;<span
+                    class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a>&nbsp;<span
+                    class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$addListener(android.support.transition.Transition, kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onCancel">onCancel</span><span
+                    class="symbol">:</span>&nbsp;<span class="symbol">(</span><span
+                    class="identifier">transition</span><span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span>&nbsp;<span
+                    class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a>&nbsp;<span
+                    class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$addListener(android.support.transition.Transition, kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onResume">onResume</span><span
+                    class="symbol">:</span>&nbsp;<span class="symbol">(</span><span
+                    class="identifier">transition</span><span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span>&nbsp;<span
+                    class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a>&nbsp;<span
+                    class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$addListener(android.support.transition.Transition, kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)), kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onPause">onPause</span><span
+                    class="symbol">:</span>&nbsp;<span class="symbol">(</span><span
+                    class="identifier">transition</span><span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span>&nbsp;<span
+                    class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a>&nbsp;<span
+                    class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Add actions at different stages of <a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html">Transition</a>.
+                Repeated blocks does not override previously
+                added block but instead run one after another.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/custom-properties.html">customProperties</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span
+                    class="identifier">customProperties</span><span class="symbol">(</span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$customProperties(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/action">action</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">.</span><span
+                    class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Builder to set custom properties to be built <a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html">Transition</a>
+                object. In the <a
+                        href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/custom-properties.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$customProperties(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/action">action</a>
+                block, <a
+                        href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/transition.html">transition</a>
+                is received as the lambda receiver and it is possible to directly set any custom
+                properties on
+                the transition.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/ease.html">ease</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span class="identifier">ease</span><span
+                    class="symbol">(</span><span class="identifier"
+                                                 id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$ease(kotlin.Function1((in.arunkumarsampath.transitionx.easing.Easing, android.view.animation.Interpolator)))/easeBuilder">easeBuilder</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="../../in.arunkumarsampath.transitionx.easing/-easing/index.html"><span
+                    class="identifier">Easing</span></a><span class="symbol">.</span><span
+                    class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/view/animation/Interpolator.html"><span
+                    class="identifier">Interpolator</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Builder to add one of the inbuilt easing as per Material Design guidelines. Calling
+                this
+                overwrites any previously set transitions.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/exclude.html">exclude</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span class="identifier">exclude</span><span
+                    class="symbol">(</span><span class="keyword">vararg</span> <span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$exclude(kotlin.Array((android.view.View)))/views">views</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/view/View.html"><span
+                    class="identifier">View</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Exclude givens <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/exclude.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$exclude(kotlin.Array((android.view.View)))/views">views</a>
+                from this transition. The transition will not affect these views during
+                execution.</p>
+            <code><span class="keyword">fun </span><span class="symbol">&lt;</span><span
+                    class="identifier">Type</span>&nbsp;<span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/view/View.html"><span
+                    class="identifier">View</span></a><span class="symbol">&gt;</span> <span
+                    class="identifier">exclude</span><span class="symbol">(</span><span
+                    class="symbol">)</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Exclude givens <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/exclude.html#Type">View</a>
+                from this transition. The transition will not affect views of <a
+                        href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/exclude.html#Type">Type</a>
+                during execution.</p>
+            <code><span class="keyword">fun </span><span class="identifier">exclude</span><span
+                    class="symbol">(</span><span class="keyword">vararg</span> <span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$exclude(kotlin.IntArray)/ids">ids</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span
+                    class="identifier">Int</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Exclude givens View <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/exclude.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$exclude(kotlin.IntArray)/ids">ids</a>
+                from this transition. The transition will not affect views with
+                this
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/exclude.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$exclude(kotlin.IntArray)/ids">ids</a>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/exclude-children.html">excludeChildren</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span
+                    class="identifier">excludeChildren</span><span class="symbol">(</span><span
+                    class="keyword">vararg</span> <span class="identifier"
+                                                        id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$excludeChildren(kotlin.Array((android.view.View)))/views">views</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/view/View.html"><span
+                    class="identifier">View</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Exclude children of given <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/exclude-children.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$excludeChildren(kotlin.Array((android.view.View)))/views">views</a>
+                from participating in this transition.</p>
+            <code><span class="keyword">fun </span><span class="symbol">&lt;</span><span
+                    class="identifier">Type</span>&nbsp;<span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/view/View.html"><span
+                    class="identifier">View</span></a><span class="symbol">&gt;</span> <span
+                    class="identifier">excludeChildren</span><span class="symbol">(</span><span
+                    class="symbol">)</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Exclude children of given <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/exclude-children.html#Type">Type</a>
+                from participating in this transition.</p>
+            <code><span class="keyword">fun </span><span
+                    class="identifier">excludeChildren</span><span class="symbol">(</span><span
+                    class="keyword">vararg</span> <span class="identifier"
+                                                        id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$excludeChildren(kotlin.IntArray)/ids">ids</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span
+                    class="identifier">Int</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Exclude children of given view <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/exclude-children.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$excludeChildren(kotlin.IntArray)/ids">ids</a>
+                from participating in this transition.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/on-cancel.html">onCancel</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span class="identifier">onCancel</span><span
+                    class="symbol">(</span><span class="identifier"
+                                                 id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$onCancel(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onCancel">onCancel</span><span
+                    class="symbol">:</span>&nbsp;<span class="symbol">(</span><span
+                    class="identifier">transition</span><span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span>&nbsp;<span
+                    class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Executes <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/on-cancel.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$onCancel(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onCancel">onCancel</a>
+                during <a
+                        href="https://developer.android.com/reference/android/support/transition/Transition/TransitionListener.html#onTransitionCancel(android.support.transition.Transition)">Transition.TransitionListener.onTransitionCancel</a>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/on-end.html">onEnd</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span class="identifier">onEnd</span><span
+                    class="symbol">(</span><span class="identifier"
+                                                 id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$onEnd(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onEnd">onEnd</span><span
+                    class="symbol">:</span>&nbsp;<span class="symbol">(</span><span
+                    class="identifier">transition</span><span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span>&nbsp;<span
+                    class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Executes <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/on-end.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$onEnd(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onEnd">onEnd</a>
+                block after <a
+                        href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/transition.html">transition</a>
+                completes.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/on-pause.html">onPause</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span class="identifier">onPause</span><span
+                    class="symbol">(</span><span class="identifier"
+                                                 id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$onPause(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onPause">onPause</span><span
+                    class="symbol">:</span>&nbsp;<span class="symbol">(</span><span
+                    class="identifier">transition</span><span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span>&nbsp;<span
+                    class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Executes <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/on-pause.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$onPause(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onPause">onPause</a>
+                during <a
+                        href="https://developer.android.com/reference/android/support/transition/Transition/TransitionListener.html#onTransitionPause(android.support.transition.Transition)">Transition.TransitionListener.onTransitionPause</a>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/on-resume.html">onResume</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span class="identifier">onResume</span><span
+                    class="symbol">(</span><span class="identifier"
+                                                 id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$onResume(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onResume">onResume</span><span
+                    class="symbol">:</span>&nbsp;<span class="symbol">(</span><span
+                    class="identifier">transition</span><span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span>&nbsp;<span
+                    class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Executes <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/on-resume.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$onResume(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onResume">onResume</a>
+                during <a
+                        href="https://developer.android.com/reference/android/support/transition/Transition/TransitionListener.html#onTransitionResume(android.support.transition.Transition)">Transition.TransitionListener.onTransitionResume</a>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/on-start.html">onStart</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span class="identifier">onStart</span><span
+                    class="symbol">(</span><span class="identifier"
+                                                 id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$onStart(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onStart">onStart</span><span
+                    class="symbol">:</span>&nbsp;<span class="symbol">(</span><span
+                    class="identifier">transition</span><span class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span>&nbsp;<span
+                    class="symbol">-&gt;</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Executes <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/on-start.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$onStart(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/onStart">onStart</a>
+                during <a
+                        href="https://developer.android.com/reference/android/support/transition/Transition/TransitionListener.html#onTransitionStart(android.support.transition.Transition)">Transition.TransitionListener.onTransitionStart</a>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/remove.html">remove</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span class="identifier">remove</span><span
+                    class="symbol">(</span><span class="keyword">vararg</span> <span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$remove(kotlin.Array((android.view.View)))/views">views</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/view/View.html"><span
+                    class="identifier">View</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Remove all <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/remove.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$remove(kotlin.Array((android.view.View)))/views">views</a>
+                as targets from this transition.</p>
+            <code><span class="keyword">fun </span><span class="identifier">remove</span><span
+                    class="symbol">(</span><span class="keyword">vararg</span> <span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$remove(kotlin.IntArray)/ids">ids</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span
+                    class="identifier">Int</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Remove all view <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/remove.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$remove(kotlin.IntArray)/ids">ids</a>
+                as targets from this transition.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/unary-minus.html">unaryMinus</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">operator</span> <span class="keyword">fun </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span
+                    class="identifier">String</span></a><span class="symbol">.</span><span
+                    class="identifier">unaryMinus</span><span class="symbol">(</span><span
+                    class="symbol">)</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Remove a target identified by <code>targetName</code> from this transition.</p>
+            <code><span class="keyword">operator</span> <span class="keyword">fun </span><span
+                    class="symbol">&lt;</span><span class="identifier">Type</span><span
+                    class="symbol">&gt;</span> <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/unary-minus.html#Type"><span
+                    class="identifier">Type</span></a><span class="symbol">.</span><span
+                    class="identifier">unaryMinus</span><span class="symbol">(</span><span
+                    class="symbol">)</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Remove targets of type <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/unary-minus.html#Type">Type</a>
+                from this transition</p>
+            <code><span class="keyword">operator</span> <span class="keyword">fun </span><a
+                    href="https://developer.android.com/reference/android/view/View.html"><span
+                    class="identifier">View</span></a><span class="symbol">.</span><span
+                    class="identifier">unaryMinus</span><span class="symbol">(</span><span
+                    class="symbol">)</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Remove a target <a
+                    href="https://developer.android.com/reference/android/view/View.html">View</a>
+                from this transition.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <a href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/unary-plus.html">unaryPlus</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">operator</span> <span class="keyword">fun </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span
+                    class="identifier">String</span></a><span class="symbol">.</span><span
+                    class="identifier">unaryPlus</span><span class="symbol">(</span><span
+                    class="symbol">)</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Add a target identified by <code>targetName</code> to this transition.</p>
+            <code><span class="keyword">operator</span> <span class="keyword">fun </span><span
+                    class="symbol">&lt;</span><span class="identifier">Type</span><span
+                    class="symbol">&gt;</span> <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/unary-plus.html#Type"><span
+                    class="identifier">Type</span></a><span class="symbol">.</span><span
+                    class="identifier">unaryPlus</span><span class="symbol">(</span><span
+                    class="symbol">)</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Add targets of type <a
+                    href="../../in.arunkumarsampath.transitionx.transition/-transition-builder/unary-plus.html#Type">Type</a>
+                to this transition</p>
+            <code><span class="keyword">operator</span> <span class="keyword">fun </span><a
+                    href="https://developer.android.com/reference/android/view/View.html"><span
+                    class="identifier">View</span></a><span class="symbol">.</span><span
+                    class="identifier">unaryPlus</span><span class="symbol">(</span><span
+                    class="symbol">)</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Add a target <a
+                    href="https://developer.android.com/reference/android/view/View.html">View</a>
+                to this transition.</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</BODY>
+</HTML>

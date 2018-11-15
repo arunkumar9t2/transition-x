@@ -1,0 +1,208 @@
+<HTML>
+<HEAD>
+    <meta charset="UTF-8">
+    <title>ChangeText - transitionx</title>
+    <link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">transitionx</a>&nbsp;/&nbsp;<a href="../index.html">in.arunkumarsampath.transitionx.transition.changetext</a>&nbsp;/&nbsp;<a
+        href="./index.html">ChangeText</a><br/>
+<br/>
+<h1>ChangeText</h1>
+<code><span class="keyword">class </span><span class="identifier">ChangeText</span>&nbsp;<span
+        class="symbol">:</span>&nbsp;<a
+        href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+        class="identifier">Transition</span></a></code>
+<p>This transition tracks changes to the text in TextView targets. If the text
+    changes between the start and end scenes, the transition ensures that the
+    starting text stays until the transition ends, at which point it changes
+    to the end text. This is useful in situations where you want to resize a
+    text view to its new size before displaying the text that goes there.</p>
+<h3>Constructors</h3>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <p><a href="-init-.html">&lt;init&gt;</a></p>
+        </td>
+        <td>
+            <code><span class="identifier">ChangeText</span><span class="symbol">(</span><span
+                    class="symbol">)</span></code>
+            <p>This transition tracks changes to the text in TextView targets. If the text
+                changes between the start and end scenes, the transition ensures that the
+                starting text stays until the transition ends, at which point it changes
+                to the end text. This is useful in situations where you want to resize a
+                text view to its new size before displaying the text that goes there.</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h3>Properties</h3>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <p><a href="change-behavior.html">changeBehavior</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">var </span><span
+                    class="identifier">changeBehavior</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span
+                    class="identifier">Int</span></a></code>
+            <p>The type of fading animation to use when this
+                transition is run. One of
+                <a href="-c-h-a-n-g-e_-b-e-h-a-v-i-o-r_-k-e-e-p.html">CHANGE_BEHAVIOR_KEEP</a>, <a
+                        href="-c-h-a-n-g-e_-b-e-h-a-v-i-o-r_-o-u-t.html">CHANGE_BEHAVIOR_OUT</a>,
+                <a href="-c-h-a-n-g-e_-b-e-h-a-v-i-o-r_-i-n.html">CHANGE_BEHAVIOR_IN</a>, and <a
+                        href="-c-h-a-n-g-e_-b-e-h-a-v-i-o-r_-o-u-t_-i-n.html">CHANGE_BEHAVIOR_OUT_IN</a>.
+            </p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<h3>Functions</h3>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <p><a href="capture-end-values.html">captureEndValues</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span
+                    class="identifier">captureEndValues</span><span class="symbol">(</span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.changetext.ChangeText$captureEndValues(android.support.transition.TransitionValues)/transitionValues">transitionValues</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/TransitionValues.html"><span
+                    class="identifier">TransitionValues</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code></td>
+    </tr>
+    <tr>
+        <td>
+            <p><a href="capture-start-values.html">captureStartValues</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span
+                    class="identifier">captureStartValues</span><span class="symbol">(</span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.changetext.ChangeText$captureStartValues(android.support.transition.TransitionValues)/transitionValues">transitionValues</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/TransitionValues.html"><span
+                    class="identifier">TransitionValues</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code></td>
+    </tr>
+    <tr>
+        <td>
+            <p><a href="create-animator.html">createAnimator</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span
+                    class="identifier">createAnimator</span><span class="symbol">(</span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.changetext.ChangeText$createAnimator(android.view.ViewGroup, android.support.transition.TransitionValues, android.support.transition.TransitionValues)/sceneRoot">sceneRoot</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/view/ViewGroup.html"><span
+                    class="identifier">ViewGroup</span></a><span class="symbol">, </span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx.transition.changetext.ChangeText$createAnimator(android.view.ViewGroup, android.support.transition.TransitionValues, android.support.transition.TransitionValues)/startValues">startValues</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/TransitionValues.html"><span
+                    class="identifier">TransitionValues</span></a><span class="symbol">?</span><span
+                    class="symbol">, </span><span class="identifier"
+                                                  id="in.arunkumarsampath.transitionx.transition.changetext.ChangeText$createAnimator(android.view.ViewGroup, android.support.transition.TransitionValues, android.support.transition.TransitionValues)/endValues">endValues</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/TransitionValues.html"><span
+                    class="identifier">TransitionValues</span></a><span class="symbol">?</span><span
+                    class="symbol">)</span><span class="symbol">: </span><a
+                    href="https://developer.android.com/reference/android/animation/Animator.html"><span
+                    class="identifier">Animator</span></a><span class="symbol">?</span></code></td>
+    </tr>
+    <tr>
+        <td>
+            <p><a href="get-transition-properties.html">getTransitionProperties</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><span
+                    class="identifier">getTransitionProperties</span><span
+                    class="symbol">(</span><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span
+                    class="identifier">Array</span></a><span class="symbol">&lt;</span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span
+                    class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+    </tr>
+    </tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <p><a href="-c-h-a-n-g-e_-b-e-h-a-v-i-o-r_-i-n.html">CHANGE_BEHAVIOR_IN</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">const</span> <span class="keyword">val </span><span
+                    class="identifier">CHANGE_BEHAVIOR_IN</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span
+                    class="identifier">Int</span></a></code>
+            <p>Flag specifying that the text changing animation should fade in the
+                end text into the affected target view(s). This transition is typically
+                used in conjunction with an earlier <a href="#">.CHANGE_BEHAVIOR_OUT</a>
+                transition, possibly with other transitions running as well, such as
+                a sequence to fade out, then resize the view, then fade in.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><a href="-c-h-a-n-g-e_-b-e-h-a-v-i-o-r_-k-e-e-p.html">CHANGE_BEHAVIOR_KEEP</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">const</span> <span class="keyword">val </span><span
+                    class="identifier">CHANGE_BEHAVIOR_KEEP</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span
+                    class="identifier">Int</span></a></code>
+            <p>Flag specifying that the text in affected/changing TextView targets will keep
+                their original text during the transition, setting it to the final text when
+                the transition ends. This is the default behavior.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><a href="-c-h-a-n-g-e_-b-e-h-a-v-i-o-r_-o-u-t.html">CHANGE_BEHAVIOR_OUT</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">const</span> <span class="keyword">val </span><span
+                    class="identifier">CHANGE_BEHAVIOR_OUT</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span
+                    class="identifier">Int</span></a></code>
+            <p>Flag specifying that the text changing animation should first fade
+                out the original text completely. The new text is set on the target
+                view at the end of the fade-out animation. This transition is typically
+                used with a later <a href="#">.CHANGE_BEHAVIOR_IN</a> transition, allowing more
+                flexibility than the <a href="#">.CHANGE_BEHAVIOR_OUT_IN</a> by allowing other
+                transitions to be run sequentially or in parallel with these fades.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><a href="-c-h-a-n-g-e_-b-e-h-a-v-i-o-r_-o-u-t_-i-n.html">CHANGE_BEHAVIOR_OUT_IN</a>
+            </p>
+        </td>
+        <td>
+            <code><span class="keyword">const</span> <span class="keyword">val </span><span
+                    class="identifier">CHANGE_BEHAVIOR_OUT_IN</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span
+                    class="identifier">Int</span></a></code>
+            <p>Flag specifying that the text changing animation should first fade
+                out the original text completely and then fade in the
+                new text.</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</BODY>
+</HTML>

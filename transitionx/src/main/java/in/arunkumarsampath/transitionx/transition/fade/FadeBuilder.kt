@@ -20,5 +20,12 @@ import `in`.arunkumarsampath.transitionx.transition.TransitionBuilder
 import android.support.transition.Fade
 import android.support.transition.Fade.IN
 import android.support.transition.Fade.OUT
+import android.support.transition.Visibility
 
+/**
+ * Builder for [Fade] transition.
+ *
+ * @param fadingMode Specify on which visible mode the fade animation should trigger. The visible
+ * mode is determined by [Visibility.isVisible]
+ */
 class FadeBuilder(@FadeMode fadingMode: Int = IN or OUT) : TransitionBuilder<Fade>(Fade(fadingMode))

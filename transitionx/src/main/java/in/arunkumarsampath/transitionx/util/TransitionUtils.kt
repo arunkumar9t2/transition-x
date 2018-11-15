@@ -19,9 +19,16 @@ package `in`.arunkumarsampath.transitionx.util
 import android.animation.Animator
 import android.animation.AnimatorSet
 
-
+/**
+ * Collection of utility methods for working with transitions.
+ */
 object TransitionUtils {
 
+    /**
+     * Merges non null animators among [animator1] and [animator2] and plays them together when started.
+     *
+     * @return Merged animator instance.
+     */
     fun mergeAnimators(animator1: Animator?, animator2: Animator?): Animator? {
         return when {
             animator1 == null -> animator2

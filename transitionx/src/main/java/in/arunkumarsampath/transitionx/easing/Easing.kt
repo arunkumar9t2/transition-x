@@ -29,29 +29,29 @@ object Easing {
     /**
      * Material Design standard's Standard Easing([FastOutSlowInInterpolator])
      *
-     * This easing is recommended for Views that move within visible area of the layout.
+     * This easing is recommended for Views that **move within visible area of the layout.**
      *
-     * @see [https://material.io/design/motion/speed.html#easing]
+     * More details: [Easing on Material.io](https://material.io/design/motion/speed.html#easing)
      */
     val standardEasing get() = FastOutSlowInInterpolator()
 
     /**
      * Material Design standard's Decelerate Easing([LinearOutSlowInInterpolator])
      *
-     * This easing is recommended for Views that appear/enter outside visible bounds of the layout.
-     * Example: Snackbar message from bottom of the screen
+     * This easing is recommended for Views that **appear/enter outside visible bounds of the layout.**
+     * Example: *Snackbar message from bottom of the screen*
      *
-     * @see [https://material.io/design/motion/speed.html#easing]
+     * More details: [Easing on Material.io](https://material.io/design/motion/speed.html#easing)
      */
     val decelerateEasing get() = LinearOutSlowInInterpolator()
 
     /**
      * Material Design standard's Accelerate Easing([FastOutLinearInInterpolator])
      *
-     * This easing is recommended for Views that exit visible bounds of the layout.
-     * Example: Disappear bottom sheet
+     * This easing is recommended for Views that **exit visible bounds of the layout.**
+     * Example: *Disappear bottom sheet*
      *
-     * @see [https://material.io/design/motion/speed.html#easing]
+     * More details: [Easing on Material.io](https://material.io/design/motion/speed.html#easing)
      */
     val accelerateEasing get() = FastOutLinearInInterpolator()
 }

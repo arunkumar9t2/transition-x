@@ -27,11 +27,10 @@ import android.view.View
 import android.view.animation.Interpolator
 
 /**
- * Builder for construction a [Transition] instance.
+ * Builder for constructing a [Transition] instance.
  */
 @TransitionBuilderMarker
 open class TransitionBuilder<T : Transition>(val transition: T) {
-
     /**
      * Sets the duration for this transition
      *
@@ -240,7 +239,7 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
     }
 
     /**
-     * Exclude givens [views] from this transition. The transition will not affect views of this [Type]
+     * Exclude givens [View][Type] from this transition. The transition will not affect views of [Type]
      * during execution.
      *
      * @see [Transition.excludeTarget]
@@ -317,7 +316,8 @@ open class TransitionBuilder<T : Transition>(val transition: T) {
     inline fun onPause(noinline onPause: (transition: Transition) -> Unit) = transition.addListener(onEnd = onPause)
 
     /**
-     * Add actions at different stages of [Transition].
+     * Add actions at different stages of [Transition]. Repeated blocks does not override previously
+     * added block but instead run one after another.
      *
      * @see [Transition.addListener]
      */

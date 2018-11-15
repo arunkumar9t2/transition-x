@@ -74,6 +74,11 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
         transition.removeTransition(this)
     }
 
+    /**
+     * Returns the [Transition] at [index]
+     *
+     * @see [TransitionSet.getTransitionAt]
+     */
     inline operator fun get(index: Int): Transition = transition.getTransitionAt(index)
 
     /**
@@ -99,6 +104,8 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
 
     /**
      * Adds an [AutoTransition] to this transition
+     *
+     * @see [AutoTransition]
      */
     inline fun auto(autoBuilder: AutoTransitionBuilder.() -> Unit = {}) {
         +AutoTransitionBuilder().apply(autoBuilder).transition
@@ -129,13 +136,13 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
 
     /**
      * Adds a [Fade] transition that triggers only when the views disappear as per condition described
-     * by [Visibility.onDisappear]
+     * by [Visibility.isVisible]
      */
     inline fun fadeOut(fadeBuilder: FadeBuilder.() -> Unit = {}) = fade(Fade.OUT, fadeBuilder)
 
     /**
      * Adds a [Fade] transition that triggers only when the views appear as per condition described
-     * by [Visibility.onAppear]
+     * by [Visibility.isVisible]
      */
     inline fun fadeIn(fadeBuilder: FadeBuilder.() -> Unit = {}) = fade(Fade.IN, fadeBuilder)
 
@@ -206,7 +213,7 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
     }
 
     /**
-     * Instantiates transition of type [T] and adds to this transition. The [T] type must have a public
+     * Instantiates [Transition] of type [T] and adds to this transition. The [T] type must have a public
      * no arg constructor for the instantiation to work.
      *
      * If the custom transition cannot have a no arg public constructor then, you can instantiate the
@@ -226,6 +233,12 @@ open class TransitionSetBuilder<T : TransitionSet>(transitionSet: T) : Transitio
         customTransition(transitionInstance, transitionBuilder)
     }
 
+    /**
+     * Alternative to [customTransition] that takes an already instantiated [transition] instance and
+     * allows additional configuration via the [transitionBuilder] block.
+     *
+     * This method is preferred for cases where [T] transition does not have a public no-arg constructor
+     */
     inline fun <T : Transition> customTransition(
             transition: T,
             transitionBuilder: TransitionBuilder<T>.() -> Unit = {}

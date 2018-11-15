@@ -18,6 +18,9 @@ package `in`.arunkumarsampath.transitionx.transition.changetext
 
 import android.support.annotation.IntDef
 
+/**
+ * Annotation for all possible [ChangeText] animation types.
+ */
 @IntDef(value = [
     ChangeText.CHANGE_BEHAVIOR_IN,
     ChangeText.CHANGE_BEHAVIOR_OUT,

@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+    <meta charset="UTF-8">
+    <title>TransitionSetBuilder.transitionSet - transitionx</title>
+    <link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">transitionx</a>&nbsp;/&nbsp;<a href="../index.html">in.arunkumarsampath.transitionx.transition.set</a>&nbsp;/&nbsp;<a
+        href="index.html">TransitionSetBuilder</a>&nbsp;/&nbsp;<a href="./transition-set.html">transitionSet</a><br/>
+<br/>
+<h1>transitionSet</h1>
+<a name="in.arunkumarsampath.transitionx.transition.set.TransitionSetBuilder$transitionSet(kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.DefaultTransitionSetBuilder, kotlin.Unit)))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="identifier">transitionSet</span><span
+        class="symbol">(</span><span class="identifier"
+                                     id="in.arunkumarsampath.transitionx.transition.set.TransitionSetBuilder$transitionSet(kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.DefaultTransitionSetBuilder, kotlin.Unit)))/setBuilder">setBuilder</span><span
+        class="symbol">:</span>&nbsp;<a href="../-default-transition-set-builder/index.html"><span
+        class="identifier">DefaultTransitionSetBuilder</span></a><span class="symbol">.</span><span
+        class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+        class="identifier">Unit</span></a>&nbsp;<span class="symbol">=</span>&nbsp;{}<span
+        class="symbol">)</span><span class="symbol">: </span><a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+        class="identifier">Unit</span></a></code>
+<p>Create another <a
+        href="https://developer.android.com/reference/android/support/transition/TransitionSet.html">TransitionSet</a>
+    and add it to this transition set. The block <a
+            href="transition-set.html#in.arunkumarsampath.transitionx.transition.set.TransitionSetBuilder$transitionSet(kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.DefaultTransitionSetBuilder, kotlin.Unit)))/setBuilder">setBuilder</a>
+    can contain code to configure the created <a
+            href="https://developer.android.com/reference/android/support/transition/TransitionSet.html">TransitionSet</a>
+</p>
+<p>Example :</p>
+<pre><code>    constraintLayout.prepareTransition {
+        auto {
+            standardEasing()
+        }
+        transitionSet {
+            fade()
+            slide()
+        }
+    }
+</code></pre>
+</BODY>
+</HTML>

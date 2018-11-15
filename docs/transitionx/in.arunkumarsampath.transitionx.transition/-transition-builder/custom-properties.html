@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+    <meta charset="UTF-8">
+    <title>TransitionBuilder.customProperties - transitionx</title>
+    <link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">transitionx</a>&nbsp;/&nbsp;<a href="../index.html">in.arunkumarsampath.transitionx.transition</a>&nbsp;/&nbsp;<a
+        href="index.html">TransitionBuilder</a>&nbsp;/&nbsp;<a href="./custom-properties.html">customProperties</a><br/>
+<br/>
+<h1>customProperties</h1>
+<a name="in.arunkumarsampath.transitionx.transition.TransitionBuilder$customProperties(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="identifier">customProperties</span><span
+        class="symbol">(</span><span class="identifier"
+                                     id="in.arunkumarsampath.transitionx.transition.TransitionBuilder$customProperties(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/action">action</span><span
+        class="symbol">:</span>&nbsp;<a
+        href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+        class="identifier">Transition</span></a><span class="symbol">.</span><span
+        class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+        class="identifier">Unit</span></a><span class="symbol">)</span><span
+        class="symbol">: </span><a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+        class="identifier">Unit</span></a></code>
+<p>Builder to set custom properties to be built <a
+        href="https://developer.android.com/reference/android/support/transition/Transition.html">Transition</a>
+    object. In the <a
+            href="custom-properties.html#in.arunkumarsampath.transitionx.transition.TransitionBuilder$customProperties(kotlin.Function1((android.support.transition.Transition, kotlin.Unit)))/action">action</a>
+    block, <a href="transition.html">transition</a>
+    is received as the lambda receiver and it is possible to directly set any custom properties on
+    the transition.</p>
+<p>This is useful when you want access a custom transition's properties not provided by this
+    builder.</p>
+<pre><code>    constraintLayout.prepareTransition {
+        customTransition&lt;MyCustomTransition&gt; {
+            customProperties {
+                myCustomProperty = 100
+            }
+        }
+    }
+    // Layout changes
+</code></pre>
+</BODY>
+</HTML>

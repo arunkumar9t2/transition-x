@@ -67,6 +67,8 @@ object Dependencies {
     val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayout}"
     val supportDesign = "com.android.support:design:${Versions.supportLib}"
     val recyclerView = "com.android.support:recyclerview-v7:${Versions.supportLib}"
+    val transition = "com.android.support:transition:${Versions.supportLib}"
+    val interpolator = "com.android.support:interpolator:${Versions.supportLib}"
 
     // Flexbox layout
     val flexBox = "com.google.android:flexbox:${Versions.flexBox}"

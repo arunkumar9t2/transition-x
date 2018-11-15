@@ -60,9 +60,8 @@ apply from: 'publishing.gradle'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Dependencies.kotlinStdlib
-    implementation Dependencies.appCompat
-    implementation Dependencies.constraintLayout
-    implementation Dependencies.supportDesign
+    implementation Dependencies.transition
+    implementation Dependencies.interpolator
 
     // Test
     testImplementation Dependencies.jUnit

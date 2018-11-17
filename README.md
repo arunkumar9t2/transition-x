@@ -1,17 +1,19 @@
+
 # Transition X
+
+<p align="center">
+<img src="https://github.com/arunkumar9t2/transition-x/raw/master/sample/src/main/res/mipmap-xxxhdpi/ic_launcher.png" 
+width="210" hspace="10" vspace="10">
+</p>
 
 **Kotlin DSL for choreographing Android Transitions**
 
 [![CircleCI](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master.svg?style=svg)](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master)[ ![Download](https://api.bintray.com/packages/arunkumar9t2/maven/transition-x/images/download.svg) ](https://bintray.com/arunkumar9t2/maven/transition-x/_latestVersion)[![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23335-blue.svg)](http://androidweekly.net/#335)
 
-<img src="https://github.com/arunkumar9t2/transition-x/blob/master/sample/src/main/res/mipmap-xxxhdpi/ic_launcher.png" align="left"
-width="200" hspace="10" vspace="10">
-
-Transition X aims to simplify construction of `Transition` instances for using with `TransitionManager` available since API 19 and now available upto API 14 via AndroidX.
 
 `TransitionManager` makes it easy to animate simple changes to layout without needing to explicitly calculate and specify `from` and `to` like `Animator` or `Animation` expects. When you call `TransitionManager.beginDelayedTransition(layout, transition)` before updating a layout, the framework automatically does a diff on before and after states and animates the difference.
 
-`Transition X` is intended to simplify construction of these `Transition` instances to take full advantage of the framework and provide a clear, concise, type safe and extensible DSL.
+`Transition X` is intended to simplify construction of these `Transition` instances to take full advantage of the framework and provide a clear, concise, type safe and extensible DSL using Kotlin language features.
 
 I highly recommend reading the introduction blog post on [Medium.](https://medium.com/@arunkumar9t2/meet-transition-x-declarative-kotlin-dsl-for-choreographing-android-transitions-dff25ebb61f9)
 
@@ -35,80 +37,198 @@ dependencies{
 }
 ```
 
-# Getting Started
+# Introduction
 
-Currently `TransitionSet`s can be constructed from XML like shown below:
+![enter image description here](https://raw.githubusercontent.com/arunkumar9t2/transition-x/develop/art/transition%20x%20intro.png)
 
-```xml
-<transitionSet xmlns:android="http://schemas.android.com/apk/res/android" android:transitionOrdering="sequential">
-	<fade android:fadingMode="fade_out" />
-	<changeBounds />
-	<fade android:fadingMode="fade_in" />
-	<targets>
-	   <target android:targetId="@+id/textView" />
-	</targets>
- </transitionSet>
-```
+As shown above, instead of creating XML files and later inflating them using `TransitionInflator`, it is possible to create `Transition` instances directly using `tranistionSet{}` block provided by the DSL.
 
-Programmaticaly, the above XML can be used like this:
+With _**Transition X**_, the construction and usage can be greatly simplified with a `prepareTransition` extension added to `ViewGroup`.
 
-```Kotlin
-TransitionManager.beginDelayedTransition(constraintLayout, TransitionInflater
-      .from(requireContext())
-      .inflateTransition(R.transition.auto))
-// Layout changes
-```
-
-With _Transition X_, the construction and usage can greatly simplified while being type safe and extensible.
+*For example:*
 
 ```Kotlin
 constraintLayout.prepareTransition {
-	fadeOut()
-	moveResize()
-	fadeIn()
-	+textView // Add text as target using '+' operator
+  fadeOut {
+      startDelay = 100
+  }
+  moveResize {
+    pathMotion = ArcMotion()
+  }
+  fadeIn()
+  +textView // Add textView as target using '+' operator
+  exclude<RecyclerView>() // Exclude all recyclerViews
+  ease {
+    standardEasing // Applies FastOutSlowInInterpolator
+  }
 }
-// Layout changes
+// Performing layout changes here will be animated just like
+// calling TransitionManager.beginDelayedTransition()
+```
+All blocks are type-safe and has IDE auto complete support thanks to Kotlin.
+
+# Getting Started
+## Writing your first transition
+TransitionSet's can be built programmatically like this.
+```kotlin
+TransitionSet().apply {
+  addTransition(ChangeBounds().apply {
+    startDelay = 100  
+    setPathMotion(ArcMotion())  
+  })  
+}
+```
+The Transition X equivalent would be:
+```kotlin
+transitionSet {   
+  moveResize {   
+    startDelay = 100  
+    pathMotion = ArcMotion()  
+  }  
+}
+```
+Some of the transition names are **opinionated** to better express their intent and promote clear code. Here `ChangeBounds` transition usually animates a `View`'s height, width, or location on screen hence the name `moveResize` to better convey what it does.
+## Working with custom transitions
+In case you have a custom transition class and want to use with the DSL, it is easy to do so. 
+
+ - If your transition has a `public no arg` constructor then the transition can be added using `customTransition<Type: Transition>{}` method. Below example shows usage of `ChangeCardColor` which animates a `CardView`s cardBackground property.
+
+```kotlin
+constraintLayout.prepareTransition {  
+  customTransition<ChangeCardColor> {  
+    +colorChangeCardView  
+  } 
+}
 ```
 
-`prepareTransition` is an extension to `ViewGroup` and allows us to construct many layers of transition declaratively. This is a relatively simple example, read on for further sample snippets and their resulting animation.
+ - If your transition does not have `public no arg` constructor then, you can instantiate the transition and then use `customTransition(transition) {}` instead to add the transition.
+ - **Accessing custom properties** : In addition to the common properties like `startDelay`, `interpolator`, etc, if your transition has custom properties then `customProperties {}` block can be used. 
+
+```kotlin
+constraintLayout.prepareTransition {
+  customTransition<ChangeCardColor> {
+    +colorChangeCardView  
+    customProperties {   
+	  myProperty = "hi"  
+	}  
+  }
+}
+```
+## Adding, removing and excluding targets
+The DSL provides simplified syntax to deal with targets by talking to `Transition`'s add/exclude/remove API.
+
+ - Use `+` operator or `add()` to add targets of type `String (Transition Name)` or `View` or `Resource Id`.
+```kotlin
+transitionSet {  
+  +"TransitionName"  
+  +userIconView
+  add(userIconView)  
+}
+```
+ - Use `-` operator or `remove()` to remove targets of type `String (Transition Name)` or `View` or `Resource Id`.
+```kotlin
+transitionSet {  
+  -"TransitionName"  
+  -userIconView
+  remove(userIconView)  
+}
+```
+ - `exclude` and `excludeChildren` methods are provided for excluding targets which can be useful in advanced transitions. It can be used on `Views`, `Resource Ids` or `Type`
+```kotlin
+transitionSet {  
+  exclude<RecyclerView>()  
+  exclude(R.id.accentBackground)
+  excludeChildren(constraintLayout)  
+}
+```
+## Interpolators
+ - *Interpolators* can be directly added using `interpolator` property.
+```kotlin
+transitionSet {  
+  moveResize()  
+  slide()  
+  interpolator = FastOutLinearInInterpolator()  
+}
+```
+
+ - *Easing* - DSL provides a dedicated `ease` block to add interpolators recommended by [material design spec](https://material.io/design/motion/speed.html#easing).
+		 
+	***standardEasing***: Recommended for views that move within visible area of the layout. `FastOutSlowInInterpolator`
+		 
+	 ***decelerateEasing***: Recommended for views that appear/enter outside visible bounds of the layout. `LinearOutSlowInInterpolator`
+		 
+	***accelerateEasing***: Recommended for Views that exit visible bounds of the layout. `FastOutLinearInInterpolator`
+
+```kotlin
+transitionSet {  
+  moveResize()  
+  ease {  
+    decelerateEasing  
+  }  
+}
+```
+## Nesting transitions
+Often, for fined grained transitions it it necessary to add different transition sets for different targets. It is simple to nest multiple transition sets just by using `transitionSet {}` recursively.
+```kotlin
+transitionSet {  
+  auto {   
+    +"View 1"  
+  }  
+  transitionSet {   
+    moveResize()  
+    slide()  
+    +"View 2"  
+  }  
+  transitionSet {   
+    sequentially()  
+    fadeOut()  
+    moveResize()  
+    fadeIn()  
+  }  
+}
+```
+## Additional transitions
+The library packages additional transitions not present in the support library and the plan is to add more commonly used transitions to provide a full package. Currently the following transitions are packaged.
+ - ***ChangeText***: Animates changes to a `TextView.text` property.
+ - ***ChangeColor***: Animates changes to `View.background` if it is a `ColorDrawable` or changes to `TextView.textColor` if the target is a `TextView`.
 
 # Samples
 
-#### Snack bar transition
-
-```Kotlin
-snackbarConstraintLayout.prepareTransition {
-  moveResize {  // Move resize uses ChangeBounds
+<table>
+<tbody>
+<tr>
+<th width="20%">Sample</th>
+<th width="30%">DSL</th>
+<th width="50%">Demo</th>
+</tr>
+<tr>
+<td><b>Snackbar animation</b></td>
+<td>Snackbar is anchored below FAB. <code>moveResize</code> is used on on FAB since its position changes. <code>Slide</code> is used on <code>Snackbar</code> since it's visibility changes.
+<pre>constraintLayout.prepareTransition {
+  moveResize { 
     +fab
   }
   slide {
-    +snackbarMessage  // We want the snackBar to slide from bottom, so we add it as target.
+    +snackbarMessage
   }
   ease {
     decelerateEasing
   }
 }
 snackbarMessage.toggleGone()
-```
-
-![enter image description here](https://github.com/arunkumar9t2/transition-x/raw/master/art/snackbar_transition.gif)
-
-#### Cascade Transition
-
-It is possible to write normal logical code in the `prepareTransition` block. Here we add `moveResize` using loops and by adding a start delay based on position, we can emulate a cascade transition.
-
-```Kotlin
-constraintLayout.prepareTransition {
-  arrayOf(textView,
-  textView2,
-  textView3,
-  textView4
-  ).forEachIndexed { position, view ->
-	  moveResize {
-	     +view
-	    startDelay = ((position + 1) * 150).toLong()
-	  }
+</pre>
+</td>
+<td><img src="https://github.com/arunkumar9t2/transition-x/raw/master/art/snackbar_transition.gif" alt="" width="470" /></td>
+</tr>
+<tr>
+<td><b>Cascade animation</b></td>
+<td>It is possible to write normal logical code in the <code>prepareTransition</code> block. Here we add <code>moveResize</code> using loops and by adding a start delay based on position, we can emulate a cascade transition.
+<pre>constraintLayout.prepareTransition {
+  texts.forEachIndexed { position, view -&gt;
+    moveResize {
+	  +view
+	  startDelay = ((position + 1) * 150).toLong()
+	}
  }
  moveResize { +fab }
  ease {
@@ -116,54 +236,49 @@ constraintLayout.prepareTransition {
  }
 }
 // Layout changes
-(if (defaultState) constraint1 else constraint2).applyTo(constraintLayout)
-```
-
-![enter image description here](https://github.com/arunkumar9t2/transition-x/raw/master/art/cascade_transition.gif)
-
-#### Custom transitions
-
-Transition X can work with custom transitions. In case you have a custom transition and you want to work with Transition X's DSL, it is possible to do so by using
-`customTransition<Type: Transition>{}` method. In the following example, `ChangeCardColor` is a custom transition that animates `cardBackgroundColor` property of `MaterialCardView`.
-
-```kotlin
-constraintLayout.prepareTransition {
-  customTransition<ChangeCardColor> {
-     +colorChangeCardView  // By adding targets we can contain on which views the said transition will run.
+(if (defaultState) constraint1 else constraint2)
+.applyTo(constraintLayout)
+</pre>
+</td>
+<td><img src="https://github.com/arunkumar9t2/transition-x/raw/master/art/cascade_transition.gif" alt="" width="470" /></td>
+</tr>
+<tr></tr>
+<tr>
+<td><b>Custom Transition</b></td>
+<td>In the following example, <code>ChangeCardColor</code> is a custom transition that animates <code>cardBackgroundColor</code> property of <code>MaterialCardView</code> .
+<pre>constraintLayout.prepareTransition {
+  customTransition&lt;ChangeCardColor&gt; {
+     +cardView
   }
   changeColor {
-     +colorChangeTextView
+     +textView
   }
   duration = 1000
 }
 // Layout changes
-colorChangeCardView.setCardBackgroundColor(color)
-colorChangeTextView.setTextColor(calcForegroundWhiteOrBlack(color))
-```
-
-![enter image description here](https://github.com/arunkumar9t2/transition-x/raw/master/art/custom_transition.gif)
-
-#### Arc motion
-
-Here the `imageView`'s gravity is changed from `START | CENTER_VERTICAL` to `TOP | CENTER_HORIZONTAL`. By using a `pathMotion` it is possible to control the motion of the animation to follow material guidelines' arc motion.
-
-```Kotlin
-frameLayout.prepareTransition {
+cardView.setCardBackgroundColor(color)
+textView.setTextColor(calcForegroundWhiteOrBlack(color))
+</pre>
+</td>
+<td><img src="https://github.com/arunkumar9t2/transition-x/raw/master/art/custom_transition.gif" alt="" width="470" /></td>
+</tr>
+<tr>
+<td><b>Arc motion</b></td>
+<td>Here the <code>imageView</code>'s gravity is changed from <code>START | CENTER_VERTICAL</code> to <code>TOP | CENTER_HORIZONTAL</code>. By using a pathMotion it is possible to control the motion of the animation to follow material guidelines' arc motion.
+<pre>frameLayout.prepareTransition {
   moveResize {
     pathMotion = ArcMotion()
     +userIconView
   }
 }
-```
-
-![enter image description here](https://github.com/arunkumar9t2/transition-x/raw/master/art/arc_motion.gif)
-
-#### Advanced choreography
-
-By using techniques above and coupling it with further customization via lifecycle listeners such as `onEnd` or `onPause` it is possible to have finer control over the entire transition process. In the example below, notice how different views are configured with different parameters for transition type, interpolation and ordering.
-
-```Kotlin
-constraintLayout.prepareTransition {
+</pre>
+</td>
+<td><img src="https://github.com/arunkumar9t2/transition-x/raw/master/art/arc_motion.gif" alt="" width="470" /></td>
+</tr>
+<tr>
+<td><b>Advanced choreography</b></td>
+<td>By using techniques above and coupling it with further customization via lifecycle listeners such as <code>onEnd</code> or <code>onPause</code> it is possible to have finer control over the entire transition process. In the example below, notice how different views are configured with different parameters for transition type, interpolation and ordering.
+<pre>constraintLayout.prepareTransition {
   auto {
      ease {
        standardEasing
@@ -184,7 +299,7 @@ constraintLayout.prepareTransition {
          moveResize()
          changeText {
              +collapseButton
-             changeTextBehavior = ChangeText.CHANGE_BEHAVIOR_OUT_IN
+             changeTextBehavior <br />              = ChangeText.CHANGE_BEHAVIOR_OUT_IN
          }
    }
    collapseButton.setText(R.string.collapse)
@@ -194,40 +309,45 @@ constraintLayout.prepareTransition {
 expandConstraint.applyTo(constraintLayout)
 metamorphosisDesc2.isGone = false
 metamorphosisDesc.isGone = true
-```
-
-![enter image description here](https://github.com/arunkumar9t2/transition-x/raw/master/art/metamorphosis.gif)
-
-#### Shared Element Transitions
-
-Library provides a `transitionSet{}` block which can be used to create an `Transition` instance. Then this instance can be used with `Fragment` with `Fragment.sharedElementEnterTransition` property.
-
-```kotlin
+</pre>
+</td>
+<td><img src="https://github.com/arunkumar9t2/transition-x/raw/master/art/metamorphosis.gif" alt="" width="470" /></td>
+</tr>
+<tr>
+<td><b>Shared element transition</b></td>
+<td>Transition instances created by the DSL can be directly used with <code> activity.window.sharedElementEnterTransition</code> or <code>fragment.sharedElementEnterTransition.</code>
+ <pre>
 fragment.sharedElementEnterTransition = transitionSet {
-            transitionSet {
-                changeImage()
-                moveResize()
-                changeClipBounds()
-                scaleRotate()
-                ease {
-                    standardEasing
-                }
-                duration = 375
-                +cartItem.cartImageTransitionName()
-            }
-            transitionSet {
-                ease {
-                    standardEasing
-                }
-                moveResize()
-                scaleRotate()
-                add(cartItem.name, cartItem.price)
-                duration = 375
-            }
-        }
-```
-
-[Example](https://github.com/arunkumar9t2/transition-x/tree/master/sample/src/main/java/in/arunkumarsampath/transitionx/sample/home/transitionsamples/cart)
+  transitionSet {
+    changeImage()
+    moveResize()
+    changeClipBounds()
+    scaleRotate()
+    ease {
+      standardEasing
+     }
+     duration = 375
+     +cartItem.cartImageTransitionName()
+  }
+  transitionSet {
+    ease {
+      standardEasing
+    }
+    moveResize()
+    scaleRotate()
+    add(cartItem.name, cartItem.price)
+    duration = 375
+   }
+}
+  <pre>
+  </td>
+<td>
+<p>Demo - WIP.</p>
+<p><a href="https://github.com/arunkumar9t2/transition-x/tree/master/sample/src/main/java/in/arunkumarsampath/transitionx/sample/home/transitionsamples/cart">Example</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 
 # Tasks
 

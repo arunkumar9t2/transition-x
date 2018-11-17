@@ -2,7 +2,7 @@
 
 **Kotlin DSL for choreographing Android Transitions**
 
-[![CircleCI](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master.svg?style=svg)](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master)[ ![Download](https://api.bintray.com/packages/arunkumar9t2/maven/transition-x/images/download.svg) ](https://bintray.com/arunkumar9t2/maven/transition-x/_latestVersion)
+[![CircleCI](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master.svg?style=svg)](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master)[ ![Download](https://api.bintray.com/packages/arunkumar9t2/maven/transition-x/images/download.svg) ](https://bintray.com/arunkumar9t2/maven/transition-x/_latestVersion)[![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23335-blue.svg)](http://androidweekly.net/#335)
 
 <img src="https://github.com/arunkumar9t2/transition-x/blob/master/sample/src/main/res/mipmap-xxxhdpi/ic_launcher.png" align="left"
 width="200" hspace="10" vspace="10">

@@ -32,7 +32,7 @@ allprojects {
 
 ```groovy
 dependencies{
-    implementation 'in.arunkumarsampath:transition-x:1.0.0'
+    implementation 'in.arunkumarsampath:transition-x:1.0.1'
 }
 ```
 

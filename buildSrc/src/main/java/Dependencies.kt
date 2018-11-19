@@ -29,7 +29,7 @@ object BuildDetails {
     const val minSdk = 19
     const val targetSdk = 28
     const val versionCode = 1
-    const val versionName = "1.0"
+    const val versionName = "1.0.1"
     const val libraryPackageName = "in.arunkumarsampath.transitionx"
     val librarySample = "$libraryPackageName.sample"
 }

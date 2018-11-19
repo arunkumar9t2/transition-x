@@ -8,8 +8,7 @@ width="210" hspace="10" vspace="10">
 
 **Kotlin DSL for choreographing Android Transitions**
 
-[![CircleCI](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master.svg?style=svg)](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master)[ ![Download](https://api.bintray.com/packages/arunkumar9t2/maven/transition-x/images/download.svg) ](https://bintray.com/arunkumar9t2/maven/transition-x/_latestVersion)[![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23335-blue.svg)](http://androidweekly.net/#335)
-
+[![CircleCI](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master.svg?style=svg)](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master)[ ![Download](https://api.bintray.com/packages/arunkumar9t2/maven/transition-x/images/download.svg) ](https://bintray.com/arunkumar9t2/maven/transition-x/_latestVersion) [![Documentation](https://img.shields.io/badge/documentation-%20-brightgreen.svg)](https://arunkumar9t2.github.io/transition-x/transitionx/index.html) [![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23335-blue.svg)](http://androidweekly.net/#335) 
 
 `TransitionManager` makes it easy to animate simple changes to layout without needing to explicitly calculate and specify `from` and `to` like `Animator` or `Animation` expects. When you call `TransitionManager.beginDelayedTransition(layout, transition)` before updating a layout, the framework automatically does a diff on before and after states and animates the difference.
 
@@ -33,7 +32,7 @@ allprojects {
 
 ```groovy
 dependencies{
-    implementation 'in.arunkumarsampath:transition-x:1.0.0'
+    implementation 'in.arunkumarsampath:transition-x:1.0.1'
 }
 ```
 

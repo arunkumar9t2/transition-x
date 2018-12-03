@@ -141,7 +141,7 @@ transitionSet {
 }
 ```
 ## Interpolators
- - *Interpolators* can be directly added using `interpolator` property.
+ - **Interpolators** can be directly added using `interpolator` property.
 ```kotlin
 transitionSet {  
   moveResize()  
@@ -150,13 +150,13 @@ transitionSet {
 }
 ```
 
- - *Easing* - DSL provides a dedicated `ease` block to add interpolators recommended by [material design spec](https://material.io/design/motion/speed.html#easing).
+ - **Easing** - DSL provides a dedicated `ease` block to add interpolators recommended by [material design spec](https://material.io/design/motion/speed.html#easing).
 		 
-	***standardEasing***: Recommended for views that move within visible area of the layout. `FastOutSlowInInterpolator`
+	*standardEasing*: Recommended for views that move within visible area of the layout. `FastOutSlowInInterpolator`
 		 
-	 ***decelerateEasing***: Recommended for views that appear/enter outside visible bounds of the layout. `LinearOutSlowInInterpolator`
+	*decelerateEasing*: Recommended for views that appear/enter outside visible bounds of the layout. `LinearOutSlowInInterpolator`
 		 
-	***accelerateEasing***: Recommended for Views that exit visible bounds of the layout. `FastOutLinearInInterpolator`
+	*accelerateEasing*: Recommended for Views that exit visible bounds of the layout. `FastOutLinearInInterpolator`
 
 ```kotlin
 transitionSet {  

@@ -36,7 +36,7 @@ import kotlinx.android.synthetic.main.fragment_cart_detail_content.*
 
 class CartDetailFragment : Fragment() {
 
-    private val cartItem by lazy { CartDetailFragmentArgs.fromBundle(arguments).cartItem }
+    private val cartItem by lazy { CartDetailFragmentArgs.fromBundle(arguments!!).cartItem }
 
     private fun applyTransition() {
         sharedElementEnterTransition = transitionSet {

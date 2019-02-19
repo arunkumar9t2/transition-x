@@ -17,20 +17,24 @@
  */
 
 buildscript {
+    apply from: 'constants.gradle'
+
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath Dependencies.agp
-        classpath Dependencies.kotlinGradlePlugin
-        classpath Dependencies.navigationPlugin
+        classpath "com.android.tools.build:gradle:${versions.androidGradle}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+        classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:${versions.navigation}"
     }
 }
 
 allprojects {
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
 }

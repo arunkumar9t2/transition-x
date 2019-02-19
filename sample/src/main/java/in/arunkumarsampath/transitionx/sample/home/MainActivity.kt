@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupBottomNavigationMenu() {
         NavigationUI.setupWithNavController(bottomNavigation, navController)
-        navController.addOnNavigatedListener { _, destination ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             rootCoordinatorLayout.prepareTransition {
                 +bottomNavigation
                 slide()

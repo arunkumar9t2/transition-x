@@ -20,7 +20,8 @@ jobs:
           command: ./gradlew dependencies
       - save_cache:
           paths:
-            - ~/.gradle
+            - ~/.gradle/caches
+            - ~/.gradle/wrapper
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "transitionx/build.gradle" }}
       - run:
           name: Run Tests

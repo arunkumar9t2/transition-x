@@ -27,7 +27,7 @@ import android.support.v7.widget.RecyclerView.NO_POSITION
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.navOptions
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.layout_cart_list_item_template.*
@@ -75,11 +75,12 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CartItemViewHolder>() {
                     navOptions {
 
                     },
-                    FragmentNavigatorExtras(
-                            cartItemName to cartItem.name,
-                            cartPrice to cartItem.price,
-                            cartContentPreview to cartItem.cartImageTransitionName()
-                    )
+                    FragmentNavigator.Extras.Builder().run {
+                        addSharedElement(cartItemName, cartItem.name)
+                        addSharedElement(cartPrice, cartItem.price)
+                        addSharedElement(cartContentPreview, cartItem.cartImageTransitionName())
+                        build()
+                    }
             )
         }
 

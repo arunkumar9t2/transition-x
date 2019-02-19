@@ -24,6 +24,16 @@ import android.support.transition.*
 import android.view.ViewGroup
 
 /**
+ * Cancels all animations running on this `ViewGroup`. Internally calls [TransitionManager.endTransitions].
+ *
+ * @see TransitionManager.endTransitions
+ */
+@Suppress("NOTHING_TO_INLINE")
+inline fun ViewGroup.cancelTransitions() {
+    TransitionManager.endTransitions(this)
+}
+
+/**
  * Schedules a call to [TransitionManager.beginDelayedTransition] with receiver [ViewGroup] as
  * the scene root. [transitionsBuilder] uses a [TransitionSet] instance internally and its
  * properties can be modified by using available methods from [DefaultTransitionSetBuilder]
@@ -46,10 +56,29 @@ inline fun ViewGroup.prepareTransition(
         cancel: Boolean = false,
         transitionsBuilder: DefaultTransitionSetBuilder.() -> Unit = {}
 ) {
-    if (cancel) {
-        TransitionManager.endTransitions(this)
-    }
     val transition = DefaultTransitionSetBuilder().apply(transitionsBuilder).transition
+    prepareTransition(cancel = cancel, transition = transition)
+}
+
+/**
+ * Calls [TransitionManager.beginDelayedTransition] with this [ViewGroup] and [transition] as the
+ * parameter.
+ *
+ * Usage:
+ * ```
+ *   constraintLayout.prepareTransition(transition)
+ *
+ *   someView.hide()
+ * ```
+ *
+ * @param cancel if true, ends all previous transitions before starting the transition
+ * @param transition the transition instance that should be used
+ */
+@Suppress("NOTHING_TO_INLINE")
+inline fun ViewGroup.prepareTransition(cancel: Boolean = false, transition: Transition) {
+    if (cancel) {
+        cancelTransitions()
+    }
     TransitionManager.beginDelayedTransition(this, transition)
 }
 
@@ -78,10 +107,10 @@ inline fun ViewGroup.prepareAutoTransition(
         autoTransitionBuilder: AutoTransitionBuilder.() -> Unit = {}
 ) {
     if (cancel) {
-        TransitionManager.endTransitions(this)
+        cancelTransitions()
     }
     val transition = AutoTransitionBuilder().apply(autoTransitionBuilder).transition
-    TransitionManager.beginDelayedTransition(this, transition)
+    prepareTransition(cancel = cancel, transition = transition)
 }
 
 /**

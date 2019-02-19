@@ -53,7 +53,7 @@ class TransitionDslTest {
             explode()
         }.transition
 
-        with(transition) {
+        transition.run {
             val slide = getTransitionAt(0)
             assertTrue(slide is Slide)
             assertTrue(slide.duration == 200L)
@@ -78,6 +78,7 @@ class TransitionDslTest {
         val transition = DefaultTransitionSetBuilder().apply {
             customTransition<SimpleFade>()
         }.transition
+
         assertTrue(transition.getTransitionAt(0) is SimpleFade)
     }
 
@@ -88,6 +89,7 @@ class TransitionDslTest {
         val transition = DefaultTransitionSetBuilder().apply {
             customTransition<SimpleFade>()
         }.transition
+
         assertTrue(transition.getTransitionAt(0) is SimpleFade)
     }
 

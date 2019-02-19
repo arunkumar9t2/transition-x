@@ -16,7 +16,7 @@ ext {
             'glide'           : '4.8.0',
             'kotlin'          : '1.3.21',
             'junit'           : '4.12',
-            'roboelectric'    : '3.8',
+            'roboelectric'    : '4.2',
             'timber'          : '4.6.0',
             'rx'              : '2.1.13',
             'rxKotlin'        : '2.2.0',

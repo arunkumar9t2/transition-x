@@ -32,7 +32,7 @@ ext {
 
     developerId = 'arunkumar9t2'
     developerName = 'Arunkumar'
-    developerEmail = 'arunkumarsampath.in'
+    developerEmail = 'arunk.beece@gmail.com'
 
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'

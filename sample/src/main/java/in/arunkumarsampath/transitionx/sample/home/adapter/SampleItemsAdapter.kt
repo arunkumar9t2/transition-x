@@ -46,6 +46,7 @@ class SampleItemsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             sample(R.id.changeTextTransitionFragment, R.string.change_text_transition),
             header(R.string.advanced_transitions),
             sample(R.id.materialCardTransformationFragment, R.string.material_card_transformation),
+            sample(R.id.animatedBottomNavigationFragment, R.string.animated_bottom_navigation_fragment),
             header(R.string.shared_element_transition),
             sample(R.id.cartListFragment, R.string.cart_list)
     )

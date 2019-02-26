@@ -121,7 +121,7 @@ class AnimatedBottomNavigationFragment : BaseSampleFragment() {
                     }
                     bg.run {
                         isGone = false
-                        (background as GradientDrawable).setColor(setAlphaComponent(selectedColor, (0.3 * 255).toInt()))
+                        (background.mutate() as GradientDrawable).setColor(setAlphaComponent(selectedColor, (0.3 * 255).toInt()))
                     }
 
                     constraintLayout.background = ColorDrawable(selectedColor)

@@ -52,4 +52,9 @@
     <string name="soft">Soft</string>
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
+    <string name="animated_bottom_navigation_fragment">Animated Bottom Navigation</string>
+    <string name="home">Home</string>
+    <string name="likes">Likes</string>
+    <string name="search">Search</string>
+    <string name="about">About</string>
 </resources>

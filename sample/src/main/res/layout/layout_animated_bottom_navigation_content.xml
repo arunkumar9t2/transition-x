@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~ Copyright 2019 Arunkumar
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    tools:context=".home.transitionsamples.AnimatedBottomNavigationFragment">
+
+    <android.support.design.card.MaterialCardView
+        android:id="@+id/bottomNavigationCard"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/home">
+
+    </android.support.design.card.MaterialCardView>
+
+    <View
+        android:id="@+id/homeBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_animated_bottom_navigation_item"
+        android:elevation="2dp"
+        android:outlineProvider="none"
+        app:layout_constraintBottom_toBottomOf="@+id/home"
+        app:layout_constraintEnd_toEndOf="@+id/homeText"
+        app:layout_constraintStart_toStartOf="@+id/home"
+        app:layout_constraintTop_toTopOf="@+id/home" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/home"
+        style="@style/BottomNavigationIcon"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/homeText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_home" />
+
+    <TextView
+        android:id="@+id/homeText"
+        style="@style/BottomNavigationText"
+        android:text="@string/home"
+        app:layout_constraintBottom_toBottomOf="@+id/home"
+        app:layout_constraintEnd_toStartOf="@+id/likes"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/home"
+        app:layout_constraintTop_toTopOf="@+id/home"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/likesBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_animated_bottom_navigation_item"
+        android:elevation="2dp"
+        android:outlineProvider="none"
+        app:layout_constraintBottom_toBottomOf="@+id/likes"
+        app:layout_constraintEnd_toEndOf="@+id/likesText"
+        app:layout_constraintStart_toStartOf="@+id/likes"
+        app:layout_constraintTop_toTopOf="@+id/likes" />
+
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/likes"
+        style="@style/BottomNavigationIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/homeText"
+        app:layout_constraintEnd_toStartOf="@+id/likesText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/homeText"
+        app:layout_constraintTop_toTopOf="@+id/homeText"
+        app:srcCompat="@drawable/ic_favorite" />
+
+    <TextView
+        android:id="@+id/likesText"
+        style="@style/BottomNavigationText"
+        android:text="@string/likes"
+        app:layout_constraintBottom_toBottomOf="@+id/likes"
+        app:layout_constraintEnd_toStartOf="@+id/search"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/likes"
+        app:layout_constraintTop_toTopOf="@+id/likes" />
+
+    <View
+        android:id="@+id/searchBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_animated_bottom_navigation_item"
+        android:elevation="2dp"
+        android:outlineProvider="none"
+        app:layout_constraintBottom_toBottomOf="@+id/search"
+        app:layout_constraintEnd_toEndOf="@+id/searchText"
+        app:layout_constraintStart_toStartOf="@+id/search"
+        app:layout_constraintTop_toTopOf="@+id/search" />
+
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/search"
+        style="@style/BottomNavigationIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/likesText"
+        app:layout_constraintEnd_toStartOf="@+id/searchText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/likesText"
+        app:layout_constraintTop_toTopOf="@+id/likesText"
+        app:srcCompat="@drawable/ic_search" />
+
+    <TextView
+        android:id="@+id/searchText"
+        style="@style/BottomNavigationText"
+        android:text="@string/search"
+        app:layout_constraintBottom_toBottomOf="@+id/search"
+        app:layout_constraintEnd_toStartOf="@+id/about"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/search"
+        app:layout_constraintTop_toTopOf="@+id/search" />
+
+    <View
+        android:id="@+id/aboutBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_animated_bottom_navigation_item"
+        android:elevation="2dp"
+        android:outlineProvider="none"
+        app:layout_constraintBottom_toBottomOf="@+id/about"
+        app:layout_constraintEnd_toEndOf="@+id/aboutText"
+        app:layout_constraintStart_toStartOf="@+id/about"
+        app:layout_constraintTop_toTopOf="@+id/about" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/about"
+        style="@style/BottomNavigationIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/searchText"
+        app:layout_constraintEnd_toStartOf="@+id/aboutText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/searchText"
+        app:layout_constraintTop_toTopOf="@+id/searchText"
+        app:srcCompat="@drawable/ic_outline_identity" />
+
+    <TextView
+        android:id="@+id/aboutText"
+        style="@style/BottomNavigationText"
+        android:text="@string/about"
+        app:layout_constraintBottom_toBottomOf="@+id/about"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/about"
+        app:layout_constraintTop_toTopOf="@+id/about"
+        tools:visibility="gone" />
+
+
+    <!--<android.support.constraint.Group
+        android:id="@+id/textGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="aboutText,searchText,likesText,homeText"
+        tools:layout_editor_absoluteX="16dp"
+        tools:visibility="gone" />
+
+    <android.support.constraint.Group
+        android:id="@+id/bgGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="aboutBg,searchBg,likesBg,homeBg"
+        tools:layout_editor_absoluteX="16dp"
+        tools:visibility="visible" />-->
+
+</android.support.constraint.ConstraintLayout>

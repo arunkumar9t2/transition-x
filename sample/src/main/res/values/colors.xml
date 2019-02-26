@@ -23,4 +23,11 @@
     <color name="snackbar">#212121</color>
     <color name="material_brown">#6D4C41</color>
     <color name="material_divider_dark">#1f000000</color>
+
+
+    <!--Bottom navigation-->
+    <color name="bottom_nav_home">#5B3DB4</color>
+    <color name="bottom_nav_likes">#C73C9C</color>
+    <color name="bottom_nav_search">#E5A830</color>
+    <color name="bottom_nav_about">#1F94A9</color>
 </resources>

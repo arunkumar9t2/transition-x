@@ -339,12 +339,44 @@ fragment.sharedElementEnterTransition = transitionSet {
     duration = 375
    }
 }
-  <pre>
+  </pre>
   </td>
 <td>
 <p>Demo - WIP.</p>
 <p><a href="https://github.com/arunkumar9t2/transition-x/tree/master/sample/src/main/java/in/arunkumarsampath/transitionx/sample/home/transitionsamples/cart">Example</a></p>
 </td>
+</tr>
+<tr>
+<td><b>Animated Bottom Navigation</b></td>
+<td>Bottom navigation animation implmentend using custom choreography instead of relying on <code>AutoTransition</code>. The implementation uses <code>ConstraintLayout</code> to define the layouts and then simply show/hides the labels and adds tint to the icons. TransitionManager does the rest.
+<pre>
+transitionSet {
+  fadeOut()
+
+  moveResize {
+    startDelay = 50
+    ease {
+      standardEasing
+    }
+  }
+
+  fadeIn {
+    startDelay = 50
+  }
+
+  changeColor {
+    navItems.map { it.text }.forEach { text -> add(text) }
+    +constraintLayout
+  }
+
+  customTransition<ChangeImageTint> {
+    navItems.map { it.icon }.forEach { icon -> add(icon) }
+  }
+ }
+</pre>
+</td>
+<td><img src="https://github.com/arunkumar9t2/transition-x/raw/master/art/animated_bottom_navigation.gif" alt="" width="470" /></td>
+</tr>
 </tr>
 </tbody>
 </table>

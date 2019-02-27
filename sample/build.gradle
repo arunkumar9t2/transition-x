@@ -1,5 +1,6 @@
 /*
- * Copyright 2018 Arunkumar
+ *
+ * Copyright 2019 Arunkumar
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,30 +13,45 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
  */
 
 apply plugin: 'com.android.application'
-apply plugin: Plugins.kotlinAndroid
-apply plugin: Plugins.kotlinAndroidExt
-apply plugin: Plugins.kotlinKapt
-apply plugin: Plugins.navigationPlugin
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs'
 
 android {
-    compileSdkVersion BuildDetails.compileSdk
-    defaultConfig {
-        applicationId BuildDetails.librarySample
-        minSdkVersion BuildDetails.minSdk
-        targetSdkVersion BuildDetails.targetSdk
-        versionCode BuildDetails.versionCode
-        versionName BuildDetails.versionName
+    compileSdkVersion buildDetails.compileSdk
 
-        testInstrumentationRunner Dependencies.androidJUnitRunner
-
-        vectorDrawables.useSupportLibrary true
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    defaultConfig {
+        applicationId buildDetails.packageName
+        minSdkVersion buildDetails.minSdk
+        targetSdkVersion buildDetails.targetSdk
+        versionCode buildDetails.versionCode
+        versionName buildDetails.versionName
+
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
     buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled true
+            shrinkResources true
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -50,35 +66,36 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':transitionx')
 
-    implementation Dependencies.kotlinStdlib
+    implementation "androidx.core:core-ktx:${versions.ktx}"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
 
     // Support
-    implementation Dependencies.appCompat
-    implementation Dependencies.constraintLayout
-    implementation Dependencies.supportDesign
-    implementation Dependencies.recyclerView
+    implementation "com.android.support:design:${versions.supportLibrary}"
+    implementation "com.android.support:cardview-v7:${versions.supportLibrary}"
+    implementation "com.android.support:support-vector-drawable:${versions.supportLibrary}"
+    implementation "com.android.support:recyclerview-v7:${versions.supportLibrary}"
 
-    implementation Dependencies.androidKtx
+    implementation "com.android.support.constraint:constraint-layout:${versions.constraintLayout}"
 
-    // Flexbox
-    implementation Dependencies.flexBox
+    implementation "com.google.android:flexbox:${versions.flexbox}"
 
-    implementation Dependencies.timber
+    // Logging
+    implementation "com.jakewharton.timber:timber:${versions.timber}"
 
     // Glide - Image loading
-    implementation Dependencies.glide
-    kapt Dependencies.glideAnnotationProcessor
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    kapt "com.github.bumptech.glide:compiler:${versions.glide}"
 
     // Navigation
-    implementation Dependencies.navigationFragment
-    implementation Dependencies.navigationFragmentKtx
-    implementation Dependencies.navigationUi
-    implementation Dependencies.navigationUiKtx
+    implementation "android.arch.navigation:navigation-fragment:${versions.navigation}"
+    implementation "android.arch.navigation:navigation-ui:${versions.navigation}"
+    implementation "android.arch.navigation:navigation-ui:${versions.navigation}"
+    implementation "android.arch.navigation:navigation-ui-ktx:${versions.navigation}"
 
     // Adapter Delegates
-    implementation Dependencies.adapterDelegates
+    implementation "com.hannesdorfmann:adapterdelegates3:${versions.adapterDelegates}"
 
-    testImplementation Dependencies.jUnit
-    androidTestImplementation Dependencies.testRunner
-    androidTestImplementation Dependencies.espressoCore
+    testImplementation "junit:junit:${versions.junit}"
+    testImplementation "org.robolectric:robolectric:${versions.roboelectric}"
 }

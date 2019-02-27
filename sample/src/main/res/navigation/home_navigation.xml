@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright 2018 Arunkumar
+  ~
+  ~ Copyright 2019 Arunkumar
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -12,6 +13,7 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
+  ~
   -->
 
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
@@ -58,6 +60,9 @@
         <action
             android:id="@+id/action_homeFragment_to_cartListFragment"
             app:destination="@id/cartListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_animatedBottomNavigationFragment"
+            app:destination="@id/animatedBottomNavigationFragment" />
     </fragment>
     <fragment
         android:id="@+id/snackBarFragment"
@@ -126,4 +131,9 @@
             android:name="cartItem"
             app:argType="in.arunkumarsampath.transitionx.sample.home.transitionsamples.cart.CartItem" />
     </fragment>
+    <fragment
+        android:id="@+id/animatedBottomNavigationFragment"
+        android:name="in.arunkumarsampath.transitionx.sample.home.transitionsamples.AnimatedBottomNavigationFragment"
+        android:label="layout_animated_bottom_navigation_content"
+        tools:layout="@layout/layout_animated_bottom_navigation_content" />
 </navigation>

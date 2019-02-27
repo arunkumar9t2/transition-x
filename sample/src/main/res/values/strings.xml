@@ -1,5 +1,6 @@
 <!--
-  ~ Copyright 2018 Arunkumar
+  ~
+  ~ Copyright 2019 Arunkumar
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -12,6 +13,7 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
+  ~
   -->
 
 <resources>
@@ -50,4 +52,9 @@
     <string name="soft">Soft</string>
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
+    <string name="animated_bottom_navigation_fragment">Animated Bottom Navigation</string>
+    <string name="home">Home</string>
+    <string name="likes">Likes</string>
+    <string name="search">Search</string>
+    <string name="about">About</string>
 </resources>

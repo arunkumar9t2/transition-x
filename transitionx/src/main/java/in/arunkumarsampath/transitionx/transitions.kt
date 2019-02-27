@@ -1,5 +1,6 @@
 /*
- * Copyright 2018 Arunkumar
+ *
+ * Copyright 2019 Arunkumar
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,6 +13,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
  */
 
 package `in`.arunkumarsampath.transitionx
@@ -20,6 +22,16 @@ import `in`.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder
 import `in`.arunkumarsampath.transitionx.transition.set.DefaultTransitionSetBuilder
 import android.support.transition.*
 import android.view.ViewGroup
+
+/**
+ * Cancels all animations running on this `ViewGroup`. Internally calls [TransitionManager.endTransitions].
+ *
+ * @see TransitionManager.endTransitions
+ */
+@Suppress("NOTHING_TO_INLINE")
+inline fun ViewGroup.cancelTransitions() {
+    TransitionManager.endTransitions(this)
+}
 
 /**
  * Schedules a call to [TransitionManager.beginDelayedTransition] with receiver [ViewGroup] as
@@ -44,10 +56,29 @@ inline fun ViewGroup.prepareTransition(
         cancel: Boolean = false,
         transitionsBuilder: DefaultTransitionSetBuilder.() -> Unit = {}
 ) {
-    if (cancel) {
-        TransitionManager.endTransitions(this)
-    }
     val transition = DefaultTransitionSetBuilder().apply(transitionsBuilder).transition
+    prepareTransition(cancel = cancel, transition = transition)
+}
+
+/**
+ * Calls [TransitionManager.beginDelayedTransition] with this [ViewGroup] and [transition] as the
+ * parameter.
+ *
+ * Usage:
+ * ```
+ *   constraintLayout.prepareTransition(transition)
+ *
+ *   someView.hide()
+ * ```
+ *
+ * @param cancel if true, ends all previous transitions before starting the transition
+ * @param transition the transition instance that should be used
+ */
+@Suppress("NOTHING_TO_INLINE")
+inline fun ViewGroup.prepareTransition(cancel: Boolean = false, transition: Transition) {
+    if (cancel) {
+        cancelTransitions()
+    }
     TransitionManager.beginDelayedTransition(this, transition)
 }
 
@@ -76,10 +107,10 @@ inline fun ViewGroup.prepareAutoTransition(
         autoTransitionBuilder: AutoTransitionBuilder.() -> Unit = {}
 ) {
     if (cancel) {
-        TransitionManager.endTransitions(this)
+        cancelTransitions()
     }
     val transition = AutoTransitionBuilder().apply(autoTransitionBuilder).transition
-    TransitionManager.beginDelayedTransition(this, transition)
+    prepareTransition(cancel = cancel, transition = transition)
 }
 
 /**

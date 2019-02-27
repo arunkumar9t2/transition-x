@@ -1,5 +1,6 @@
 /*
- * Copyright 2018 Arunkumar
+ *
+ * Copyright 2019 Arunkumar
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,6 +13,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
  */
 ext {
     bintrayRepo = 'maven'
@@ -30,7 +32,7 @@ ext {
 
     developerId = 'arunkumar9t2'
     developerName = 'Arunkumar'
-    developerEmail = 'arunkumarsampath.in'
+    developerEmail = 'arunk.beece@gmail.com'
 
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'

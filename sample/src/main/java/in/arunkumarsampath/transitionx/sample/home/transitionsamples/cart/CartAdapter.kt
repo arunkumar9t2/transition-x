@@ -1,5 +1,6 @@
 /*
- * Copyright 2018 Arunkumar
+ *
+ * Copyright 2019 Arunkumar
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,6 +13,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
  */
 
 package `in`.arunkumarsampath.transitionx.sample.home.transitionsamples.cart
@@ -25,7 +27,7 @@ import android.support.v7.widget.RecyclerView.NO_POSITION
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.navOptions
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.layout_cart_list_item_template.*
@@ -73,11 +75,12 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CartItemViewHolder>() {
                     navOptions {
 
                     },
-                    FragmentNavigatorExtras(
-                            cartItemName to cartItem.name,
-                            cartPrice to cartItem.price,
-                            cartContentPreview to cartItem.cartImageTransitionName()
-                    )
+                    FragmentNavigator.Extras.Builder().run {
+                        addSharedElement(cartItemName, cartItem.name)
+                        addSharedElement(cartPrice, cartItem.price)
+                        addSharedElement(cartContentPreview, cartItem.cartImageTransitionName())
+                        build()
+                    }
             )
         }
 

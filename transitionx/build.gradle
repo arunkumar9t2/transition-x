@@ -1,5 +1,6 @@
 /*
- * Copyright 2018 Arunkumar
+ *
+ * Copyright 2019 Arunkumar
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,7 +13,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
  */
+
 buildscript {
     repositories {
         jcenter()
@@ -23,22 +26,27 @@ buildscript {
         classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.17"
     }
 }
+
 apply plugin: 'com.android.library'
-apply plugin: Plugins.kotlinAndroid
-apply plugin: Plugins.kotlinAndroidExt
-apply plugin: Plugins.androidMaven
-apply plugin: Plugins.jfrogBintay
-apply plugin: Plugins.dokka
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'org.jetbrains.dokka-android'
 
 android {
-    compileSdkVersion BuildDetails.compileSdk
-    defaultConfig {
-        minSdkVersion BuildDetails.minSdk
-        targetSdkVersion BuildDetails.targetSdk
-        versionCode BuildDetails.versionCode
-        versionName BuildDetails.versionName
+    compileSdkVersion buildDetails.compileSdk
 
-        testInstrumentationRunner Dependencies.androidJUnitRunner
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion buildDetails.minSdk
+        targetSdkVersion buildDetails.targetSdk
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     testOptions {
@@ -59,13 +67,12 @@ apply from: 'publishing.gradle'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation Dependencies.kotlinStdlib
-    implementation Dependencies.transition
-    implementation Dependencies.interpolator
 
-    // Test
-    testImplementation Dependencies.jUnit
-    testImplementation Dependencies.robotElectric
-    androidTestImplementation Dependencies.testRunner
-    androidTestImplementation Dependencies.espressoCore
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
+
+    implementation "com.android.support:transition:${versions.supportLibrary}"
+    implementation "com.android.support:interpolator:${versions.supportLibrary}"
+
+    testImplementation "junit:junit:${versions.junit}"
+    testImplementation "org.robolectric:robolectric:${versions.roboelectric}"
 }

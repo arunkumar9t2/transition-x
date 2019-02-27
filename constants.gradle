@@ -1,0 +1,28 @@
+ext {
+    buildDetails = [
+            'compileSdk' : 28,
+            'minSdk'     : 19,
+            'targetSdk'  : 28,
+            'versionCode': 1,
+            'versionName': "1.0"
+    ]
+    versions = [
+            'androidGradle'   : '3.4.0-beta05',
+            'supportLibrary'  : '28.0.0',
+            'flexbox'         : '1.0.0',
+            'constraintLayout': '1.1.3',
+            'glide'           : '4.8.0',
+            'kotlin'          : '1.3.21',
+            'junit'           : '4.12',
+            'roboelectric'    : '4.2',
+            'timber'          : '4.6.0',
+            'rx'              : '2.1.13',
+            'rxKotlin'        : '2.2.0',
+            'rxAndroid'       : '2.0.1',
+            'rxBinding'       : '2.1.1',
+            'butterKnife'     : '8.8.1',
+            'ktx'             : '0.3',
+            'navigation'      : '1.0.0-beta02',
+            'adapterDelegates': '3.0.1'
+    ]
+}

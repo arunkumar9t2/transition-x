@@ -8,8 +8,7 @@ width="210" hspace="10" vspace="10">
 
 **Kotlin DSL for choreographing Android Transitions**
 
-[![CircleCI](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master.svg?style=svg)](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master)[ ![Download](https://api.bintray.com/packages/arunkumar9t2/maven/transition-x/images/download.svg) ](https://bintray.com/arunkumar9t2/maven/transition-x/_latestVersion)[![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23335-blue.svg)](http://androidweekly.net/#335)
-
+[![CircleCI](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master.svg?style=svg)](https://circleci.com/gh/arunkumar9t2/transition-x/tree/master)[ ![Download](https://api.bintray.com/packages/arunkumar9t2/maven/transition-x/images/download.svg) ](https://bintray.com/arunkumar9t2/maven/transition-x/_latestVersion) [![Documentation](https://img.shields.io/badge/documentation-%20-brightgreen.svg)](https://arunkumar9t2.github.io/transition-x/transitionx/index.html) [![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23335-blue.svg)](http://androidweekly.net/#335) 
 
 `TransitionManager` makes it easy to animate simple changes to layout without needing to explicitly calculate and specify `from` and `to` like `Animator` or `Animation` expects. When you call `TransitionManager.beginDelayedTransition(layout, transition)` before updating a layout, the framework automatically does a diff on before and after states and animates the difference.
 
@@ -33,7 +32,7 @@ allprojects {
 
 ```groovy
 dependencies{
-    implementation 'in.arunkumarsampath:transition-x:1.0.0'
+    implementation 'in.arunkumarsampath:transition-x:1.0.1'
 }
 ```
 
@@ -142,7 +141,7 @@ transitionSet {
 }
 ```
 ## Interpolators
- - *Interpolators* can be directly added using `interpolator` property.
+ - **Interpolators** can be directly added using `interpolator` property.
 ```kotlin
 transitionSet {  
   moveResize()  
@@ -151,13 +150,13 @@ transitionSet {
 }
 ```
 
- - *Easing* - DSL provides a dedicated `ease` block to add interpolators recommended by [material design spec](https://material.io/design/motion/speed.html#easing).
+ - **Easing** - DSL provides a dedicated `ease` block to add interpolators recommended by [material design spec](https://material.io/design/motion/speed.html#easing).
 		 
-	***standardEasing***: Recommended for views that move within visible area of the layout. `FastOutSlowInInterpolator`
+	*standardEasing*: Recommended for views that move within visible area of the layout. `FastOutSlowInInterpolator`
 		 
-	 ***decelerateEasing***: Recommended for views that appear/enter outside visible bounds of the layout. `LinearOutSlowInInterpolator`
+	*decelerateEasing*: Recommended for views that appear/enter outside visible bounds of the layout. `LinearOutSlowInInterpolator`
 		 
-	***accelerateEasing***: Recommended for Views that exit visible bounds of the layout. `FastOutLinearInInterpolator`
+	*accelerateEasing*: Recommended for Views that exit visible bounds of the layout. `FastOutLinearInInterpolator`
 
 ```kotlin
 transitionSet {  
@@ -339,12 +338,45 @@ fragment.sharedElementEnterTransition = transitionSet {
     duration = 375
    }
 }
-  <pre>
+  </pre>
   </td>
 <td>
 <p>Demo - WIP.</p>
 <p><a href="https://github.com/arunkumar9t2/transition-x/tree/master/sample/src/main/java/in/arunkumarsampath/transitionx/sample/home/transitionsamples/cart">Example</a></p>
 </td>
+</tr>
+<tr>
+<td><b>Animated Bottom Navigation</b></td>
+<td>Bottom navigation animation implmentend using custom choreography instead of relying on <code>AutoTransition</code>. The implementation uses <code>ConstraintLayout</code> to define the layouts and then simply show/hides the labels and adds tint to the icons. TransitionManager does the rest.
+
+
+    transitionSet {
+      fadeOut()
+
+      moveResize {
+        startDelay = 50
+        ease {
+          standardEasing
+        }
+      }
+
+     fadeIn {
+       startDelay = 50
+     }
+
+     changeColor {
+       navItems.map { it.text }.forEach { text -> add(text) }
+       +constraintLayout
+     }
+
+      customTransition<ChangeImageTint> {
+         navItems.map { it.icon }.forEach { icon -> add(icon) }
+      }
+    }
+	
+</td>
+<td><img src="https://github.com/arunkumar9t2/transition-x/raw/master/art/animated_bottom_navigation.gif" alt="" width="470" /></td>
+</tr>
 </tr>
 </tbody>
 </table>
@@ -367,7 +399,7 @@ How can you help:
 
 # License
 
-    Copyright 2018, Arunkumar.
+    Copyright 2019, Arunkumar.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

@@ -30,3 +30,8 @@ values.properties
 # Sandbox stuff
 _sandbox
 /rebel.xml
+
+
+.project
+.classpath
+.settings/

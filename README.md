@@ -348,31 +348,32 @@ fragment.sharedElementEnterTransition = transitionSet {
 <tr>
 <td><b>Animated Bottom Navigation</b></td>
 <td>Bottom navigation animation implmentend using custom choreography instead of relying on <code>AutoTransition</code>. The implementation uses <code>ConstraintLayout</code> to define the layouts and then simply show/hides the labels and adds tint to the icons. TransitionManager does the rest.
-<pre>
-transitionSet {
-  fadeOut()
 
-  moveResize {
-    startDelay = 50
-    ease {
-      standardEasing
+
+    transitionSet {
+      fadeOut()
+
+      moveResize {
+        startDelay = 50
+        ease {
+          standardEasing
+        }
+      }
+
+     fadeIn {
+       startDelay = 50
+     }
+
+     changeColor {
+       navItems.map { it.text }.forEach { text -> add(text) }
+       +constraintLayout
+     }
+
+      customTransition<ChangeImageTint> {
+         navItems.map { it.icon }.forEach { icon -> add(icon) }
+      }
     }
-  }
-
-  fadeIn {
-    startDelay = 50
-  }
-
-  changeColor {
-    navItems.map { it.text }.forEach { text -> add(text) }
-    +constraintLayout
-  }
-
-  customTransition<ChangeImageTint> {
-    navItems.map { it.icon }.forEach { icon -> add(icon) }
-  }
- }
-</pre>
+	
 </td>
 <td><img src="https://github.com/arunkumar9t2/transition-x/raw/master/art/animated_bottom_navigation.gif" alt="" width="470" /></td>
 </tr>
@@ -398,7 +399,7 @@ How can you help:
 
 # License
 
-    Copyright 2018, Arunkumar.
+    Copyright 2019, Arunkumar.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

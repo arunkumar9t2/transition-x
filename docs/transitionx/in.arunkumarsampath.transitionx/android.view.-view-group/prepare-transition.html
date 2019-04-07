@@ -1,26 +1,8 @@
-<!--
-  ~
-  ~ Copyright 2019 Arunkumar
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~     http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  ~
-  -->
-
 <HTML>
 <HEAD>
     <meta charset="UTF-8">
     <title>prepareTransition - transitionx</title>
-    <link rel="stylesheet" href="../../../style.css">
+    <link href="../../../style.css" rel="stylesheet">
 </HEAD>
 <BODY>
 <a href="../../index.html">transitionx</a>&nbsp;/&nbsp;<a href="../index.html">in.arunkumarsampath.transitionx</a>&nbsp;/&nbsp;<a
@@ -78,5 +60,40 @@ textView.setText("Hello")
     <code>transitionsBuilder</code> - Builder to construct transition instance for use with <a
             href="https://developer.android.com/reference/android/support/transition/TransitionManager.html">TransitionManager</a>
 </p>
+<a name="in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, android.support.transition.Transition)"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><a
+        href="https://developer.android.com/reference/android/view/ViewGroup.html"><span
+        class="identifier">ViewGroup</span></a><span class="symbol">.</span><span
+        class="identifier">prepareTransition</span><span class="symbol">(</span><span
+        class="identifier"
+        id="in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, android.support.transition.Transition)/cancel">cancel</span><span
+        class="symbol">:</span>&nbsp;<a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span
+        class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span
+        class="symbol">, </span><span class="identifier"
+                                      id="in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, android.support.transition.Transition)/transition">transition</span><span
+        class="symbol">:</span>&nbsp;<a
+        href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+        class="identifier">Transition</span></a><span class="symbol">)</span><span
+        class="symbol">: </span><a
+        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+        class="identifier">Unit</span></a></code>
+<p>Calls <a
+        href="https://developer.android.com/reference/android/support/transition/TransitionManager.html#beginDelayedTransition(android.view.ViewGroup)">TransitionManager.beginDelayedTransition</a>
+    with this <a href="https://developer.android.com/reference/android/view/ViewGroup.html">ViewGroup</a>
+    and
+    <a href="prepare-transition.html#in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, android.support.transition.Transition)/transition">transition</a>
+    as the
+    parameter.</p>
+<p>Usage:</p>
+<pre><code>constraintLayout.prepareTransition(transition)
+
+someView.hide()
+</code></pre>
+<h3>Parameters</h3>
+<p><a name="cancel"></a>
+    <code>cancel</code> - if true, ends all previous transitions before starting the transition</p>
+<p><a name="transition"></a>
+    <code>transition</code> - the transition instance that should be used</p>
 </BODY>
 </HTML>

@@ -1,6 +1,8 @@
 $dokka.format:html
 $dokka.linkExtension:html
+$dokka.location:in.arunkumarsampath.transitionx$cancelTransitions(android.view.ViewGroup)in.arunkumarsampath.transitionx/android.view.-view-group/cancel-transitions.html
 $dokka.location:in.arunkumarsampath.transitionx$prepareAutoTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.AutoTransitionBuilder, kotlin.Unit)))in.arunkumarsampath.transitionx/android.view.-view-group/prepare-auto-transition.html
+$dokka.location:in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, android.support.transition.Transition)in.arunkumarsampath.transitionx/android.view.-view-group/prepare-transition.html
 $dokka.location:in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, kotlin.Function1((in.arunkumarsampath.transitionx.transition.set.DefaultTransitionSetBuilder, kotlin.Unit)))in.arunkumarsampath.transitionx/android.view.-view-group/prepare-transition.html
 in.arunkumarsampath.transitionx
 in.arunkumarsampath.transitionx.easing

@@ -1,26 +1,8 @@
-<!--
-  ~
-  ~ Copyright 2019 Arunkumar
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~     http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  ~
-  -->
-
 <HTML>
 <HEAD>
     <meta charset="UTF-8">
     <title>in.arunkumarsampath.transitionx.android.view.ViewGroup - transitionx</title>
-    <link rel="stylesheet" href="../../../style.css">
+    <link href="../../../style.css" rel="stylesheet">
 </HEAD>
 <BODY>
 <a href="../../index.html">transitionx</a>&nbsp;/&nbsp;<a href="../index.html">in.arunkumarsampath.transitionx</a>&nbsp;/&nbsp;<a
@@ -29,6 +11,23 @@
 <h3>Extensions for android.view.ViewGroup</h3>
 <table>
     <tbody>
+    <tr>
+        <td>
+            <p><a href="cancel-transitions.html">cancelTransitions</a></p>
+        </td>
+        <td>
+            <code><span class="keyword">fun </span><a
+                    href="https://developer.android.com/reference/android/view/ViewGroup.html"><span
+                    class="identifier">ViewGroup</span></a><span class="symbol">.</span><span
+                    class="identifier">cancelTransitions</span><span class="symbol">(</span><span
+                    class="symbol">)</span><span class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Cancels all animations running on this <code>ViewGroup</code>. Internally calls <a
+                    href="https://developer.android.com/reference/android/support/transition/TransitionManager.html#endTransitions(android.view.ViewGroup)">TransitionManager.endTransitions</a>.
+            </p>
+        </td>
+    </tr>
     <tr>
         <td>
             <p><a href="prepare-auto-transition.html">prepareAutoTransition</a></p>
@@ -110,6 +109,31 @@
                 properties can be modified by using available methods from <a
                         href="../../in.arunkumarsampath.transitionx.transition.set/-default-transition-set-builder/index.html">DefaultTransitionSetBuilder</a>
             </p>
+            <code><span class="keyword">fun </span><a
+                    href="https://developer.android.com/reference/android/view/ViewGroup.html"><span
+                    class="identifier">ViewGroup</span></a><span class="symbol">.</span><span
+                    class="identifier">prepareTransition</span><span class="symbol">(</span><span
+                    class="identifier"
+                    id="in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, android.support.transition.Transition)/cancel">cancel</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span
+                    class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span
+                    class="symbol">, </span><span class="identifier"
+                                                  id="in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, android.support.transition.Transition)/transition">transition</span><span
+                    class="symbol">:</span>&nbsp;<a
+                    href="https://developer.android.com/reference/android/support/transition/Transition.html"><span
+                    class="identifier">Transition</span></a><span class="symbol">)</span><span
+                    class="symbol">: </span><a
+                    href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span
+                    class="identifier">Unit</span></a></code>
+            <p>Calls <a
+                    href="https://developer.android.com/reference/android/support/transition/TransitionManager.html#beginDelayedTransition(android.view.ViewGroup)">TransitionManager.beginDelayedTransition</a>
+                with this <a
+                        href="https://developer.android.com/reference/android/view/ViewGroup.html">ViewGroup</a>
+                and
+                <a href="prepare-transition.html#in.arunkumarsampath.transitionx$prepareTransition(android.view.ViewGroup, kotlin.Boolean, android.support.transition.Transition)/transition">transition</a>
+                as the
+                parameter.</p>
         </td>
     </tr>
     </tbody>

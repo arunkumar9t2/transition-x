@@ -14,7 +14,7 @@ width="210" hspace="10" vspace="10">
 
 `Transition X` is intended to simplify construction of these `Transition` instances to take full advantage of the framework and provide a clear, concise, type safe and extensible DSL using Kotlin language features.
 
-I highly recommend reading the introduction blog post on [Medium.](https://medium.com/@arunkumar9t2/meet-transition-x-declarative-kotlin-dsl-for-choreographing-android-transitions-dff25ebb61f9)
+I highly recommend reading the introduction blog post on [my blog.](https://arunkumar.dev/transtition-x-declarative-kotlin-dsl-for-choreographing-android-transitions/)
 
 # Download
 

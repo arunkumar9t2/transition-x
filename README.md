@@ -186,6 +186,25 @@ transitionSet {
   }  
 }
 ```
+
+## Adding listeners to transitions
+Transition-X makes it easy to react to `Transition` lifecycle by providing lifecycle methods like `onEnd`, `onStart` which internally uses `Transition.addListener`.
+
+Example:
+```kotlin
+rootCoordinatorLayout.prepareTransition {
+    onStart { 
+        // Transition Started!
+    }
+    moveResize {
+        +image1
+    }
+    onEnd { 
+        // Transition Ended!
+    }
+}
+```
+
 ## Additional transitions
 The library packages additional transitions not present in the support library and the plan is to add more commonly used transitions to provide a full package. Currently the following transitions are packaged.
  - ***ChangeText***: Animates changes to a `TextView.text` property.

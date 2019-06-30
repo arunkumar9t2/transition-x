@@ -73,8 +73,8 @@ class ChangeColor : Transition() {
                         startBackground.color,
                         finalColor
                 ).apply {
-                    addUpdateListener { animation ->
-                        animation.animatedValue?.let { color ->
+                    addUpdateListener {
+                        this.animatedValue?.let { color ->
                             endBackground.color = color as Int
                         }
                     }
@@ -92,8 +92,8 @@ class ChangeColor : Transition() {
                         start,
                         end
                 ).apply {
-                    addUpdateListener { animation ->
-                        animation.animatedValue?.let { color ->
+                    addUpdateListener {
+                        this.animatedValue?.let { color ->
                             view.setTextColor(color as Int)
                         }
                     }

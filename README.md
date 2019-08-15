@@ -44,7 +44,7 @@ As shown above, instead of creating XML files and later inflating them using `Tr
 
 With _**Transition X**_, the construction and usage can be greatly simplified with a `prepareTransition` extension added to `ViewGroup`.
 
-*For example:*
+For example:
 
 ```Kotlin
 constraintLayout.prepareTransition {
@@ -64,13 +64,16 @@ constraintLayout.prepareTransition {
 // Performing layout changes here will be animated just like
 // calling TransitionManager.beginDelayedTransition()
 ```
+
 All blocks are type-safe and has IDE auto complete support thanks to Kotlin.
 
 # Getting Started
+
 ## Writing your first transition
-TransitionSet's can be built programmatically like this.
+
+TransitionSet's can be built programmatically like shown below.
 ```kotlin
-TransitionSet().apply {
+val transition = TransitionSet().apply {
   addTransition(ChangeBounds().apply {
     startDelay = 100  
     setPathMotion(ArcMotion())  
@@ -79,44 +82,53 @@ TransitionSet().apply {
 ```
 The Transition X equivalent would be:
 ```kotlin
-transitionSet {   
+val transition = transitionSet {   
   moveResize {   
     startDelay = 100  
     pathMotion = ArcMotion()  
   }  
 }
 ```
-Some of the transition names are **opinionated** to better express their intent and promote clear code. Here `ChangeBounds` transition usually animates a `View`'s height, width, or location on screen hence the name `moveResize` to better convey what it does.
-## Working with custom transitions
-In case you have a custom transition class and want to use with the DSL, it is easy to do so. 
 
- - If your transition has a `public no arg` constructor then the transition can be added using `customTransition<Type: Transition>{}` method. Below example shows usage of `ChangeCardColor` which animates a `CardView`s cardBackground property.
+Some of the transition names are **opinionated** to better express their intent and promote clear code. Here `ChangeBounds` transition usually animates a `View`'s height, width, or location on screen hence the name `moveResize` to better convey what it does.
+
+## Working with custom transitions
+
+In case you have a custom transition class and want to use with the DSL, it is easy to do so.
+
+ - If your transition has a `public no arg` constructor then the transition can be added using `customTransition<Type: Transition>{}` method, transition-x takes care of instantiating the transition. Below example shows usage of `ChangeCardColor` which animates a `CardView`'s `cardBackground` property.
 
 ```kotlin
 constraintLayout.prepareTransition {  
   customTransition<ChangeCardColor> {  
     +colorChangeCardView  
-  } 
+  }
 }
 ```
 
- - If your transition does not have `public no arg` constructor then, you can instantiate the transition and then use `customTransition(transition) {}` instead to add the transition.
- - **Accessing custom properties** : In addition to the common properties like `startDelay`, `interpolator`, etc, if your transition has custom properties then `customProperties {}` block can be used. 
+ - If your transition does not have `public no arg` constructor then, you can instantiate the transition yourself and then use `customTransition(transition) {}` instead to add the transition and configure it.
+
+### Accessing custom properties
+
+In addition to the common properties like `startDelay`, `interpolator`, etc, if your transition has custom properties then `customProperties {}` block can be used. 
 
 ```kotlin
 constraintLayout.prepareTransition {
   customTransition<ChangeCardColor> {
     +colorChangeCardView  
     customProperties {   
-	  myProperty = "hi"  
-	}  
+      myProperty = "hi"
+    }  
   }
 }
 ```
+
 ## Adding, removing and excluding targets
+
 The DSL provides simplified syntax to deal with targets by talking to `Transition`'s add/exclude/remove API.
 
  - Use `+` operator or `add()` to add targets of type `String (Transition Name)` or `View` or `Resource Id`.
+
 ```kotlin
 transitionSet {  
   +"TransitionName"  
@@ -124,7 +136,9 @@ transitionSet {
   add(userIconView)  
 }
 ```
+
  - Use `-` operator or `remove()` to remove targets of type `String (Transition Name)` or `View` or `Resource Id`.
+
 ```kotlin
 transitionSet {  
   -"TransitionName"  
@@ -132,7 +146,9 @@ transitionSet {
   remove(userIconView)  
 }
 ```
+
  - `exclude` and `excludeChildren` methods are provided for excluding targets which can be useful in advanced transitions. It can be used on `Views`, `Resource Ids` or `Type`
+
 ```kotlin
 transitionSet {  
   exclude<RecyclerView>()  
@@ -140,8 +156,11 @@ transitionSet {
   excludeChildren(constraintLayout)  
 }
 ```
+
 ## Interpolators
+
  - **Interpolators** can be directly added using `interpolator` property.
+
 ```kotlin
 transitionSet {  
   moveResize()  
@@ -151,12 +170,9 @@ transitionSet {
 ```
 
  - **Easing** - DSL provides a dedicated `ease` block to add interpolators recommended by [material design spec](https://material.io/design/motion/speed.html#easing).
-		 
-	*standardEasing*: Recommended for views that move within visible area of the layout. `FastOutSlowInInterpolator`
-		 
-	*decelerateEasing*: Recommended for views that appear/enter outside visible bounds of the layout. `LinearOutSlowInInterpolator`
-		 
-	*accelerateEasing*: Recommended for Views that exit visible bounds of the layout. `FastOutLinearInInterpolator`
+	- `standardEasing` - Recommended for views that move within visible area of the layout. Uses `FastOutSlowInInterpolator`
+	- `decelerateEasing` - Recommended for views that appear/enter outside visible bounds of the layout. Uses `LinearOutSlowInInterpolator`
+	- `accelerateEasing` - Recommended for Views that exit visible bounds of the layout. Uses `FastOutLinearInInterpolator`
 
 ```kotlin
 transitionSet {  
@@ -166,7 +182,9 @@ transitionSet {
   }  
 }
 ```
+
 ## Nesting transitions
+
 Often, for fined grained transitions it it necessary to add different transition sets for different targets. It is simple to nest multiple transition sets just by using `transitionSet {}` recursively.
 ```kotlin
 transitionSet {  
@@ -188,9 +206,11 @@ transitionSet {
 ```
 
 ## Adding listeners to transitions
+
 Transition-X makes it easy to react to `Transition` lifecycle by providing lifecycle methods like `onEnd`, `onStart` which internally uses `Transition.addListener`.
 
 Example:
+
 ```kotlin
 rootCoordinatorLayout.prepareTransition {
     onStart { 
@@ -206,9 +226,11 @@ rootCoordinatorLayout.prepareTransition {
 ```
 
 ## Additional transitions
-The library packages additional transitions not present in the support library and the plan is to add more commonly used transitions to provide a full package. Currently the following transitions are packaged.
- - ***ChangeText***: Animates changes to a `TextView.text` property.
- - ***ChangeColor***: Animates changes to `View.background` if it is a `ColorDrawable` or changes to `TextView.textColor` if the target is a `TextView`.
+
+The library packages additional transitions not present in the support library and the plan is to add more commonly used transitions to provide a full package. Currently the following transitions are packaged:
+
+ - `ChangeText`: Animates changes to a `TextView.text` property.
+ - `ChangeColor`: Animates changes to `View.background` if it is a `ColorDrawable` or changes to `TextView.textColor` if the target is a `TextView`.
 
 # Samples
 
@@ -410,7 +432,7 @@ fragment.sharedElementEnterTransition = transitionSet {
 # Contributions
 
 Contributions are welcome! I would greatly appreciate creating an issue to discuss major changes before submitting a PR directly.
-How can you help:
+How you can help:
 
 - Improving test coverage.
 - Finding the DSL not sufficient for your case? Create an issue so we can discuss.
